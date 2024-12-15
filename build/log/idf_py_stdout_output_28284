@@ -1,0 +1,40 @@
+[1/9] Performing build step for 'bootloader'
+[1/1] cmd.exe /C "cd /D C:\espressif5.0\frameworks\arcadeJoypad\build\bootloader\esp-idf\esptool_py && C:\Espressif5.0\python_env\idf5.0_py3.11_env\Scripts\python.exe C:/espressif5.0/frameworks/esp-idf-v5.0.3/components/partition_table/check_sizes.py --offset 0x8000 bootloader 0x0 C:/espressif5.0/frameworks/arcadeJoypad/build/bootloader/bootloader.bin"
+Bootloader binary size 0x4e20 bytes. 0x31e0 bytes (39%) free.
+[2/7] Building C object esp-idf/main/CMakeFiles/__idf_main.dir/app_main.c.obj
+C:/espressif5.0/frameworks/arcadeJoypad/main/app_main.c: In function 'pvTimerCallback':
+C:/espressif5.0/frameworks/arcadeJoypad/main/app_main.c:92:23: warning: variable 'xTimeNow' set but not used [-Wunused-but-set-variable]
+   92 |     static TickType_t xTimeNow;
+      |                       ^~~~~~~~
+C:/espressif5.0/frameworks/arcadeJoypad/main/app_main.c: In function 'app_main':
+C:/espressif5.0/frameworks/arcadeJoypad/main/app_main.c:380:24: warning: variable 'ackChannel' set but not used [-Wunused-but-set-variable]
+  380 |             static int ackChannel = 0;
+      |                        ^~~~~~~~~~
+C:/espressif5.0/frameworks/arcadeJoypad/main/app_main.c:189:9: warning: unused variable '_channel' [-Wunused-variable]
+  189 |     int _channel = 0;
+      |         ^~~~~~~~
+C:/espressif5.0/frameworks/arcadeJoypad/main/app_main.c:179:17: warning: unused variable 'firstPress' [-Wunused-variable]
+  179 |     static bool firstPress = false;
+      |                 ^~~~~~~~~~
+At top level:
+C:/espressif5.0/frameworks/arcadeJoypad/main/app_main.c:179:17: warning: 'firstPress' defined but not used [-Wunused-variable]
+C:/espressif5.0/frameworks/arcadeJoypad/main/app_main.c:66:12: warning: 'rxUARTBytes' defined but not used [-Wunused-variable]
+   66 | static int rxUARTBytes;
+      |            ^~~~~~~~~~~
+C:/espressif5.0/frameworks/arcadeJoypad/main/app_main.c:65:16: warning: 'led_state' defined but not used [-Wunused-variable]
+   65 | static uint8_t led_state = 0; // off
+      |                ^~~~~~~~~
+C:/espressif5.0/frameworks/arcadeJoypad/main/app_main.c:62:35: warning: 'xTimer1Stopped' defined but not used [-Wunused-variable]
+   62 | static BaseType_t xTimer1Started, xTimer1Stopped;
+      |                                   ^~~~~~~~~~~~~~
+[3/7] Linking C static library esp-idf\main\libmain.a
+[4/7] Generating ld/sections.ld
+[5/7] Linking CXX executable arcadeJoypad.elf
+[6/7] Generating binary image from built executable
+esptool.py v4.5.1
+Creating esp32c3 image...
+Merged 3 ELF sections
+Successfully created esp32c3 image.
+Generated C:/espressif5.0/frameworks/arcadeJoypad/build/arcadeJoypad.bin
+[7/7] cmd.exe /C "cd /D C:\espressif5.0\frameworks\arcadeJoypad\build\esp-idf\esptool_py && C:\Espressif5.0\python_env\idf5.0_py3.11_env\Scripts\python.exe C:/espressif5.0/frameworks/esp-idf-v5.0.3/components/partition_table/check_sizes.py --offset 0x8000 partition --type app C:/espressif5.0/frameworks/arcadeJoypad/build/partition_table/partition-table.bin C:/espressif5.0/frameworks/arcadeJoypad/build/arcadeJoypad.bin"
+arcadeJoypad.bin binary size 0xc29a0 bytes. Smallest app partition is 0x300000 bytes. 0x23d660 bytes (75%) free.
