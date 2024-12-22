@@ -7,8 +7,20 @@ C:/espressif5.0/frameworks/arcadeJoypad/main/app_main.c:91:23: warning: variable
    91 |     static TickType_t xTimeNow;
       |                       ^~~~~~~~
 C:/espressif5.0/frameworks/arcadeJoypad/main/app_main.c: In function 'app_main':
-C:/espressif5.0/frameworks/arcadeJoypad/main/app_main.c:284:24: warning: variable 'ackChannel' set but not used [-Wunused-but-set-variable]
-  284 |             static int ackChannel = 0;
+C:/espressif5.0/frameworks/arcadeJoypad/main/app_main.c:247:17: warning: unused variable 'sw4' [-Wunused-variable]
+  247 |             int sw4 = gpio_get_level(SW4_PIN);
+      |                 ^~~
+C:/espressif5.0/frameworks/arcadeJoypad/main/app_main.c:246:17: warning: unused variable 'sw3' [-Wunused-variable]
+  246 |             int sw3 = gpio_get_level(SW3_PIN);
+      |                 ^~~
+C:/espressif5.0/frameworks/arcadeJoypad/main/app_main.c:245:17: warning: unused variable 'sw2' [-Wunused-variable]
+  245 |             int sw2 = gpio_get_level(SW2_PIN);
+      |                 ^~~
+C:/espressif5.0/frameworks/arcadeJoypad/main/app_main.c:244:17: warning: unused variable 'sw1' [-Wunused-variable]
+  244 |             int sw1 = gpio_get_level(SW1_PIN);
+      |                 ^~~
+C:/espressif5.0/frameworks/arcadeJoypad/main/app_main.c:288:24: warning: variable 'ackChannel' set but not used [-Wunused-but-set-variable]
+  288 |             static int ackChannel = 0;
       |                        ^~~~~~~~~~
 C:/espressif5.0/frameworks/arcadeJoypad/main/app_main.c:146:9: warning: unused variable '_channel' [-Wunused-variable]
   146 |     int _channel = 0;
@@ -33,7 +45,7 @@ Merged 3 ELF sections
 Successfully created esp32c3 image.
 Generated C:/espressif5.0/frameworks/arcadeJoypad/build/arcadeJoypad.bin
 [7/8] cmd.exe /C "cd /D C:\espressif5.0\frameworks\arcadeJoypad\build\esp-idf\esptool_py && C:\Espressif5.0\python_env\idf5.0_py3.11_env\Scripts\python.exe C:/espressif5.0/frameworks/esp-idf-v5.0.3/components/partition_table/check_sizes.py --offset 0x8000 partition --type app C:/espressif5.0/frameworks/arcadeJoypad/build/partition_table/partition-table.bin C:/espressif5.0/frameworks/arcadeJoypad/build/arcadeJoypad.bin"
-arcadeJoypad.bin binary size 0xbeef0 bytes. Smallest app partition is 0x300000 bytes. 0x241110 bytes (75%) free.
+arcadeJoypad.bin binary size 0xbee80 bytes. Smallest app partition is 0x300000 bytes. 0x241180 bytes (75%) free.
 [7/8] cmd.exe /C "cd /D C:\espressif5.0\frameworks\esp-idf-v5.0.3\components\esptool_py && C:\espressif5.0\tools\cmake\3.24.0\bin\cmake.exe -D IDF_PATH=C:/espressif5.0/frameworks/esp-idf-v5.0.3 -D SERIAL_TOOL=C:/Espressif5.0/python_env/idf5.0_py3.11_env/Scripts/python.exe;;C:/espressif5.0/frameworks/esp-idf-v5.0.3/components/esptool_py/esptool/esptool.py;--chip;esp32c3 -D SERIAL_TOOL_ARGS=--before=default_reset;--after=hard_reset;--no-stub;write_flash;@flash_args -D WORKING_DIRECTORY=C:/espressif5.0/frameworks/arcadeJoypad/build -P C:/espressif5.0/frameworks/esp-idf-v5.0.3/components/esptool_py/run_serial_tool.cmake"
 esptool esp32c3 -p COM18 -b 460800 --before=default_reset --after=hard_reset --no-stub write_flash --flash_mode dio --flash_freq 80m --flash_size 4MB 0x0 bootloader/bootloader.bin 0x10000 arcadeJoypad.bin 0x8000 partition_table/partition-table.bin
 esptool.py v4.5.1
@@ -72,10 +84,10 @@ Writing at 0x00004000... (85 %)
 Writing at 0x00004400... (90 %)
 Writing at 0x00004800... (95 %)
 Writing at 0x00004c00... (100 %)
-Wrote 20480 bytes at 0x00000000 in 0.4 seconds (457.7 kbit/s)...
+Wrote 20480 bytes at 0x00000000 in 0.4 seconds (452.8 kbit/s)...
 Hash of data verified.
 Erasing flash...
-Took 3.90s to erase flash block
+Took 3.87s to erase flash block
 Writing at 0x00010000... (0 %)
 Writing at 0x00010400... (0 %)
 Writing at 0x00010800... (0 %)
@@ -840,14 +852,14 @@ Writing at 0x000ce000... (99 %)
 Writing at 0x000ce400... (99 %)
 Writing at 0x000ce800... (99 %)
 Writing at 0x000cec00... (100 %)
-Wrote 782336 bytes at 0x00010000 in 13.7 seconds (455.2 kbit/s)...
+Wrote 782336 bytes at 0x00010000 in 14.8 seconds (422.9 kbit/s)...
 Hash of data verified.
 Erasing flash...
 Took 0.05s to erase flash block
 Writing at 0x00008000... (33 %)
 Writing at 0x00008400... (66 %)
 Writing at 0x00008800... (100 %)
-Wrote 3072 bytes at 0x00008000 in 0.0 seconds (499.8 kbit/s)...
+Wrote 3072 bytes at 0x00008000 in 0.1 seconds (461.9 kbit/s)...
 Hash of data verified.
 
 Leaving...

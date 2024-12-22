@@ -18,9 +18,8 @@
 
 // #include "app_main.h"
 
-#define PACKET_LENGTH       18   //ENTRY PACKET
+#define PACKET_LENGTH       13   //ENTRY PACKET
 #define ACK_PACKET_LENGTH   18
-#define RECV_PACKET_LENGTH  12
 #define SEND_PACKET_TERM    10
 #define TOGGLE_TERM         50
 
@@ -40,7 +39,13 @@
 #define PAIRING_MODE_LIMIT      1000000
 #define LED_BLINK_TERM          10
 
-static const char *TAG = "app_main_remocon";
+#define CW                      1
+#define CCW                     2
+#define ORIGIN                  0
+
+#define MOTOR_SPD               150     
+
+static const char *TAG = "arcade Joypad";
 
 void init_nvs_flash(void);
 void init_espnow_slave(unsigned int _mac[MAC_CH_NUMBER]);
@@ -61,7 +66,7 @@ static QueueHandle_t xQueueESPnowRecv = NULL;
 static TimerHandle_t xAutoReloadTimer;
 static BaseType_t xTimer1Started, xTimer1Stopped;
 
-static const int BUF_SIZE = 32;
+//static const int BUF_SIZE = 32;
 static uint8_t led_state = 0; // off
 static int rxUARTBytes;
 static int gCount = 0;
@@ -82,7 +87,6 @@ int64_t paringStartTime = 0;
 int64_t pairinglapseTime = 0;
 
 int appMode = APP_APPLICATION_MODE;
-static bool entryPacketEnable = true;
 
 int64_t sleepStartTime = 0;
 int64_t sleepLapseTime = 0;
@@ -96,47 +100,6 @@ static void pvTimerCallback(TimerHandle_t xTimer)
     rCount++;
     tCount++;
     ledCount++;
-}
-
-void console_init(void)
-{
-    const uart_config_t uart_config = {
-        .baud_rate = 115200,
-        .data_bits = UART_DATA_8_BITS,
-        .parity = UART_PARITY_DISABLE,
-        .stop_bits = UART_STOP_BITS_1,
-        .flow_ctrl = UART_HW_FLOWCTRL_DISABLE,
-        .source_clk = UART_SCLK_DEFAULT,
-    };
-
-    uart_driver_install(CONFIG_ESP_CONSOLE_UART_NUM, BUF_SIZE * 8, 0, 0, NULL, 0);
-    uart_param_config(CONFIG_ESP_CONSOLE_UART_NUM, &uart_config);
-}
-
-static void console_rx_task(void *arg)
-{
-    static char _buf[PACKET_LENGTH];   // entry에서 받은 패킷 저장 버퍼
-    fpurge(stdin);
-    memset(_buf, 0, PACKET_LENGTH);
-
-    while (true)
-    {
-        if (fgets(_buf, PACKET_LENGTH, stdin) != NULL)
-        {
-            //if (xSemaphoreGive(xConsoleRecv) == pdPASS)
-            //{
-            //    memcpy(buf, _buf, PACKET_LENGTH);
-                //printf("RECV:%s\n", _buf);
-            //}
-            sleepStartTime = esp_timer_get_time();
-            memcpy(sPacket.msg, _buf, PACKET_LENGTH);
-            sPacket.rxBytes = PACKET_LENGTH;
-            memset(_buf, 0x00, sizeof(_buf));
-            //if(entryPacketEnable == true) xQueueSend(xQueueESPnowSend, &sPacket, portMAX_DELAY);
-        }
-        
-        vTaskDelay(20 / portTICK_PERIOD_MS);
-    }
 }
 
 void shutdown_handler(void)
@@ -173,7 +136,7 @@ void app_main(void)
     led_conf.pull_up_en = 0;          
     gpio_config(&led_conf);
     
-    gpio_set_level(LED_PIN, 0);     
+    gpio_set_level(LED_PIN, 1);     
    
     static bool firstPress = false;
 
@@ -219,8 +182,7 @@ void app_main(void)
         printf("\n");
         vTaskDelay(pdMS_TO_TICKS(200));
     }
-
-    console_init();    
+  
     init_nvs_flash();
 
     if(appMode == APP_APPLICATION_MODE) init_espnow_slave(destMAC);
@@ -230,66 +192,26 @@ void app_main(void)
     esp_register_shutdown_handler(shutdown_handler);
 
     memset(_sendbuf, 0, PACKET_LENGTH);    
-    _sendbuf[ID_START1] = 0x54;
-    _sendbuf[ID_START2] = 0x55;
-    _sendbuf[ID_INFO] = 0x00;
-    _sendbuf[ID_LEN] = 9;
-    _sendbuf[ID_FROM] = 0;
-    _sendbuf[ID_TO] = 0;
-    _sendbuf[ID_COM] = 0;
-    _sendbuf[ID_DIR] = 0;
-    _sendbuf[ID_SPD] = 0;
-    _sendbuf[ID_DIR + 1] = 0;
-    _sendbuf[ID_SPD + 1] = 0;
-    _sendbuf[ID_DIR + 2] = 0;
-    _sendbuf[ID_SPD + 2] = 0;
-    _sendbuf[ID_DELI1] = 36;
-    _sendbuf[ID_DELI2] = 36;
-
-    // initialized for the status that unconnected with receivers..
-    rPacket.msg[ID_START1] = 0x54;
-    rPacket.msg[ID_START2] = 0x55;
-    rPacket.msg[ID_INFO] = INFO_SENSOR;
-    rPacket.msg[ID_LEN] = 4; // only data payload
-    rPacket.msg[ID_FROM] = DEV_RECEIVER;
-    rPacket.msg[ID_TO] = DEV_REMOCON;
-    rPacket.msg[ID_P_STAT] = STAT_READY;
-    rPacket.msg[ID_SEN] = 0x00;
-    rPacket.msg[ID_SEN + 1] = 0x00;
-    rPacket.msg[ID_SEN + 2] = 0x00;
-    rPacket.msg[ID_CRCL] = 36;
-    rPacket.msg[ID_CRCH] = 36;
-    rPacket.rxBytes = RECV_PACKET_LENGTH;
-
-    if(appMode == APP_APPLICATION_MODE) {
-
-        xTaskCreate(console_rx_task, "console_rx_task", 1024 * 8, NULL, 5, NULL);
-    }
+    _sendbuf[ID_START1] =   0x54;
+    _sendbuf[ID_START2] =   0x55;
+    _sendbuf[ID_INFO]   =   0x00;
+    _sendbuf[ID_LEN]    =   5;
+    _sendbuf[ID_FROM]   =   0;
+    _sendbuf[ID_TO]     =   0;
+    _sendbuf[ID_DIR]    =   0;
+    _sendbuf[ID_SPD]    =   0;
+    _sendbuf[ID_DIR + 1] =  0;
+    _sendbuf[ID_SPD + 1] =  0;
+    _sendbuf[ID_SOL]    =   0;
+    _sendbuf[ID_DELI1]  =   36;
+    _sendbuf[ID_DELI2]  =   36;
 
     xAutoReloadTimer = xTimerCreate("AutoReload", pdMS_TO_TICKS(10UL), pdTRUE, 0, pvTimerCallback);
     if (xAutoReloadTimer != NULL)
     {
         xTimer1Started = xTimerStart(xAutoReloadTimer, 0);
     }
-
-    /*
-    const char *file_path = "/spiffs/mac_add.txt";
-    unsigned int myMac[MAC_CH_NUMBER] = {0x24, 0x6F, 0x28, 0x1A, 0xB2, 0xC1, 0x0A};
-    unsigned int iMac[MAC_CH_NUMBER] = {};
-
-    save_mac(file_path, myMac);
-    vTaskDelay(pdMS_TO_TICKS(100));
-    
-    read_mac(file_path, iMac);
-
-    printf("output:");
-    for (int j = 0; j < MAC_CH_NUMBER; j++)
-    {
-        printf("%02X ", iMac[j]);
-    }
-    printf("\n");
-    */
-
+   
     paringStartTime = esp_timer_get_time();
     sleepStartTime = esp_timer_get_time();
 
@@ -306,42 +228,18 @@ void app_main(void)
 
     while (true)
     {
-        //페어링 모드 버튼 확인
-        /*
-        int _pBtn = gpio_get_level(BTN_PIN);
-        if (_pBtn == BTN_PRESS)
-        {
-            if (firstPress == false)
-            {
-                pressStartTime = esp_timer_get_time();
-                firstPress = true;
-            }
-            pressingTime = esp_timer_get_time();
-
-            if ((pressingTime - pressStartTime) > PRESS_INTERVAL)
-            {
-                _mode[0] = APP_PAIRING_MODE;
-                save_mode(mode_file_path, _mode);
-                vTaskDelay(pdMS_TO_TICKS(100));
-                esp_restart();
-            }
-        }
-        else
-        {
-            firstPress = false;
-        }
-        */
-
+        
         sleepLapseTime = esp_timer_get_time();
-        if((sleepLapseTime - sleepStartTime) > SLEEP_WAIT_TIME)
+        if((sleepLapseTime - sleepStartTime) > (SLEEP_WAIT_TIME * 5))
         {
-            //esp_deep_sleep_enable_gpio_wakeup((1ULL << SW_UP1_PIN) | (1ULL << SW_UP2_PIN) | (1ULL << SW_UP3_PIN), ESP_GPIO_WAKEUP_GPIO_LOW);
             esp_deep_sleep_enable_gpio_wakeup(BIT(BTN_PIN), ESP_GPIO_WAKEUP_GPIO_LOW);
-           
+            gpio_set_level(LED_PIN, 0);
             ESP_LOGI(TAG, "Entering deep sleep mode...\n");
             vTaskDelay(pdMS_TO_TICKS(1000));
             esp_deep_sleep_start();
-        }
+        }        
+
+        // 페어링 모드 버튼 확인       
 
         BaseType_t _stat = xQueueReceive(xQueueESPnowRecv, &rPacket, pdMS_TO_TICKS(1));
 
@@ -352,27 +250,107 @@ void app_main(void)
             int sw3 = gpio_get_level(SW3_PIN);
             int sw4 = gpio_get_level(SW4_PIN);
             int btn = gpio_get_level(BTN_PIN);
+            //ESP_LOGI(TAG, "SW_UP: %d SW_DN: %d SW_R: %d SW_L: %d btn:%d", sw1, sw2, sw3, sw4, btn);
 
-            ESP_LOGI(TAG, "SW1: %d SW2: %d SW3: %d SW4: %d btn:%d", sw1, sw2, sw3, sw4, btn);            
+            if ((!sw1) && (sw2) && (sw3) && (sw4))      // STICK UP
+            {
+                _sendbuf[ID_DIR] = CW;
+                _sendbuf[ID_SPD] = MOTOR_SPD;
+                _sendbuf[ID_DIR + 1] = CCW;
+                _sendbuf[ID_SPD + 1] = MOTOR_SPD;
+            }
+            else if ((sw1) && (!sw2) && (sw3) && (sw4))  // STICK DOWN
+            {
+                _sendbuf[ID_DIR] = CCW;
+                _sendbuf[ID_SPD] = MOTOR_SPD;
+                _sendbuf[ID_DIR + 1] = CW;
+                _sendbuf[ID_SPD + 1] = MOTOR_SPD;
+            }
+            else if ((sw1) && (sw2) && (!sw3) && (sw4)) // STICK RIGHT
+            {
+                _sendbuf[ID_DIR] = CCW;
+                _sendbuf[ID_SPD] = MOTOR_SPD;
+                _sendbuf[ID_DIR + 1] = CCW;
+                _sendbuf[ID_SPD + 1] = MOTOR_SPD;
+            }
+            else if ((sw1) && (sw2) && (sw3) && (!sw4)) // STICK LEFT
+            {
+                _sendbuf[ID_DIR] = CW;
+                _sendbuf[ID_SPD] = MOTOR_SPD;
+                _sendbuf[ID_DIR + 1] = CW;
+                _sendbuf[ID_SPD + 1] = MOTOR_SPD;
+            }
+            else if ((!sw1) && (sw2) && (sw3) && (!sw4)) // STICK UP-LEFT
+            {
+                _sendbuf[ID_DIR] = CW;
+                _sendbuf[ID_SPD] = MOTOR_SPD;
+                _sendbuf[ID_DIR + 1] = ORIGIN;
+                _sendbuf[ID_SPD + 1] = 0;
+            }
+            else if ((!sw1) && (sw2) && (!sw3) && (sw4)) // STICK UP-RIGHT
+            {
+                _sendbuf[ID_DIR] = ORIGIN;
+                _sendbuf[ID_SPD] = 0;
+                _sendbuf[ID_DIR + 1] = CCW;
+                _sendbuf[ID_SPD + 1] = MOTOR_SPD;
+            }
+            else if ((sw1) && (!sw2) && (sw3) && (!sw4)) // STICK DOWN-LEFT
+            {
+                _sendbuf[ID_DIR] = CCW;
+                _sendbuf[ID_SPD] = MOTOR_SPD;
+                _sendbuf[ID_DIR + 1] = ORIGIN;
+                _sendbuf[ID_SPD + 1] = 0;
+            }
+            else if ((sw1) && (!sw2) && (!sw3) && (sw4)) // STICK DOWN-LEFT
+            {
+                _sendbuf[ID_DIR] = 0;
+                _sendbuf[ID_SPD] = MOTOR_SPD;
+                _sendbuf[ID_DIR + 1] = CW;
+                _sendbuf[ID_SPD + 1] = MOTOR_SPD;
+            }
+            else if ((sw1) && (sw2) && (sw3) && (sw4)) // STICK STOP
+            {
+                _sendbuf[ID_DIR] = ORIGIN;
+                _sendbuf[ID_SPD] = 0;
+                _sendbuf[ID_DIR + 1] = ORIGIN;
+                _sendbuf[ID_SPD + 1] = 0;
+            } 
+
+            if(btn == BTN_PRESS)  _sendbuf[ID_SOL] = 1;
+            else _sendbuf[ID_SOL] = 0;    
             
             if (gCount >= SEND_PACKET_TERM)
             {            
                 gCount = 0;
-                if(entryPacketEnable == false)  memcpy(sPacket.msg, _sendbuf, PACKET_LENGTH); //컨트롤러 패킷을 복사  - 그렇지 않으면 엔트리 패킷 반영
+                memcpy(sPacket.msg, _sendbuf, PACKET_LENGTH); //컨트롤러 패킷을 복사  - 그렇지 않으면 엔트리 패킷 반영
                 sPacket.rxBytes = PACKET_LENGTH;
                 xQueueSend(xQueueESPnowSend, &sPacket, portMAX_DELAY);
-            }           
-            
-            if (_stat == pdTRUE)
+            }
+           
+            if (btn == BTN_PRESS)
             {
-                printf("\n");
-                for (int j = 0; j < rPacket.rxBytes; j++)
+                gpio_set_level(LED_PIN, 0);
+                if (firstPress == false)
                 {
-                    printf("%c", rPacket.msg[j]);
+                    pressStartTime = esp_timer_get_time();
+                    firstPress = true;
                 }
-            }                
-        }
-        // else if(rPacket.msg[ID_INFO] == INFO_ADVERTISE)
+                pressingTime = esp_timer_get_time();
+
+                if ((pressingTime - pressStartTime) > PRESS_INTERVAL)
+                {
+                    _mode[0] = APP_PAIRING_MODE;
+                    save_mode(mode_file_path, _mode);
+                    vTaskDelay(pdMS_TO_TICKS(100));
+                    esp_restart();
+                }
+            }
+            else 
+            {
+                firstPress = false;
+                gpio_set_level(LED_PIN, 1);
+            }
+        }        
         else if (appMode == APP_PAIRING_MODE)
         {
             //esp_now_peer_info_t peerInfo;
@@ -386,8 +364,7 @@ void app_main(void)
                 ledCount = 0;                
                 if(_led == false) {gpio_set_level(LED_PIN, 1); _led = true;}
                 else {gpio_set_level(LED_PIN, 0); _led = false;}
-            }
-            
+            }            
 
             if(_stat == pdTRUE)
             {

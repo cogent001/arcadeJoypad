@@ -1,0 +1,921 @@
+ESP-ROM:esp32c3-api1-20210207
+Build:Feb  7 2021
+rst:0x15 (USB_UART_CHIP_RESET),boot:0xf (SPI_FAST_FLASH_BOOT)
+Saved PC:0x4004c98c
+SPIWP:0xee
+mode:DIO, clock div:1
+load:0x3fcd5820,len:0x16a8
+load:0x403cc710,len:0x93c
+load:0x403ce710,len:0x2ddc
+entry 0x403cc710
+[0;32mI (24) boot: ESP-IDF v5.0.3-dirty 2nd stage bootloader[0m
+[0;32mI (24) boot: compile time 15:46:05[0m
+[0;32mI (25) boot: chip revision: v0.4[0m
+[0;32mI (27) boot.esp32c3: SPI Speed      : 80MHz[0m
+[0;32mI (32) boot.esp32c3: SPI Mode       : DIO[0m
+[0;32mI (36) boot.esp32c3: SPI Flash Size : 4MB[0m
+[0;32mI (41) boot: Enabling RNG early entropy source...[0m
+[0;32mI (46) boot: Partition Table:[0m
+[0;32mI (50) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (57) boot:  0 nvs              WiFi data        01 02 00009000 00003000[0m
+[0;32mI (65) boot:  1 phy_init         RF data          01 01 0000c000 00001000[0m
+[0;32mI (72) boot:  2 factory          factory app      00 00 00010000 00300000[0m
+[0;32mI (80) boot:  3 spiffs           Unknown data     01 82 00310000 000f0000[0m
+[0;32mI (87) boot: End of partition table[0m
+[0;32mI (91) esp_image: segment 0: paddr=00010020 vaddr=3c090020 size=1eb08h (125704) map[0m
+[0;32mI (119) esp_image: segment 1: paddr=0002eb30 vaddr=3fc91800 size=014e8h (  5352) load[0m
+[0;32mI (121) esp_image: segment 2: paddr=00030020 vaddr=42000020 size=8c6f0h (575216) map[0m
+[0;32mI (215) esp_image: segment 3: paddr=000bc718 vaddr=3fc92ce8 size=00f34h (  3892) load[0m
+[0;32mI (216) esp_image: segment 4: paddr=000bd654 vaddr=40380000 size=117d0h ( 71632) load[0m
+[0;32mI (234) esp_image: segment 5: paddr=000cee2c vaddr=50000000 size=00018h (    24) load[0m
+[0;32mI (239) boot: Loaded app from partition at offset 0x10000[0m
+[0;32mI (239) boot: Disabling RNG early entropy source...[0m
+[0;32mI (243) cpu_start: Unicore app[0m
+[0;32mI (247) cpu_start: Pro cpu up.[0m
+[0;32mI (262) cpu_start: Pro cpu start user code[0m
+[0;32mI (262) cpu_start: cpu freq: 160000000 Hz[0m
+[0;32mI (262) cpu_start: Application information:[0m
+[0;32mI (265) cpu_start: Project name:     arcadeJoypad[0m
+[0;32mI (270) cpu_start: App version:      3fd2885-dirty[0m
+[0;32mI (276) cpu_start: Compile time:     Dec 19 2024 14:56:30[0m
+[0;32mI (282) cpu_start: ELF file SHA256:  6706509b7c845ccf...[0m
+[0;32mI (288) cpu_start: ESP-IDF:          v5.0.3-dirty[0m
+[0;32mI (293) cpu_start: Min chip rev:     v0.3[0m
+[0;32mI (298) cpu_start: Max chip rev:     v0.99 [0m
+[0;32mI (303) cpu_start: Chip rev:         v0.4[0m
+[0;32mI (307) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (315) heap_init: At 3FC97F00 len 00044810 (274 KiB): DRAM[0m
+[0;32mI (321) heap_init: At 3FCDC710 len 00002950 (10 KiB): STACK/DRAM[0m
+[0;32mI (328) heap_init: At 50000028 len 00001FD8 (7 KiB): RTCRAM[0m
+[0;32mI (335) spi_flash: detected chip: generic[0m
+[0;32mI (335) spi_flash: flash io: dio[0m
+[0;32mI (336) sleep: Configure to isolate all GPIO pins in sleep state[0m
+[0;32mI (341) sleep: Enable automatic switching of GPIO sleep configuration[0m
+[0;32mI (348) cpu_start: Starting scheduler.[0m
+[0;32mI (348) app_main_remocon: ARCADE JOYPAD START![0m
+[0;32mI (348) gpio: GPIO[7]| InputEn: 1| OutputEn: 0| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+[0;32mI (348) gpio: GPIO[8]| InputEn: 1| OutputEn: 0| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+[0;32mI (348) gpio: GPIO[9]| InputEn: 1| OutputEn: 0| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+[0;32mI (348) gpio: GPIO[10]| InputEn: 1| OutputEn: 0| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+[0;32mI (348) gpio: GPIO[0]| InputEn: 1| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (348) gpio: GPIO[1]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+[0;32mI (368) SPIFFS: Partition size: total: 896321, used: 1004[0m
+[0;32mI (368) read_mode:: mode file read: 01[0m
+[0;32mI (368) app_main_remocon: APPLICATION MODE![0m
+[0;32mI (368) read_mac: mac file read[0m
+READED MAC:a0 a0 a0 a0 a0 a0 1 
+[0;32mI (568) init_espnow mac:: A0:A0:A0:A0:A0:A0 CH:1[0m
+[0;32mI (568) pp: pp rom version: 9387209[0m
+[0;32mI (568) net80211: net80211 rom version: 9387209[0m
+I (578) wifi:wifi driver task: 3fca1a20, prio:23, stack:6656, core=0
+[0;32mI (578) system_api: Base MAC address is not set[0m
+[0;32mI (578) system_api: read default base MAC address from EFUSE[0m
+I (578) wifi:wifi firmware version: 15fc0ca
+I (578) wifi:wifi certification version: v7.0
+I (578) wifi:config NVS flash: enabled
+I (578) wifi:config nano formating: disabled
+I (578) wifi:Init data frame dynamic rx buffer num: 32
+I (578) wifi:Init management frame dynamic rx buffer num: 32
+I (578) wifi:Init management short buffer num: 32
+I (578) wifi:Init dynamic tx buffer num: 32
+I (578) wifi:Init static tx FG buffer num: 2
+I (578) wifi:Init static rx buffer size: 1600
+I (578) wifi:Init static rx buffer num: 10
+I (578) wifi:Init dynamic rx buffer num: 32
+[0;32mI (578) wifi_init: rx ba win: 6[0m
+[0;32mI (578) wifi_init: tcpip mbox: 32[0m
+[0;32mI (578) wifi_init: udp mbox: 6[0m
+[0;32mI (578) wifi_init: tcp mbox: 6[0m
+[0;32mI (578) wifi_init: tcp tx win: 5744[0m
+[0;32mI (578) wifi_init: tcp rx win: 5744[0m
+[0;32mI (578) wifi_init: tcp mss: 1440[0m
+[0;32mI (578) wifi_init: WiFi IRAM OP enabled[0m
+[0;32mI (578) wifi_init: WiFi RX IRAM OP enabled[0m
+[0;32mI (578) phy_init: phy_version 970,1856f88,May 10 2023,17:44:12[0m
+I (618) wifi:mode : sta (18:8b:0e:2c:a0:20)
+I (618) wifi:enable tsf
+I (618) ESPNOW: espnow [version: 1.0] init
+BASE MAC :18:8B:E:2C:A0:20
+[0;32mI (628) espnow_slave: Listening[0m
+[0;32mI (628) app_main_remocon: APPLICATION MODE...[0m
+MY Base MAC Address: 18:8B:0E:2C:A0:20
+[0;32mI (10098) save_mode:: mode file written: 02[0m
+System is shutting down!
+ESP-ROM:esp32c3-api1-20210207
+Build:Feb  7 2021
+rst:0x3 (RTC_SW_SYS_RST),boot:0xf (SPI_FAST_FLASH_BOOT)
+Saved PC:0x403806b8
+SPIWP:0xee
+mode:DIO, clock div:1
+load:0x3fcd5820,len:0x16a8
+load:0x403cc710,len:0x93c
+load:0x403ce710,len:0x2ddc
+entry 0x403cc710
+[0;32mI (24) boot: ESP-IDF v5.0.3-dirty 2nd stage bootloader[0m
+[0;32mI (24) boot: compile time 15:46:05[0m
+[0;32mI (24) boot: chip revision: v0.4[0m
+[0;32mI (26) boot.esp32c3: SPI Speed      : 80MHz[0m
+[0;32mI (31) boot.esp32c3: SPI Mode       : DIO[0m
+[0;32mI (36) boot.esp32c3: SPI Flash Size : 4MB[0m
+[0;32mI (40) boot: Enabling RNG early entropy source...[0m
+[0;32mI (46) boot: Partition Table:[0m
+[0;32mI (49) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (57) boot:  0 nvs              WiFi data        01 02 00009000 00003000[0m
+[0;32mI (64) boot:  1 phy_init         RF data          01 01 0000c000 00001000[0m
+[0;32mI (72) boot:  2 factory          factory app      00 00 00010000 00300000[0m
+[0;32mI (79) boot:  3 spiffs           Unknown data     01 82 00310000 000f0000[0m
+[0;32mI (87) boot: End of partition table[0m
+[0;32mI (91) esp_image: segment 0: paddr=00010020 vaddr=3c090020 size=1eb08h (125704) map[0m
+[0;32mI (119) esp_image: segment 1: paddr=0002eb30 vaddr=3fc91800 size=014e8h (  5352) load[0m
+[0;32mI (120) esp_image: segment 2: paddr=00030020 vaddr=42000020 size=8c6f0h (575216) map[0m
+[0;32mI (214) esp_image: segment 3: paddr=000bc718 vaddr=3fc92ce8 size=00f34h (  3892) load[0m
+[0;32mI (216) esp_image: segment 4: paddr=000bd654 vaddr=40380000 size=117d0h ( 71632) load[0m
+[0;32mI (233) esp_image: segment 5: paddr=000cee2c vaddr=50000000 size=00018h (    24) load[0m
+[0;32mI (239) boot: Loaded app from partition at offset 0x10000[0m
+[0;32mI (239) boot: Disabling RNG early entropy source...[0m
+[0;32mI (242) cpu_start: Unicore app[0m
+[0;32mI (246) cpu_start: Pro cpu up.[0m
+[0;32mI (261) cpu_start: Pro cpu start user code[0m
+[0;32mI (261) cpu_start: cpu freq: 160000000 Hz[0m
+[0;32mI (261) cpu_start: Application information:[0m
+[0;32mI (264) cpu_start: Project name:     arcadeJoypad[0m
+[0;32mI (270) cpu_start: App version:      3fd2885-dirty[0m
+[0;32mI (275) cpu_start: Compile time:     Dec 19 2024 14:56:30[0m
+[0;32mI (281) cpu_start: ELF file SHA256:  6706509b7c845ccf...[0m
+[0;32mI (287) cpu_start: ESP-IDF:          v5.0.3-dirty[0m
+[0;32mI (293) cpu_start: Min chip rev:     v0.3[0m
+[0;32mI (297) cpu_start: Max chip rev:     v0.99 [0m
+[0;32mI (302) cpu_start: Chip rev:         v0.4[0m
+[0;32mI (307) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (314) heap_init: At 3FC97F00 len 00044810 (274 KiB): DRAM[0m
+[0;32mI (320) heap_init: At 3FCDC710 len 00002950 (10 KiB): STACK/DRAM[0m
+[0;32mI (327) heap_init: At 50000028 len 00001FD8 (7 KiB): RTCRAM[0m
+[0;32mI (334) spi_flash: detected chip: generic[0m
+[0;32mI (335) spi_flash: flash io: dio[0m
+[0;32mI (335) sleep: Configure to isolate all GPIO pins in sleep state[0m
+[0;32mI (340) sleep: Enable automatic switching of GPIO sleep configuration[0m
+[0;32mI (347) cpu_start: Starting scheduler.[0m
+[0;32mI (348) app_main_remocon: ARCADE JOYPAD START![0m
+[0;32mI (348) gpio: GPIO[7]| InputEn: 1| OutputEn: 0| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+[0;32mI (348) gpio: GPIO[8]| InputEn: 1| OutputEn: 0| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+[0;32mI (348) gpio: GPIO[9]| InputEn: 1| OutputEn: 0| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+[0;32mI (348) gpio: GPIO[10]| InputEn: 1| OutputEn: 0| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+[0;32mI (348) gpio: GPIO[0]| InputEn: 1| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (348) gpio: GPIO[1]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+[0;32mI (368) SPIFFS: Partition size: total: 896321, used: 1004[0m
+[0;32mI (368) read_mode:: mode file read: 02[0m
+[0;32mI (368) app_main_remocon: PAIRNG MODE![0m
+[0;32mI (1368) init_espnow mac:: FF:FF:FF:FF:FF:FF CH:13[0m
+[0;32mI (1368) pp: pp rom version: 9387209[0m
+[0;32mI (1368) net80211: net80211 rom version: 9387209[0m
+I (1378) wifi:wifi driver task: 3fca1a20, prio:23, stack:6656, core=0
+[0;32mI (1378) system_api: Base MAC address is not set[0m
+[0;32mI (1378) system_api: read default base MAC address from EFUSE[0m
+I (1378) wifi:wifi firmware version: 15fc0ca
+I (1378) wifi:wifi certification version: v7.0
+I (1378) wifi:config NVS flash: enabled
+I (1378) wifi:config nano formating: disabled
+I (1378) wifi:Init data frame dynamic rx buffer num: 32
+I (1378) wifi:Init management frame dynamic rx buffer num: 32
+I (1378) wifi:Init management short buffer num: 32
+I (1378) wifi:Init dynamic tx buffer num: 32
+I (1378) wifi:Init static tx FG buffer num: 2
+I (1378) wifi:Init static rx buffer size: 1600
+I (1378) wifi:Init static rx buffer num: 10
+I (1378) wifi:Init dynamic rx buffer num: 32
+[0;32mI (1378) wifi_init: rx ba win: 6[0m
+[0;32mI (1378) wifi_init: tcpip mbox: 32[0m
+[0;32mI (1378) wifi_init: udp mbox: 6[0m
+[0;32mI (1378) wifi_init: tcp mbox: 6[0m
+[0;32mI (1378) wifi_init: tcp tx win: 5744[0m
+[0;32mI (1378) wifi_init: tcp rx win: 5744[0m
+[0;32mI (1378) wifi_init: tcp mss: 1440[0m
+[0;32mI (1378) wifi_init: WiFi IRAM OP enabled[0m
+[0;32mI (1378) wifi_init: WiFi RX IRAM OP enabled[0m
+[0;32mI (1378) phy_init: phy_version 970,1856f88,May 10 2023,17:44:12[0m
+I (1418) wifi:mode : sta (18:8b:0e:2c:a0:20)
+I (1418) wifi:enable tsf
+I (1418) ESPNOW: espnow [version: 1.0] init
+BASE MAC :18:8B:E:2C:A0:20
+[0;32mI (1428) espnow_slave: Listening[0m
+[0;32mI (1428) app_main_remocon: PAIRING MODE...[0m
+MY Base MAC Address: 18:8B:0E:2C:A0:20
+[0;32mI (2458) save_mode:: mode file written: 01[0m
+System is shutting down!
+ESP-ROM:esp32c3-api1-20210207
+Build:Feb  7 2021
+rst:0x3 (RTC_SW_SYS_RST),boot:0xf (SPI_FAST_FLASH_BOOT)
+Saved PC:0x403806b8
+SPIWP:0xee
+mode:DIO, clock div:1
+load:0x3fcd5820,len:0x16a8
+load:0x403cc710,len:0x93c
+load:0x403ce710,len:0x2ddc
+entry 0x403cc710
+[0;32mI (24) boot: ESP-IDF v5.0.3-dirty 2nd stage bootloader[0m
+[0;32mI (24) boot: compile time 15:46:05[0m
+[0;32mI (24) boot: chip revision: v0.4[0m
+[0;32mI (26) boot.esp32c3: SPI Speed      : 80MHz[0m
+[0;32mI (31) boot.esp32c3: SPI Mode       : DIO[0m
+[0;32mI (36) boot.esp32c3: SPI Flash Size : 4MB[0m
+[0;32mI (40) boot: Enabling RNG early entropy source...[0m
+[0;32mI (46) boot: Partition Table:[0m
+[0;32mI (49) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (57) boot:  0 nvs              WiFi data        01 02 00009000 00003000[0m
+[0;32mI (64) boot:  1 phy_init         RF data          01 01 0000c000 00001000[0m
+[0;32mI (72) boot:  2 factory          factory app      00 00 00010000 00300000[0m
+[0;32mI (79) boot:  3 spiffs           Unknown data     01 82 00310000 000f0000[0m
+[0;32mI (87) boot: End of partition table[0m
+[0;32mI (91) esp_image: segment 0: paddr=00010020 vaddr=3c090020 size=1eb08h (125704) map[0m
+[0;32mI (119) esp_image: segment 1: paddr=0002eb30 vaddr=3fc91800 size=014e8h (  5352) load[0m
+[0;32mI (120) esp_image: segment 2: paddr=00030020 vaddr=42000020 size=8c6f0h (575216) map[0m
+[0;32mI (214) esp_image: segment 3: paddr=000bc718 vaddr=3fc92ce8 size=00f34h (  3892) load[0m
+[0;32mI (216) esp_image: segment 4: paddr=000bd654 vaddr=40380000 size=117d0h ( 71632) load[0m
+[0;32mI (233) esp_image: segment 5: paddr=000cee2c vaddr=50000000 size=00018h (    24) load[0m
+[0;32mI (239) boot: Loaded app from partition at offset 0x10000[0m
+[0;32mI (239) boot: Disabling RNG early entropy source...[0m
+[0;32mI (242) cpu_start: Unicore app[0m
+[0;32mI (246) cpu_start: Pro cpu up.[0m
+[0;32mI (261) cpu_start: Pro cpu start user code[0m
+[0;32mI (261) cpu_start: cpu freq: 160000000 Hz[0m
+[0;32mI (262) cpu_start: Application information:[0m
+[0;32mI (264) cpu_start: Project name:     arcadeJoypad[0m
+[0;32mI (270) cpu_start: App version:      3fd2885-dirty[0m
+[0;32mI (275) cpu_start: Compile time:     Dec 19 2024 14:56:30[0m
+[0;32mI (281) cpu_start: ELF file SHA256:  6706509b7c845ccf...[0m
+[0;32mI (287) cpu_start: ESP-IDF:          v5.0.3-dirty[0m
+[0;32mI (293) cpu_start: Min chip rev:     v0.3[0m
+[0;32mI (297) cpu_start: Max chip rev:     v0.99 [0m
+[0;32mI (302) cpu_start: Chip rev:         v0.4[0m
+[0;32mI (307) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (314) heap_init: At 3FC97F00 len 00044810 (274 KiB): DRAM[0m
+[0;32mI (320) heap_init: At 3FCDC710 len 00002950 (10 KiB): STACK/DRAM[0m
+[0;32mI (327) heap_init: At 50000028 len 00001FD8 (7 KiB): RTCRAM[0m
+[0;32mI (334) spi_flash: detected chip: generic[0m
+[0;32mI (335) spi_flash: flash io: dio[0m
+[0;32mI (335) sleep: Configure to isolate all GPIO pins in sleep state[0m
+[0;32mI (340) sleep: Enable automatic switching of GPIO sleep configuration[0m
+[0;32mI (347) cpu_start: Starting scheduler.[0m
+[0;32mI (348) app_main_remocon: ARCADE JOYPAD START![0m
+[0;32mI (348) gpio: GPIO[7]| InputEn: 1| OutputEn: 0| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+[0;32mI (348) gpio: GPIO[8]| InputEn: 1| OutputEn: 0| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+[0;32mI (348) gpio: GPIO[9]| InputEn: 1| OutputEn: 0| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+[0;32mI (348) gpio: GPIO[10]| InputEn: 1| OutputEn: 0| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+[0;32mI (348) gpio: GPIO[0]| InputEn: 1| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (348) gpio: GPIO[1]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+[0;32mI (368) SPIFFS: Partition size: total: 896321, used: 1004[0m
+[0;32mI (368) read_mode:: mode file read: 01[0m
+[0;32mI (368) app_main_remocon: APPLICATION MODE![0m
+[0;32mI (388) read_mac: mac file read[0m
+READED MAC:a0 a0 a0 a0 a0 a0 1 
+[0;32mI (588) init_espnow mac:: A0:A0:A0:A0:A0:A0 CH:1[0m
+[0;32mI (588) pp: pp rom version: 9387209[0m
+[0;32mI (588) net80211: net80211 rom version: 9387209[0m
+I (598) wifi:wifi driver task: 3fca1a20, prio:23, stack:6656, core=0
+[0;32mI (598) system_api: Base MAC address is not set[0m
+[0;32mI (598) system_api: read default base MAC address from EFUSE[0m
+I (598) wifi:wifi firmware version: 15fc0ca
+I (598) wifi:wifi certification version: v7.0
+I (598) wifi:config NVS flash: enabled
+I (598) wifi:config nano formating: disabled
+I (598) wifi:Init data frame dynamic rx buffer num: 32
+I (598) wifi:Init management frame dynamic rx buffer num: 32
+I (598) wifi:Init management short buffer num: 32
+I (598) wifi:Init dynamic tx buffer num: 32
+I (598) wifi:Init static tx FG buffer num: 2
+I (598) wifi:Init static rx buffer size: 1600
+I (598) wifi:Init static rx buffer num: 10
+I (598) wifi:Init dynamic rx buffer num: 32
+[0;32mI (598) wifi_init: rx ba win: 6[0m
+[0;32mI (598) wifi_init: tcpip mbox: 32[0m
+[0;32mI (598) wifi_init: udp mbox: 6[0m
+[0;32mI (598) wifi_init: tcp mbox: 6[0m
+[0;32mI (598) wifi_init: tcp tx win: 5744[0m
+[0;32mI (598) wifi_init: tcp rx win: 5744[0m
+[0;32mI (598) wifi_init: tcp mss: 1440[0m
+[0;32mI (598) wifi_init: WiFi IRAM OP enabled[0m
+[0;32mI (598) wifi_init: WiFi RX IRAM OP enabled[0m
+[0;32mI (598) phy_init: phy_version 970,1856f88,May 10 2023,17:44:12[0m
+I (638) wifi:mode : sta (18:8b:0e:2c:a0:20)
+I (638) wifi:enable tsf
+I (638) ESPNOW: espnow [version: 1.0] init
+BASE MAC :18:8B:E:2C:A0:20
+[0;32mI (648) espnow_slave: Listening[0m
+[0;32mI (648) app_main_remocon: APPLICATION MODE...[0m
+MY Base MAC Address: 18:8B:0E:2C:A0:20
+[0;32mI (42958) save_mode:: mode file written: 02[0m
+System is shutting down!
+ESP-ROM:esp32c3-api1-20210207
+Build:Feb  7 2021
+rst:0x3 (RTC_SW_SYS_RST),boot:0xf (SPI_FAST_FLASH_BOOT)
+Saved PC:0x403806b8
+SPIWP:0xee
+mode:DIO, clock div:1
+load:0x3fcd5820,len:0x16a8
+load:0x403cc710,len:0x93c
+load:0x403ce710,len:0x2ddc
+entry 0x403cc710
+[0;32mI (24) boot: ESP-IDF v5.0.3-dirty 2nd stage bootloader[0m
+[0;32mI (24) boot: compile time 15:46:05[0m
+[0;32mI (24) boot: chip revision: v0.4[0m
+[0;32mI (26) boot.esp32c3: SPI Speed      : 80MHz[0m
+[0;32mI (31) boot.esp32c3: SPI Mode       : DIO[0m
+[0;32mI (36) boot.esp32c3: SPI Flash Size : 4MB[0m
+[0;32mI (40) boot: Enabling RNG early entropy source...[0m
+[0;32mI (46) boot: Partition Table:[0m
+[0;32mI (49) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (57) boot:  0 nvs              WiFi data        01 02 00009000 00003000[0m
+[0;32mI (64) boot:  1 phy_init         RF data          01 01 0000c000 00001000[0m
+[0;32mI (72) boot:  2 factory          factory app      00 00 00010000 00300000[0m
+[0;32mI (79) boot:  3 spiffs           Unknown data     01 82 00310000 000f0000[0m
+[0;32mI (87) boot: End of partition table[0m
+[0;32mI (91) esp_image: segment 0: paddr=00010020 vaddr=3c090020 size=1eb08h (125704) map[0m
+[0;32mI (119) esp_image: segment 1: paddr=0002eb30 vaddr=3fc91800 size=014e8h (  5352) load[0m
+[0;32mI (120) esp_image: segment 2: paddr=00030020 vaddr=42000020 size=8c6f0h (575216) map[0m
+[0;32mI (214) esp_image: segment 3: paddr=000bc718 vaddr=3fc92ce8 size=00f34h (  3892) load[0m
+[0;32mI (216) esp_image: segment 4: paddr=000bd654 vaddr=40380000 size=117d0h ( 71632) load[0m
+[0;32mI (233) esp_image: segment 5: paddr=000cee2c vaddr=50000000 size=00018h (    24) load[0m
+[0;32mI (239) boot: Loaded app from partition at offset 0x10000[0m
+[0;32mI (239) boot: Disabling RNG early entropy source...[0m
+[0;32mI (242) cpu_start: Unicore app[0m
+[0;32mI (246) cpu_start: Pro cpu up.[0m
+[0;32mI (261) cpu_start: Pro cpu start user code[0m
+[0;32mI (261) cpu_start: cpu freq: 160000000 Hz[0m
+[0;32mI (261) cpu_start: Application information:[0m
+[0;32mI (264) cpu_start: Project name:     arcadeJoypad[0m
+[0;32mI (270) cpu_start: App version:      3fd2885-dirty[0m
+[0;32mI (275) cpu_start: Compile time:     Dec 19 2024 14:56:30[0m
+[0;32mI (281) cpu_start: ELF file SHA256:  6706509b7c845ccf...[0m
+[0;32mI (287) cpu_start: ESP-IDF:          v5.0.3-dirty[0m
+[0;32mI (293) cpu_start: Min chip rev:     v0.3[0m
+[0;32mI (297) cpu_start: Max chip rev:     v0.99 [0m
+[0;32mI (302) cpu_start: Chip rev:         v0.4[0m
+[0;32mI (307) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (314) heap_init: At 3FC97F00 len 00044810 (274 KiB): DRAM[0m
+[0;32mI (320) heap_init: At 3FCDC710 len 00002950 (10 KiB): STACK/DRAM[0m
+[0;32mI (327) heap_init: At 50000028 len 00001FD8 (7 KiB): RTCRAM[0m
+[0;32mI (334) spi_flash: detected chip: generic[0m
+[0;32mI (335) spi_flash: flash io: dio[0m
+[0;32mI (335) sleep: Configure to isolate all GPIO pins in sleep state[0m
+[0;32mI (340) sleep: Enable automatic switching of GPIO sleep configuration[0m
+[0;32mI (347) cpu_start: Starting scheduler.[0m
+[0;32mI (348) app_main_remocon: ARCADE JOYPAD START![0m
+[0;32mI (348) gpio: GPIO[7]| InputEn: 1| OutputEn: 0| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+[0;32mI (348) gpio: GPIO[8]| InputEn: 1| OutputEn: 0| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+[0;32mI (348) gpio: GPIO[9]| InputEn: 1| OutputEn: 0| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+[0;32mI (348) gpio: GPIO[10]| InputEn: 1| OutputEn: 0| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+[0;32mI (348) gpio: GPIO[0]| InputEn: 1| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (348) gpio: GPIO[1]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+[0;32mI (368) SPIFFS: Partition size: total: 896321, used: 1004[0m
+[0;32mI (368) read_mode:: mode file read: 02[0m
+[0;32mI (368) app_main_remocon: PAIRNG MODE![0m
+[0;32mI (1368) init_espnow mac:: FF:FF:FF:FF:FF:FF CH:13[0m
+[0;32mI (1368) pp: pp rom version: 9387209[0m
+[0;32mI (1368) net80211: net80211 rom version: 9387209[0m
+I (1378) wifi:wifi driver task: 3fca1a20, prio:23, stack:6656, core=0
+[0;32mI (1378) system_api: Base MAC address is not set[0m
+[0;32mI (1378) system_api: read default base MAC address from EFUSE[0m
+I (1378) wifi:wifi firmware version: 15fc0ca
+I (1378) wifi:wifi certification version: v7.0
+I (1378) wifi:config NVS flash: enabled
+I (1378) wifi:config nano formating: disabled
+I (1378) wifi:Init data frame dynamic rx buffer num: 32
+I (1378) wifi:Init management frame dynamic rx buffer num: 32
+I (1378) wifi:Init management short buffer num: 32
+I (1378) wifi:Init dynamic tx buffer num: 32
+I (1378) wifi:Init static tx FG buffer num: 2
+I (1378) wifi:Init static rx buffer size: 1600
+I (1378) wifi:Init static rx buffer num: 10
+I (1378) wifi:Init dynamic rx buffer num: 32
+[0;32mI (1378) wifi_init: rx ba win: 6[0m
+[0;32mI (1378) wifi_init: tcpip mbox: 32[0m
+[0;32mI (1378) wifi_init: udp mbox: 6[0m
+[0;32mI (1378) wifi_init: tcp mbox: 6[0m
+[0;32mI (1378) wifi_init: tcp tx win: 5744[0m
+[0;32mI (1378) wifi_init: tcp rx win: 5744[0m
+[0;32mI (1378) wifi_init: tcp mss: 1440[0m
+[0;32mI (1378) wifi_init: WiFi IRAM OP enabled[0m
+[0;32mI (1378) wifi_init: WiFi RX IRAM OP enabled[0m
+[0;32mI (1378) phy_init: phy_version 970,1856f88,May 10 2023,17:44:12[0m
+I (1418) wifi:mode : sta (18:8b:0e:2c:a0:20)
+I (1418) wifi:enable tsf
+I (1428) ESPNOW: espnow [version: 1.0] init
+BASE MAC :18:8B:E:2C:A0:20
+[0;32mI (1428) espnow_slave: Listening[0m
+[0;32mI (1428) app_main_remocon: PAIRING MODE...[0m
+MY Base MAC Address: 18:8B:0E:2C:A0:20
+my partner MAC: 30:30:F9:DC:32:00 CH:06[0;32mI (1548) save_mac:: mac file written[0m
+[0;32mI (1658) save_mode:: mode file written: 01[0m
+System is shutting down!
+ESP-ROM:esp32c3-api1-20210207
+Build:Feb  7 2021
+rst:0x3 (RTC_SW_SYS_RST),boot:0xf (SPI_FAST_FLASH_BOOT)
+Saved PC:0x403806b8
+SPIWP:0xee
+mode:DIO, clock div:1
+load:0x3fcd5820,len:0x16a8
+load:0x403cc710,len:0x93c
+load:0x403ce710,len:0x2ddc
+entry 0x403cc710
+[0;32mI (24) boot: ESP-IDF v5.0.3-dirty 2nd stage bootloader[0m
+[0;32mI (24) boot: compile time 15:46:05[0m
+[0;32mI (24) boot: chip revision: v0.4[0m
+[0;32mI (26) boot.esp32c3: SPI Speed      : 80MHz[0m
+[0;32mI (31) boot.esp32c3: SPI Mode       : DIO[0m
+[0;32mI (36) boot.esp32c3: SPI Flash Size : 4MB[0m
+[0;32mI (40) boot: Enabling RNG early entropy source...[0m
+[0;32mI (46) boot: Partition Table:[0m
+[0;32mI (49) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (57) boot:  0 nvs              WiFi data        01 02 00009000 00003000[0m
+[0;32mI (64) boot:  1 phy_init         RF data          01 01 0000c000 00001000[0m
+[0;32mI (72) boot:  2 factory          factory app      00 00 00010000 00300000[0m
+[0;32mI (79) boot:  3 spiffs           Unknown data     01 82 00310000 000f0000[0m
+[0;32mI (87) boot: End of partition table[0m
+[0;32mI (91) esp_image: segment 0: paddr=00010020 vaddr=3c090020 size=1eb08h (125704) map[0m
+[0;32mI (119) esp_image: segment 1: paddr=0002eb30 vaddr=3fc91800 size=014e8h (  5352) load[0m
+[0;32mI (120) esp_image: segment 2: paddr=00030020 vaddr=42000020 size=8c6f0h (575216) map[0m
+[0;32mI (214) esp_image: segment 3: paddr=000bc718 vaddr=3fc92ce8 size=00f34h (  3892) load[0m
+[0;32mI (216) esp_image: segment 4: paddr=000bd654 vaddr=40380000 size=117d0h ( 71632) load[0m
+[0;32mI (233) esp_image: segment 5: paddr=000cee2c vaddr=50000000 size=00018h (    24) load[0m
+[0;32mI (239) boot: Loaded app from partition at offset 0x10000[0m
+[0;32mI (239) boot: Disabling RNG early entropy source...[0m
+[0;32mI (242) cpu_start: Unicore app[0m
+[0;32mI (246) cpu_start: Pro cpu up.[0m
+[0;32mI (261) cpu_start: Pro cpu start user code[0m
+[0;32mI (261) cpu_start: cpu freq: 160000000 Hz[0m
+[0;32mI (262) cpu_start: Application information:[0m
+[0;32mI (264) cpu_start: Project name:     arcadeJoypad[0m
+[0;32mI (270) cpu_start: App version:      3fd2885-dirty[0m
+[0;32mI (275) cpu_start: Compile time:     Dec 19 2024 14:56:30[0m
+[0;32mI (281) cpu_start: ELF file SHA256:  6706509b7c845ccf...[0m
+[0;32mI (287) cpu_start: ESP-IDF:          v5.0.3-dirty[0m
+[0;32mI (293) cpu_start: Min chip rev:     v0.3[0m
+[0;32mI (297) cpu_start: Max chip rev:     v0.99 [0m
+[0;32mI (302) cpu_start: Chip rev:         v0.4[0m
+[0;32mI (307) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (314) heap_init: At 3FC97F00 len 00044810 (274 KiB): DRAM[0m
+[0;32mI (320) heap_init: At 3FCDC710 len 00002950 (10 KiB): STACK/DRAM[0m
+[0;32mI (327) heap_init: At 50000028 len 00001FD8 (7 KiB): RTCRAM[0m
+[0;32mI (334) spi_flash: detected chip: generic[0m
+[0;32mI (335) spi_flash: flash io: dio[0m
+[0;32mI (335) sleep: Configure to isolate all GPIO pins in sleep state[0m
+[0;32mI (340) sleep: Enable automatic switching of GPIO sleep configuration[0m
+[0;32mI (347) cpu_start: Starting scheduler.[0m
+[0;32mI (348) app_main_remocon: ARCADE JOYPAD START![0m
+[0;32mI (348) gpio: GPIO[7]| InputEn: 1| OutputEn: 0| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+[0;32mI (348) gpio: GPIO[8]| InputEn: 1| OutputEn: 0| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+[0;32mI (348) gpio: GPIO[9]| InputEn: 1| OutputEn: 0| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+[0;32mI (348) gpio: GPIO[10]| InputEn: 1| OutputEn: 0| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+[0;32mI (348) gpio: GPIO[0]| InputEn: 1| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (348) gpio: GPIO[1]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+[0;32mI (368) SPIFFS: Partition size: total: 896321, used: 1004[0m
+[0;32mI (368) read_mode:: mode file read: 01[0m
+[0;32mI (368) app_main_remocon: APPLICATION MODE![0m
+[0;32mI (388) read_mac: mac file read[0m
+READED MAC:30 30 f9 dc 32 0 6 
+[0;32mI (588) init_espnow mac:: 30:30:F9:DC:32:0 CH:6[0m
+[0;32mI (588) pp: pp rom version: 9387209[0m
+[0;32mI (588) net80211: net80211 rom version: 9387209[0m
+I (598) wifi:wifi driver task: 3fca1a20, prio:23, stack:6656, core=0
+[0;32mI (598) system_api: Base MAC address is not set[0m
+[0;32mI (598) system_api: read default base MAC address from EFUSE[0m
+I (598) wifi:wifi firmware version: 15fc0ca
+I (598) wifi:wifi certification version: v7.0
+I (598) wifi:config NVS flash: enabled
+I (598) wifi:config nano formating: disabled
+I (598) wifi:Init data frame dynamic rx buffer num: 32
+I (598) wifi:Init management frame dynamic rx buffer num: 32
+I (598) wifi:Init management short buffer num: 32
+I (598) wifi:Init dynamic tx buffer num: 32
+I (598) wifi:Init static tx FG buffer num: 2
+I (598) wifi:Init static rx buffer size: 1600
+I (598) wifi:Init static rx buffer num: 10
+I (598) wifi:Init dynamic rx buffer num: 32
+[0;32mI (598) wifi_init: rx ba win: 6[0m
+[0;32mI (598) wifi_init: tcpip mbox: 32[0m
+[0;32mI (598) wifi_init: udp mbox: 6[0m
+[0;32mI (598) wifi_init: tcp mbox: 6[0m
+[0;32mI (598) wifi_init: tcp tx win: 5744[0m
+[0;32mI (598) wifi_init: tcp rx win: 5744[0m
+[0;32mI (598) wifi_init: tcp mss: 1440[0m
+[0;32mI (598) wifi_init: WiFi IRAM OP enabled[0m
+[0;32mI (598) wifi_init: WiFi RX IRAM OP enabled[0m
+[0;32mI (598) phy_init: phy_version 970,1856f88,May 10 2023,17:44:12[0m
+I (638) wifi:mode : sta (18:8b:0e:2c:a0:20)
+I (638) wifi:enable tsf
+I (648) ESPNOW: espnow [version: 1.0] init
+BASE MAC :18:8B:E:2C:A0:20
+[0;32mI (648) espnow_slave: Listening[0m
+[0;32mI (648) app_main_remocon: APPLICATION MODE...[0m
+MY Base MAC Address: 18:8B:0E:2C:A0:20
+[0;32mI (164678) save_mode:: mode file written: 02[0m
+System is shutting down!
+ESP-ROM:esp32c3-api1-20210207
+Build:Feb  7 2021
+rst:0x3 (RTC_SW_SYS_RST),boot:0xf (SPI_FAST_FLASH_BOOT)
+Saved PC:0x403806b8
+SPIWP:0xee
+mode:DIO, clock div:1
+load:0x3fcd5820,len:0x16a8
+load:0x403cc710,len:0x93c
+load:0x403ce710,len:0x2ddc
+entry 0x403cc710
+[0;32mI (24) boot: ESP-IDF v5.0.3-dirty 2nd stage bootloader[0m
+[0;32mI (24) boot: compile time 15:46:05[0m
+[0;32mI (24) boot: chip revision: v0.4[0m
+[0;32mI (26) boot.esp32c3: SPI Speed      : 80MHz[0m
+[0;32mI (31) boot.esp32c3: SPI Mode       : DIO[0m
+[0;32mI (36) boot.esp32c3: SPI Flash Size : 4MB[0m
+[0;32mI (40) boot: Enabling RNG early entropy source...[0m
+[0;32mI (46) boot: Partition Table:[0m
+[0;32mI (49) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (57) boot:  0 nvs              WiFi data        01 02 00009000 00003000[0m
+[0;32mI (64) boot:  1 phy_init         RF data          01 01 0000c000 00001000[0m
+[0;32mI (72) boot:  2 factory          factory app      00 00 00010000 00300000[0m
+[0;32mI (79) boot:  3 spiffs           Unknown data     01 82 00310000 000f0000[0m
+[0;32mI (87) boot: End of partition table[0m
+[0;32mI (91) esp_image: segment 0: paddr=00010020 vaddr=3c090020 size=1eb08h (125704) map[0m
+[0;32mI (119) esp_image: segment 1: paddr=0002eb30 vaddr=3fc91800 size=014e8h (  5352) load[0m
+[0;32mI (120) esp_image: segment 2: paddr=00030020 vaddr=42000020 size=8c6f0h (575216) map[0m
+[0;32mI (214) esp_image: segment 3: paddr=000bc718 vaddr=3fc92ce8 size=00f34h (  3892) load[0m
+[0;32mI (216) esp_image: segment 4: paddr=000bd654 vaddr=40380000 size=117d0h ( 71632) load[0m
+[0;32mI (233) esp_image: segment 5: paddr=000cee2c vaddr=50000000 size=00018h (    24) load[0m
+[0;32mI (239) boot: Loaded app from partition at offset 0x10000[0m
+[0;32mI (239) boot: Disabling RNG early entropy source...[0m
+[0;32mI (242) cpu_start: Unicore app[0m
+[0;32mI (246) cpu_start: Pro cpu up.[0m
+[0;32mI (261) cpu_start: Pro cpu start user code[0m
+[0;32mI (261) cpu_start: cpu freq: 160000000 Hz[0m
+[0;32mI (262) cpu_start: Application information:[0m
+[0;32mI (264) cpu_start: Project name:     arcadeJoypad[0m
+[0;32mI (270) cpu_start: App version:      3fd2885-dirty[0m
+[0;32mI (275) cpu_start: Compile time:     Dec 19 2024 14:56:30[0m
+[0;32mI (281) cpu_start: ELF file SHA256:  6706509b7c845ccf...[0m
+[0;32mI (287) cpu_start: ESP-IDF:          v5.0.3-dirty[0m
+[0;32mI (293) cpu_start: Min chip rev:     v0.3[0m
+[0;32mI (297) cpu_start: Max chip rev:     v0.99 [0m
+[0;32mI (302) cpu_start: Chip rev:         v0.4[0m
+[0;32mI (307) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (314) heap_init: At 3FC97F00 len 00044810 (274 KiB): DRAM[0m
+[0;32mI (320) heap_init: At 3FCDC710 len 00002950 (10 KiB): STACK/DRAM[0m
+[0;32mI (327) heap_init: At 50000028 len 00001FD8 (7 KiB): RTCRAM[0m
+[0;32mI (334) spi_flash: detected chip: generic[0m
+[0;32mI (335) spi_flash: flash io: dio[0m
+[0;32mI (335) sleep: Configure to isolate all GPIO pins in sleep state[0m
+[0;32mI (340) sleep: Enable automatic switching of GPIO sleep configuration[0m
+[0;32mI (347) cpu_start: Starting scheduler.[0m
+[0;32mI (348) app_main_remocon: ARCADE JOYPAD START![0m
+[0;32mI (348) gpio: GPIO[7]| InputEn: 1| OutputEn: 0| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+[0;32mI (348) gpio: GPIO[8]| InputEn: 1| OutputEn: 0| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+[0;32mI (348) gpio: GPIO[9]| InputEn: 1| OutputEn: 0| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+[0;32mI (348) gpio: GPIO[10]| InputEn: 1| OutputEn: 0| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+[0;32mI (348) gpio: GPIO[0]| InputEn: 1| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (348) gpio: GPIO[1]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+[0;32mI (368) SPIFFS: Partition size: total: 896321, used: 1004[0m
+[0;32mI (368) read_mode:: mode file read: 02[0m
+[0;32mI (368) app_main_remocon: PAIRNG MODE![0m
+[0;32mI (1368) init_espnow mac:: FF:FF:FF:FF:FF:FF CH:13[0m
+[0;32mI (1368) pp: pp rom version: 9387209[0m
+[0;32mI (1368) net80211: net80211 rom version: 9387209[0m
+I (1378) wifi:wifi driver task: 3fca1a20, prio:23, stack:6656, core=0
+[0;32mI (1378) system_api: Base MAC address is not set[0m
+[0;32mI (1378) system_api: read default base MAC address from EFUSE[0m
+I (1378) wifi:wifi firmware version: 15fc0ca
+I (1378) wifi:wifi certification version: v7.0
+I (1378) wifi:config NVS flash: enabled
+I (1378) wifi:config nano formating: disabled
+I (1378) wifi:Init data frame dynamic rx buffer num: 32
+I (1378) wifi:Init management frame dynamic rx buffer num: 32
+I (1378) wifi:Init management short buffer num: 32
+I (1378) wifi:Init dynamic tx buffer num: 32
+I (1378) wifi:Init static tx FG buffer num: 2
+I (1378) wifi:Init static rx buffer size: 1600
+I (1378) wifi:Init static rx buffer num: 10
+I (1378) wifi:Init dynamic rx buffer num: 32
+[0;32mI (1378) wifi_init: rx ba win: 6[0m
+[0;32mI (1378) wifi_init: tcpip mbox: 32[0m
+[0;32mI (1378) wifi_init: udp mbox: 6[0m
+[0;32mI (1378) wifi_init: tcp mbox: 6[0m
+[0;32mI (1378) wifi_init: tcp tx win: 5744[0m
+[0;32mI (1378) wifi_init: tcp rx win: 5744[0m
+[0;32mI (1378) wifi_init: tcp mss: 1440[0m
+[0;32mI (1378) wifi_init: WiFi IRAM OP enabled[0m
+[0;32mI (1378) wifi_init: WiFi RX IRAM OP enabled[0m
+[0;32mI (1378) phy_init: phy_version 970,1856f88,May 10 2023,17:44:12[0m
+I (1418) wifi:mode : sta (18:8b:0e:2c:a0:20)
+I (1418) wifi:enable tsf
+I (1418) ESPNOW: espnow [version: 1.0] init
+BASE MAC :18:8B:E:2C:A0:20
+[0;32mI (1428) espnow_slave: Listening[0m
+[0;32mI (1428) app_main_remocon: PAIRING MODE...[0m
+MY Base MAC Address: 18:8B:0E:2C:A0:20
+my partner MAC: 30:30:F9:DC:32:00 CH:07[0;32mI (1528) save_mac:: mac file written[0m
+[0;32mI (1638) save_mode:: mode file written: 01[0m
+System is shutting down!
+ESP-ROM:esp32c3-api1-20210207
+Build:Feb  7 2021
+rst:0x3 (RTC_SW_SYS_RST),boot:0xf (SPI_FAST_FLASH_BOOT)
+Saved PC:0x403806b8
+SPIWP:0xee
+mode:DIO, clock div:1
+load:0x3fcd5820,len:0x16a8
+load:0x403cc710,len:0x93c
+load:0x403ce710,len:0x2ddc
+entry 0x403cc710
+[0;32mI (24) boot: ESP-IDF v5.0.3-dirty 2nd stage bootloader[0m
+[0;32mI (24) boot: compile time 15:46:05[0m
+[0;32mI (24) boot: chip revision: v0.4[0m
+[0;32mI (26) boot.esp32c3: SPI Speed      : 80MHz[0m
+[0;32mI (31) boot.esp32c3: SPI Mode       : DIO[0m
+[0;32mI (36) boot.esp32c3: SPI Flash Size : 4MB[0m
+[0;32mI (40) boot: Enabling RNG early entropy source...[0m
+[0;32mI (46) boot: Partition Table:[0m
+[0;32mI (49) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (57) boot:  0 nvs              WiFi data        01 02 00009000 00003000[0m
+[0;32mI (64) boot:  1 phy_init         RF data          01 01 0000c000 00001000[0m
+[0;32mI (72) boot:  2 factory          factory app      00 00 00010000 00300000[0m
+[0;32mI (79) boot:  3 spiffs           Unknown data     01 82 00310000 000f0000[0m
+[0;32mI (87) boot: End of partition table[0m
+[0;32mI (91) esp_image: segment 0: paddr=00010020 vaddr=3c090020 size=1eb08h (125704) map[0m
+[0;32mI (119) esp_image: segment 1: paddr=0002eb30 vaddr=3fc91800 size=014e8h (  5352) load[0m
+[0;32mI (120) esp_image: segment 2: paddr=00030020 vaddr=42000020 size=8c6f0h (575216) map[0m
+[0;32mI (214) esp_image: segment 3: paddr=000bc718 vaddr=3fc92ce8 size=00f34h (  3892) load[0m
+[0;32mI (216) esp_image: segment 4: paddr=000bd654 vaddr=40380000 size=117d0h ( 71632) load[0m
+[0;32mI (233) esp_image: segment 5: paddr=000cee2c vaddr=50000000 size=00018h (    24) load[0m
+[0;32mI (239) boot: Loaded app from partition at offset 0x10000[0m
+[0;32mI (239) boot: Disabling RNG early entropy source...[0m
+[0;32mI (242) cpu_start: Unicore app[0m
+[0;32mI (246) cpu_start: Pro cpu up.[0m
+[0;32mI (261) cpu_start: Pro cpu start user code[0m
+[0;32mI (261) cpu_start: cpu freq: 160000000 Hz[0m
+[0;32mI (262) cpu_start: Application information:[0m
+[0;32mI (264) cpu_start: Project name:     arcadeJoypad[0m
+[0;32mI (270) cpu_start: App version:      3fd2885-dirty[0m
+[0;32mI (275) cpu_start: Compile time:     Dec 19 2024 14:56:30[0m
+[0;32mI (281) cpu_start: ELF file SHA256:  6706509b7c845ccf...[0m
+[0;32mI (287) cpu_start: ESP-IDF:          v5.0.3-dirty[0m
+[0;32mI (293) cpu_start: Min chip rev:     v0.3[0m
+[0;32mI (297) cpu_start: Max chip rev:     v0.99 [0m
+[0;32mI (302) cpu_start: Chip rev:         v0.4[0m
+[0;32mI (307) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (314) heap_init: At 3FC97F00 len 00044810 (274 KiB): DRAM[0m
+[0;32mI (320) heap_init: At 3FCDC710 len 00002950 (10 KiB): STACK/DRAM[0m
+[0;32mI (327) heap_init: At 50000028 len 00001FD8 (7 KiB): RTCRAM[0m
+[0;32mI (334) spi_flash: detected chip: generic[0m
+[0;32mI (335) spi_flash: flash io: dio[0m
+[0;32mI (335) sleep: Configure to isolate all GPIO pins in sleep state[0m
+[0;32mI (340) sleep: Enable automatic switching of GPIO sleep configuration[0m
+[0;32mI (347) cpu_start: Starting scheduler.[0m
+[0;32mI (348) app_main_remocon: ARCADE JOYPAD START![0m
+[0;32mI (348) gpio: GPIO[7]| InputEn: 1| OutputEn: 0| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+[0;32mI (348) gpio: GPIO[8]| InputEn: 1| OutputEn: 0| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+[0;32mI (348) gpio: GPIO[9]| InputEn: 1| OutputEn: 0| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+[0;32mI (348) gpio: GPIO[10]| InputEn: 1| OutputEn: 0| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+[0;32mI (348) gpio: GPIO[0]| InputEn: 1| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (348) gpio: GPIO[1]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+[0;32mI (368) SPIFFS: Partition size: total: 896321, used: 1004[0m
+[0;32mI (368) read_mode:: mode file read: 01[0m
+[0;32mI (368) app_main_remocon: APPLICATION MODE![0m
+[0;32mI (388) read_mac: mac file read[0m
+READED MAC:30 30 f9 dc 32 0 7 
+[0;32mI (588) init_espnow mac:: 30:30:F9:DC:32:0 CH:7[0m
+[0;32mI (588) pp: pp rom version: 9387209[0m
+[0;32mI (588) net80211: net80211 rom version: 9387209[0m
+I (598) wifi:wifi driver task: 3fca1a20, prio:23, stack:6656, core=0
+[0;32mI (598) system_api: Base MAC address is not set[0m
+[0;32mI (598) system_api: read default base MAC address from EFUSE[0m
+I (598) wifi:wifi firmware version: 15fc0ca
+I (598) wifi:wifi certification version: v7.0
+I (598) wifi:config NVS flash: enabled
+I (598) wifi:config nano formating: disabled
+I (598) wifi:Init data frame dynamic rx buffer num: 32
+I (598) wifi:Init management frame dynamic rx buffer num: 32
+I (598) wifi:Init management short buffer num: 32
+I (598) wifi:Init dynamic tx buffer num: 32
+I (598) wifi:Init static tx FG buffer num: 2
+I (598) wifi:Init static rx buffer size: 1600
+I (598) wifi:Init static rx buffer num: 10
+I (598) wifi:Init dynamic rx buffer num: 32
+[0;32mI (598) wifi_init: rx ba win: 6[0m
+[0;32mI (598) wifi_init: tcpip mbox: 32[0m
+[0;32mI (598) wifi_init: udp mbox: 6[0m
+[0;32mI (598) wifi_init: tcp mbox: 6[0m
+[0;32mI (598) wifi_init: tcp tx win: 5744[0m
+[0;32mI (598) wifi_init: tcp rx win: 5744[0m
+[0;32mI (598) wifi_init: tcp mss: 1440[0m
+[0;32mI (598) wifi_init: WiFi IRAM OP enabled[0m
+[0;32mI (598) wifi_init: WiFi RX IRAM OP enabled[0m
+[0;32mI (598) phy_init: phy_version 970,1856f88,May 10 2023,17:44:12[0m
+I (638) wifi:mode : sta (18:8b:0e:2c:a0:20)
+I (638) wifi:enable tsf
+I (638) ESPNOW: espnow [version: 1.0] init
+BASE MAC :18:8B:E:2C:A0:20
+[0;32mI (648) espnow_slave: Listening[0m
+[0;32mI (648) app_main_remocon: APPLICATION MODE...[0m
+MY Base MAC Address: 18:8B:0E:2C:A0:20
+[0;32mI (300668) app_main_remocon: Entering deep sleep mode...
+[0m
+[0;32mI (147752) save_mode:: mode file written: 02[0m
+System is shutting down!
+ESP-ROM:esp32c3-api1-20210207
+Build:Feb  7 2021
+rst:0x3 (RTC_SW_SYS_RST),boot:0xf (SPI_FAST_FLASH_BOOT)
+Saved PC:0x403806b8
+SPIWP:0xee
+mode:DIO, clock div:1
+load:0x3fcd5820,len:0x16a8
+load:0x403cc710,len:0x93c
+load:0x403ce710,len:0x2ddc
+entry 0x403cc710
+[0;32mI (24) boot: ESP-IDF v5.0.3-dirty 2nd stage bootloader[0m
+[0;32mI (24) boot: compile time 15:46:05[0m
+[0;32mI (24) boot: chip revision: v0.4[0m
+[0;32mI (26) boot.esp32c3: SPI Speed      : 80MHz[0m
+[0;32mI (31) boot.esp32c3: SPI Mode       : DIO[0m
+[0;32mI (36) boot.esp32c3: SPI Flash Size : 4MB[0m
+[0;32mI (40) boot: Enabling RNG early entropy source...[0m
+[0;32mI (46) boot: Partition Table:[0m
+[0;32mI (49) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (57) boot:  0 nvs              WiFi data        01 02 00009000 00003000[0m
+[0;32mI (64) boot:  1 phy_init         RF data          01 01 0000c000 00001000[0m
+[0;32mI (72) boot:  2 factory          factory app      00 00 00010000 00300000[0m
+[0;32mI (79) boot:  3 spiffs           Unknown data     01 82 00310000 000f0000[0m
+[0;32mI (87) boot: End of partition table[0m
+[0;32mI (91) esp_image: segment 0: paddr=00010020 vaddr=3c090020 size=1eb08h (125704) map[0m
+[0;32mI (119) esp_image: segment 1: paddr=0002eb30 vaddr=3fc91800 size=014e8h (  5352) load[0m
+[0;32mI (120) esp_image: segment 2: paddr=00030020 vaddr=42000020 size=8c6f0h (575216) map[0m
+[0;32mI (214) esp_image: segment 3: paddr=000bc718 vaddr=3fc92ce8 size=00f34h (  3892) load[0m
+[0;32mI (216) esp_image: segment 4: paddr=000bd654 vaddr=40380000 size=117d0h ( 71632) load[0m
+[0;32mI (233) esp_image: segment 5: paddr=000cee2c vaddr=50000000 size=00018h (    24) load[0m
+[0;32mI (239) boot: Loaded app from partition at offset 0x10000[0m
+[0;32mI (239) boot: Disabling RNG early entropy source...[0m
+[0;32mI (242) cpu_start: Unicore app[0m
+[0;32mI (246) cpu_start: Pro cpu up.[0m
+[0;32mI (261) cpu_start: Pro cpu start user code[0m
+[0;32mI (261) cpu_start: cpu freq: 160000000 Hz[0m
+[0;32mI (261) cpu_start: Application information:[0m
+[0;32mI (264) cpu_start: Project name:     arcadeJoypad[0m
+[0;32mI (270) cpu_start: App version:      3fd2885-dirty[0m
+[0;32mI (275) cpu_start: Compile time:     Dec 19 2024 14:56:30[0m
+[0;32mI (281) cpu_start: ELF file SHA256:  6706509b7c845ccf...[0m
+[0;32mI (287) cpu_start: ESP-IDF:          v5.0.3-dirty[0m
+[0;32mI (293) cpu_start: Min chip rev:     v0.3[0m
+[0;32mI (297) cpu_start: Max chip rev:     v0.99 [0m
+[0;32mI (302) cpu_start: Chip rev:         v0.4[0m
+[0;32mI (307) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (314) heap_init: At 3FC97F00 len 00044810 (274 KiB): DRAM[0m
+[0;32mI (320) heap_init: At 3FCDC710 len 00002950 (10 KiB): STACK/DRAM[0m
+[0;32mI (327) heap_init: At 50000028 len 00001FD8 (7 KiB): RTCRAM[0m
+[0;32mI (334) spi_flash: detected chip: generic[0m
+[0;32mI (335) spi_flash: flash io: dio[0m
+[0;32mI (335) sleep: Configure to isolate all GPIO pins in sleep state[0m
+[0;32mI (340) sleep: Enable automatic switching of GPIO sleep configuration[0m
+[0;32mI (347) cpu_start: Starting scheduler.[0m
+[0;32mI (348) app_main_remocon: ARCADE JOYPAD START![0m
+[0;32mI (348) gpio: GPIO[7]| InputEn: 1| OutputEn: 0| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+[0;32mI (348) gpio: GPIO[8]| InputEn: 1| OutputEn: 0| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+[0;32mI (348) gpio: GPIO[9]| InputEn: 1| OutputEn: 0| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+[0;32mI (348) gpio: GPIO[10]| InputEn: 1| OutputEn: 0| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+[0;32mI (348) gpio: GPIO[0]| InputEn: 1| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (348) gpio: GPIO[1]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+[0;32mI (368) SPIFFS: Partition size: total: 896321, used: 1004[0m
+[0;32mI (368) read_mode:: mode file read: 02[0m
+[0;32mI (368) app_main_remocon: PAIRNG MODE![0m
+[0;32mI (1368) init_espnow mac:: FF:FF:FF:FF:FF:FF CH:13[0m
+[0;32mI (1368) pp: pp rom version: 9387209[0m
+[0;32mI (1368) net80211: net80211 rom version: 9387209[0m
+I (1378) wifi:wifi driver task: 3fca1a20, prio:23, stack:6656, core=0
+[0;32mI (1378) system_api: Base MAC address is not set[0m
+[0;32mI (1378) system_api: read default base MAC address from EFUSE[0m
+I (1378) wifi:wifi firmware version: 15fc0ca
+I (1378) wifi:wifi certification version: v7.0
+I (1378) wifi:config NVS flash: enabled
+I (1378) wifi:config nano formating: disabled
+I (1378) wifi:Init data frame dynamic rx buffer num: 32
+I (1378) wifi:Init management frame dynamic rx buffer num: 32
+I (1378) wifi:Init management short buffer num: 32
+I (1378) wifi:Init dynamic tx buffer num: 32
+I (1378) wifi:Init static tx FG buffer num: 2
+I (1378) wifi:Init static rx buffer size: 1600
+I (1378) wifi:Init static rx buffer num: 10
+I (1378) wifi:Init dynamic rx buffer num: 32
+[0;32mI (1378) wifi_init: rx ba win: 6[0m
+[0;32mI (1378) wifi_init: tcpip mbox: 32[0m
+[0;32mI (1378) wifi_init: udp mbox: 6[0m
+[0;32mI (1378) wifi_init: tcp mbox: 6[0m
+[0;32mI (1378) wifi_init: tcp tx win: 5744[0m
+[0;32mI (1378) wifi_init: tcp rx win: 5744[0m
+[0;32mI (1378) wifi_init: tcp mss: 1440[0m
+[0;32mI (1378) wifi_init: WiFi IRAM OP enabled[0m
+[0;32mI (1378) wifi_init: WiFi RX IRAM OP enabled[0m
+[0;32mI (1378) phy_init: phy_version 970,1856f88,May 10 2023,17:44:12[0m
+I (1418) wifi:mode : sta (18:8b:0e:2c:a0:20)
+I (1418) wifi:enable tsf
+I (1418) ESPNOW: espnow [version: 1.0] init
+BASE MAC :18:8B:E:2C:A0:20
+[0;32mI (1418) espnow_slave: Listening[0m
+[0;32mI (1418) app_main_remocon: PAIRING MODE...[0m
+MY Base MAC Address: 18:8B:0E:2C:A0:20
+[0;32mI (2448) save_mode:: mode file written: 01[0m
+System is shutting down!
+ESP-ROM:esp32c3-api1-20210207
+Build:Feb  7 2021
+rst:0x3 (RTC_SW_SYS_RST),boot:0xf (SPI_FAST_FLASH_BOOT)
+Saved PC:0x403806b8
+SPIWP:0xee
+mode:DIO, clock div:1
+load:0x3fcd5820,len:0x16a8
+load:0x403cc710,len:0x93c
+load:0x403ce710,len:0x2ddc
+entry 0x403cc710
+[0;32mI (24) boot: ESP-IDF v5.0.3-dirty 2nd stage bootloader[0m
+[0;32mI (24) boot: compile time 15:46:05[0m
+[0;32mI (24) boot: chip revision: v0.4[0m
+[0;32mI (26) boot.esp32c3: SPI Speed      : 80MHz[0m
+[0;32mI (31) boot.esp32c3: SPI Mode       : DIO[0m
+[0;32mI (36) boot.esp32c3: SPI Flash Size : 4MB[0m
+[0;32mI (40) boot: Enabling RNG early entropy source...[0m
+[0;32mI (46) boot: Partition Table:[0m
+[0;32mI (49) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (57) boot:  0 nvs              WiFi data        01 02 00009000 00003000[0m
+[0;32mI (64) boot:  1 phy_init         RF data          01 01 0000c000 00001000[0m
+[0;32mI (72) boot:  2 factory          factory app      00 00 00010000 00300000[0m
+[0;32mI (79) boot:  3 spiffs           Unknown data     01 82 00310000 000f0000[0m
+[0;32mI (87) boot: End of partition table[0m
+[0;32mI (91) esp_image: segment 0: paddr=00010020 vaddr=3c090020 size=1eb08h (125704) map[0m
+[0;32mI (119) esp_image: segment 1: paddr=0002eb30 vaddr=3fc91800 size=014e8h (  5352) load[0m
+[0;32mI (120) esp_image: segment 2: paddr=00030020 vaddr=42000020 size=8c6f0h (575216) map[0m
+[0;32mI (214) esp_image: segment 3: paddr=000bc718 vaddr=3fc92ce8 size=00f34h (  3892) load[0m
+[0;32mI (216) esp_image: segment 4: paddr=000bd654 vaddr=40380000 size=117d0h ( 71632) load[0m
+[0;32mI (233) esp_image: segment 5: paddr=000cee2c vaddr=50000000 size=00018h (    24) load[0m
+[0;32mI (239) boot: Loaded app from partition at offset 0x10000[0m
+[0;32mI (239) boot: Disabling RNG early entropy source...[0m
+[0;32mI (242) cpu_start: Unicore app[0m
+[0;32mI (246) cpu_start: Pro cpu up.[0m
+[0;32mI (261) cpu_start: Pro cpu start user code[0m
+[0;32mI (261) cpu_start: cpu freq: 160000000 Hz[0m
+[0;32mI (261) cpu_start: Application information:[0m
+[0;32mI (264) cpu_start: Project name:     arcadeJoypad[0m
+[0;32mI (270) cpu_start: App version:      3fd2885-dirty[0m
+[0;32mI (275) cpu_start: Compile time:     Dec 19 2024 14:56:30[0m
+[0;32mI (281) cpu_start: ELF file SHA256:  6706509b7c845ccf...[0m
+[0;32mI (287) cpu_start: ESP-IDF:          v5.0.3-dirty[0m
+[0;32mI (293) cpu_start: Min chip rev:     v0.3[0m
+[0;32mI (297) cpu_start: Max chip rev:     v0.99 [0m
+[0;32mI (302) cpu_start: Chip rev:         v0.4[0m
+[0;32mI (307) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (314) heap_init: At 3FC97F00 len 00044810 (274 KiB): DRAM[0m
+[0;32mI (320) heap_init: At 3FCDC710 len 00002950 (10 KiB): STACK/DRAM[0m
+[0;32mI (327) heap_init: At 50000028 len 00001FD8 (7 KiB): RTCRAM[0m
+[0;32mI (334) spi_flash: detected chip: generic[0m
+[0;32mI (335) spi_flash: flash io: dio[0m
+[0;32mI (335) sleep: Configure to isolate all GPIO pins in sleep state[0m
+[0;32mI (340) sleep: Enable automatic switching of GPIO sleep configuration[0m
+[0;32mI (347) cpu_start: Starting scheduler.[0m
+[0;32mI (348) app_main_remocon: ARCADE JOYPAD START![0m
+[0;32mI (348) gpio: GPIO[7]| InputEn: 1| OutputEn: 0| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+[0;32mI (348) gpio: GPIO[8]| InputEn: 1| OutputEn: 0| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+[0;32mI (348) gpio: GPIO[9]| InputEn: 1| OutputEn: 0| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+[0;32mI (348) gpio: GPIO[10]| InputEn: 1| OutputEn: 0| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+[0;32mI (348) gpio: GPIO[0]| InputEn: 1| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (348) gpio: GPIO[1]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+[0;32mI (368) SPIFFS: Partition size: total: 896321, used: 1004[0m
+[0;32mI (368) read_mode:: mode file read: 01[0m
+[0;32mI (368) app_main_remocon: APPLICATION MODE![0m
+[0;32mI (388) read_mac: mac file read[0m
+READED MAC:30 30 f9 dc 32 0 7 
+[0;32mI (588) init_espnow mac:: 30:30:F9:DC:32:0 CH:7[0m
+[0;32mI (588) pp: pp rom version: 9387209[0m
+[0;32mI (588) net80211: net80211 rom version: 9387209[0m
+I (598) wifi:wifi driver task: 3fca1a20, prio:23, stack:6656, core=0
+[0;32mI (598) system_api: Base MAC address is not set[0m
+[0;32mI (598) system_api: read default base MAC address from EFUSE[0m
+I (598) wifi:wifi firmware version: 15fc0ca
+I (598) wifi:wifi certification version: v7.0
+I (598) wifi:config NVS flash: enabled
+I (598) wifi:config nano formating: disabled
+I (598) wifi:Init data frame dynamic rx buffer num: 32
+I (598) wifi:Init management frame dynamic rx buffer num: 32
+I (598) wifi:Init management short buffer num: 32
+I (598) wifi:Init dynamic tx buffer num: 32
+I (598) wifi:Init static tx FG buffer num: 2
+I (598) wifi:Init static rx buffer size: 1600
+I (598) wifi:Init static rx buffer num: 10
+I (598) wifi:Init dynamic rx buffer num: 32
+[0;32mI (598) wifi_init: rx ba win: 6[0m
+[0;32mI (598) wifi_init: tcpip mbox: 32[0m
+[0;32mI (598) wifi_init: udp mbox: 6[0m
+[0;32mI (598) wifi_init: tcp mbox: 6[0m
+[0;32mI (598) wifi_init: tcp tx win: 5744[0m
+[0;32mI (598) wifi_init: tcp rx win: 5744[0m
+[0;32mI (598) wifi_init: tcp mss: 1440[0m
+[0;32mI (598) wifi_init: WiFi IRAM OP enabled[0m
+[0;32mI (598) wifi_init: WiFi RX IRAM OP enabled[0m
+[0;32mI (598) phy_init: phy_version 970,1856f88,May 10 2023,17:44:12[0m
+I (638) wifi:mode : sta (18:8b:0e:2c:a0:20)
+I (638) wifi:enable tsf
+I (638) ESPNOW: espnow [version: 1.0] init
+BASE MAC :18:8B:E:2C:A0:20
+[0;32mI (648) espnow_slave: Listening[0m
+[0;32mI (648) app_main_remocon: APPLICATION MODE...[0m
+MY Base MAC Address: 18:8B:0E:2C:A0:20

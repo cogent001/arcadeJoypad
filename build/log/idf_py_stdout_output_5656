@@ -1,0 +1,521 @@
+[0;32mI (6939) arcade Joypad: SW1: 1 SW2: 1 SW3: 1 SW4: 1 btn:1ESP-ROM:esp32c3-api1-20210207
+Build:Feb  7 2021
+rst:0x15 (USB_UART_CHIP_RESET),boot:0xd (SPI_FAST_FLASH_BOOT)
+Saved PC:0x4038684c
+SPIWP:0xee
+mode:DIO, clock div:1
+load:0x3fcd5820,len:0x16a8
+load:0x403cc710,len:0x93c
+load:0x403ce710,len:0x2ddc
+entry 0x403cc710
+[0;32mI (24) boot: ESP-IDF v5.0.3-dirty 2nd stage bootloader[0m
+[0;32mI (24) boot: compile time 15:46:05[0m
+[0;32mI (25) boot: chip revision: v0.4[0m
+[0;32mI (27) boot.esp32c3: SPI Speed      : 80MHz[0m
+[0;32mI (32) boot.esp32c3: SPI Mode       : DIO[0m
+[0;32mI (36) boot.esp32c3: SPI Flash Size : 4MB[0m
+[0;32mI (41) boot: Enabling RNG early entropy source...[0m
+[0;32mI (46) boot: Partition Table:[0m
+[0;32mI (50) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (57) boot:  0 nvs              WiFi data        01 02 00009000 00003000[0m
+[0;32mI (65) boot:  1 phy_init         RF data          01 01 0000c000 00001000[0m
+[0;32mI (72) boot:  2 factory          factory app      00 00 00010000 00300000[0m
+[0;32mI (80) boot:  3 spiffs           Unknown data     01 82 00310000 000f0000[0m
+[0;32mI (87) boot: End of partition table[0m
+[0;32mI (91) esp_image: segment 0: paddr=00010020 vaddr=3c090020 size=1eb40h (125760) map[0m
+[0;32mI (119) esp_image: segment 1: paddr=0002eb68 vaddr=3fc91800 size=014b0h (  5296) load[0m
+[0;32mI (121) esp_image: segment 2: paddr=00030020 vaddr=42000020 size=8c78ch (575372) map[0m
+[0;32mI (215) esp_image: segment 3: paddr=000bc7b4 vaddr=3fc92cb0 size=00f6ch (  3948) load[0m
+[0;32mI (216) esp_image: segment 4: paddr=000bd728 vaddr=40380000 size=117d0h ( 71632) load[0m
+[0;32mI (234) esp_image: segment 5: paddr=000cef00 vaddr=50000000 size=00018h (    24) load[0m
+[0;32mI (239) boot: Loaded app from partition at offset 0x10000[0m
+[0;32mI (239) boot: Disabling RNG early entropy source...[0m
+[0;32mI (243) cpu_start: Unicore app[0m
+[0;32mI (247) cpu_start: Pro cpu up.[0m
+[0;32mI (262) cpu_start: Pro cpu start user code[0m
+[0;32mI (262) cpu_start: cpu freq: 160000000 Hz[0m
+[0;32mI (262) cpu_start: Application information:[0m
+[0;32mI (265) cpu_start: Project name:     arcadeJoypad[0m
+[0;32mI (270) cpu_start: App version:      3fd2885-dirty[0m
+[0;32mI (276) cpu_start: Compile time:     Dec 19 2024 14:56:30[0m
+[0;32mI (282) cpu_start: ELF file SHA256:  a6b6341ebb0f9fee...[0m
+[0;32mI (288) cpu_start: ESP-IDF:          v5.0.3-dirty[0m
+[0;32mI (293) cpu_start: Min chip rev:     v0.3[0m
+[0;32mI (298) cpu_start: Max chip rev:     v0.99 [0m
+[0;32mI (303) cpu_start: Chip rev:         v0.4[0m
+[0;32mI (308) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (315) heap_init: At 3FC97F00 len 00044810 (274 KiB): DRAM[0m
+[0;32mI (321) heap_init: At 3FCDC710 len 00002950 (10 KiB): STACK/DRAM[0m
+[0;32mI (328) heap_init: At 50000028 len 00001FD8 (7 KiB): RTCRAM[0m
+[0;32mI (335) spi_flash: detected chip: generic[0m
+[0;32mI (335) spi_flash: flash io: dio[0m
+[0;32mI (336) sleep: Configure to isolate all GPIO pins in sleep state[0m
+[0;32mI (341) sleep: Enable automatic switching of GPIO sleep configuration[0m
+[0;32mI (348) cpu_start: Starting scheduler.[0m
+[0;32mI (349) arcade Joypad: ARCADE JOYPAD START![0m
+[0;32mI (349) gpio: GPIO[7]| InputEn: 1| OutputEn: 0| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+[0;32mI (349) gpio: GPIO[8]| InputEn: 1| OutputEn: 0| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+[0;32mI (349) gpio: GPIO[9]| InputEn: 1| OutputEn: 0| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+[0;32mI (349) gpio: GPIO[10]| InputEn: 1| OutputEn: 0| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+[0;32mI (349) gpio: GPIO[0]| InputEn: 1| OutputEn: 0| OpenDrain: 0| Pullup: 1| Pulldown: 0| Intr:0 [0m
+[0;32mI (349) gpio: GPIO[1]| InputEn: 0| OutputEn: 1| OpenDrain: 0| Pullup: 0| Pulldown: 0| Intr:0 [0m
+[0;32mI (369) SPIFFS: Partition size: total: 896321, used: 1004[0m
+[0;32mI (369) read_mode:: mode file read: 01[0m
+[0;32mI (369) arcade Joypad: APPLICATION MODE![0m
+[0;32mI (389) read_mac: mac file read[0m
+READED MAC:30 30 f9 dc 32 0 7 
+[0;32mI (589) init_espnow mac:: 30:30:F9:DC:32:0 CH:7[0m
+[0;32mI (589) pp: pp rom version: 9387209[0m
+[0;32mI (589) net80211: net80211 rom version: 9387209[0m
+I (599) wifi:wifi driver task: 3fca1a20, prio:23, stack:6656, core=0
+[0;32mI (599) system_api: Base MAC address is not set[0m
+[0;32mI (599) system_api: read default base MAC address from EFUSE[0m
+I (599) wifi:wifi firmware version: 15fc0ca
+I (599) wifi:wifi certification version: v7.0
+I (599) wifi:config NVS flash: enabled
+I (599) wifi:config nano formating: disabled
+I (599) wifi:Init data frame dynamic rx buffer num: 32
+I (599) wifi:Init management frame dynamic rx buffer num: 32
+I (599) wifi:Init management short buffer num: 32
+I (599) wifi:Init dynamic tx buffer num: 32
+I (599) wifi:Init static tx FG buffer num: 2
+I (599) wifi:Init static rx buffer size: 1600
+I (599) wifi:Init static rx buffer num: 10
+I (599) wifi:Init dynamic rx buffer num: 32
+[0;32mI (599) wifi_init: rx ba win: 6[0m
+[0;32mI (599) wifi_init: tcpip mbox: 32[0m
+[0;32mI (599) wifi_init: udp mbox: 6[0m
+[0;32mI (599) wifi_init: tcp mbox: 6[0m
+[0;32mI (599) wifi_init: tcp tx win: 5744[0m
+[0;32mI (599) wifi_init: tcp rx win: 5744[0m
+[0;32mI (599) wifi_init: tcp mss: 1440[0m
+[0;32mI (599) wifi_init: WiFi IRAM OP enabled[0m
+[0;32mI (599) wifi_init: WiFi RX IRAM OP enabled[0m
+[0;32mI (599) phy_init: phy_version 970,1856f88,May 10 2023,17:44:12[0m
+I (639) wifi:mode : sta (18:8b:0e:2c:a0:20)
+I (639) wifi:enable tsf
+I (639) ESPNOW: espnow [version: 1.0] init
+BASE MAC :18:8B:E:2C:A0:20
+[0;32mI (649) espnow_slave: Listening[0m
+[0;32mI (649) arcade Joypad: APPLICATION MODE...[0m
+MY Base MAC Address: 18:8B:0E:2C:A0:20
+[0;32mI (649) arcade Joypad: SW1: 1 SW2: 1 SW3: 1 SW4: 1 btn:1[0m
+[0;32mI (669) arcade Joypad: SW1: 1 SW2: 1 SW3: 1 SW4: 1 btn:1[0m
+[0;32mI (689) arcade Joypad: SW1: 1 SW2: 1 SW3: 1 SW4: 1 btn:1[0m
+[0;32mI (709) arcade Joypad: SW1: 1 SW2: 1 SW3: 1 SW4: 1 btn:1[0m
+[0;32mI (729) arcade Joypad: SW1: 1 SW2: 1 SW3: 1 SW4: 1 btn:1[0m
+[0;32mI (749) arcade Joypad: SW1: 1 SW2: 1 SW3: 1 SW4: 1 btn:1[0m
+[0;32mI (769) arcade Joypad: SW1: 1 SW2: 1 SW3: 1 SW4: 1 btn:1[0m
+[0;32mI (789) arcade Joypad: SW1: 1 SW2: 1 SW3: 1 SW4: 1 btn:1[0m
+[0;32mI (809) arcade Joypad: SW1: 1 SW2: 1 SW3: 1 SW4: 1 btn:1[0m
+[0;32mI (829) arcade Joypad: SW1: 1 SW2: 1 SW3: 1 SW4: 1 btn:1[0m
+[0;32mI (849) arcade Joypad: SW1: 1 SW2: 1 SW3: 1 SW4: 1 btn:1[0m
+[0;32mI (869) arcade Joypad: SW1: 1 SW2: 1 SW3: 1 SW4: 1 btn:1[0m
+[0;32mI (889) arcade Joypad: SW1: 1 SW2: 1 SW3: 1 SW4: 1 btn:1[0m
+[0;32mI (909) arcade Joypad: SW1: 1 SW2: 1 SW3: 1 SW4: 1 btn:1[0m
+[0;32mI (929) arcade Joypad: SW1: 1 SW2: 1 SW3: 1 SW4: 1 btn:1[0m
+[0;32mI (949) arcade Joypad: SW1: 1 SW2: 1 SW3: 1 SW4: 1 btn:1[0m
+[0;32mI (969) arcade Joypad: SW1: 1 SW2: 1 SW3: 1 SW4: 1 btn:1[0m
+[0;32mI (989) arcade Joypad: SW1: 1 SW2: 1 SW3: 1 SW4: 1 btn:1[0m
+[0;32mI (1009) arcade Joypad: SW1: 1 SW2: 1 SW3: 1 SW4: 1 btn:1[0m
+[0;32mI (1029) arcade Joypad: SW1: 1 SW2: 1 SW3: 1 SW4: 1 btn:1[0m
+[0;32mI (1049) arcade Joypad: SW1: 1 SW2: 1 SW3: 1 SW4: 1 btn:1[0m
+[0;32mI (1069) arcade Joypad: SW1: 1 SW2: 1 SW3: 1 SW4: 1 btn:1[0m
+[0;32mI (1089) arcade Joypad: SW1: 1 SW2: 1 SW3: 1 SW4: 1 btn:1[0m
+[0;32mI (1109) arcade Joypad: SW1: 1 SW2: 1 SW3: 1 SW4: 1 btn:1[0m
+[0;32mI (1129) arcade Joypad: SW1: 1 SW2: 1 SW3: 1 SW4: 1 btn:1[0m
+[0;32mI (1149) arcade Joypad: SW1: 1 SW2: 1 SW3: 1 SW4: 1 btn:1[0m
+[0;32mI (1169) arcade Joypad: SW1: 1 SW2: 1 SW3: 1 SW4: 1 btn:1[0m
+[0;32mI (1189) arcade Joypad: SW1: 1 SW2: 1 SW3: 1 SW4: 1 btn:1[0m
+[0;32mI (1209) arcade Joypad: SW1: 1 SW2: 1 SW3: 1 SW4: 1 btn:1[0m
+[0;32mI (1229) arcade Joypad: SW1: 1 SW2: 1 SW3: 1 SW4: 1 btn:1[0m
+[0;32mI (1249) arcade Joypad: SW1: 1 SW2: 1 SW3: 1 SW4: 1 btn:1[0m
+[0;32mI (1269) arcade Joypad: SW1: 1 SW2: 1 SW3: 1 SW4: 1 btn:1[0m
+[0;32mI (1289) arcade Joypad: SW1: 1 SW2: 1 SW3: 1 SW4: 1 btn:1[0m
+[0;32mI (1309) arcade Joypad: SW1: 1 SW2: 1 SW3: 1 SW4: 1 btn:1[0m
+[0;32mI (1329) arcade Joypad: SW1: 1 SW2: 1 SW3: 1 SW4: 1 btn:1[0m
+[0;32mI (1349) arcade Joypad: SW1: 1 SW2: 1 SW3: 1 SW4: 1 btn:1[0m
+[0;32mI (1369) arcade Joypad: SW1: 1 SW2: 1 SW3: 1 SW4: 1 btn:1[0m
+[0;32mI (1389) arcade Joypad: SW1: 1 SW2: 1 SW3: 1 SW4: 1 btn:1[0m
+[0;32mI (1409) arcade Joypad: SW1: 1 SW2: 1 SW3: 1 SW4: 1 btn:1[0m
+[0;32mI (1429) arcade Joypad: SW1: 1 SW2: 1 SW3: 1 SW4: 1 btn:1[0m
+[0;32mI (1449) arcade Joypad: SW1: 1 SW2: 1 SW3: 1 SW4: 1 btn:1[0m
+[0;32mI (1469) arcade Joypad: SW1: 1 SW2: 1 SW3: 1 SW4: 1 btn:1[0m
+[0;32mI (1489) arcade Joypad: SW1: 1 SW2: 1 SW3: 1 SW4: 1 btn:1[0m
+[0;32mI (1509) arcade Joypad: SW1: 1 SW2: 1 SW3: 1 SW4: 1 btn:1[0m
+[0;32mI (1529) arcade Joypad: SW1: 1 SW2: 1 SW3: 1 SW4: 1 btn:1[0m
+[0;32mI (1549) arcade Joypad: SW1: 1 SW2: 1 SW3: 1 SW4: 1 btn:1[0m
+[0;32mI (1569) arcade Joypad: SW1: 1 SW2: 1 SW3: 1 SW4: 1 btn:1[0m
+[0;32mI (1589) arcade Joypad: SW1: 1 SW2: 1 SW3: 1 SW4: 1 btn:1[0m
+[0;32mI (1609) arcade Joypad: SW1: 1 SW2: 1 SW3: 1 SW4: 1 btn:1[0m
+[0;32mI (1629) arcade Joypad: SW1: 1 SW2: 1 SW3: 1 SW4: 1 btn:1[0m
+[0;32mI (1649) arcade Joypad: SW1: 1 SW2: 1 SW3: 1 SW4: 1 btn:1[0m
+[0;32mI (1669) arcade Joypad: SW1: 1 SW2: 1 SW3: 1 SW4: 1 btn:1[0m
+[0;32mI (1689) arcade Joypad: SW1: 1 SW2: 1 SW3: 1 SW4: 1 btn:1[0m
+[0;32mI (1709) arcade Joypad: SW1: 1 SW2: 1 SW3: 1 SW4: 1 btn:1[0m
+[0;32mI (1729) arcade Joypad: SW1: 1 SW2: 1 SW3: 1 SW4: 1 btn:1[0m
+[0;32mI (1749) arcade Joypad: SW1: 1 SW2: 1 SW3: 1 SW4: 1 btn:1[0m
+[0;32mI (1769) arcade Joypad: SW1: 1 SW2: 1 SW3: 1 SW4: 1 btn:1[0m
+[0;32mI (1789) arcade Joypad: SW1: 1 SW2: 1 SW3: 1 SW4: 1 btn:1[0m
+[0;32mI (1809) arcade Joypad: SW1: 1 SW2: 1 SW3: 1 SW4: 1 btn:1[0m
+[0;32mI (1829) arcade Joypad: SW1: 1 SW2: 1 SW3: 1 SW4: 1 btn:1[0m
+[0;32mI (1849) arcade Joypad: SW1: 1 SW2: 1 SW3: 1 SW4: 1 btn:1[0m
+[0;32mI (1869) arcade Joypad: SW1: 1 SW2: 1 SW3: 1 SW4: 1 btn:1[0m
+[0;32mI (1889) arcade Joypad: SW1: 1 SW2: 1 SW3: 1 SW4: 1 btn:1[0m
+[0;32mI (1909) arcade Joypad: SW1: 1 SW2: 1 SW3: 1 SW4: 1 btn:1[0m
+[0;32mI (1929) arcade Joypad: SW1: 1 SW2: 1 SW3: 1 SW4: 1 btn:1[0m
+[0;32mI (1949) arcade Joypad: SW1: 1 SW2: 1 SW3: 1 SW4: 1 btn:1[0m
+[0;32mI (1969) arcade Joypad: SW1: 1 SW2: 1 SW3: 1 SW4: 1 btn:1[0m
+[0;32mI (1989) arcade Joypad: SW1: 1 SW2: 1 SW3: 1 SW4: 1 btn:1[0m
+[0;32mI (2009) arcade Joypad: SW1: 1 SW2: 1 SW3: 1 SW4: 1 btn:1[0m
+[0;32mI (2029) arcade Joypad: SW1: 1 SW2: 1 SW3: 1 SW4: 1 btn:1[0m
+[0;32mI (2049) arcade Joypad: SW1: 1 SW2: 1 SW3: 1 SW4: 1 btn:1[0m
+[0;32mI (2069) arcade Joypad: SW1: 1 SW2: 1 SW3: 1 SW4: 1 btn:1[0m
+[0;32mI (2089) arcade Joypad: SW1: 1 SW2: 1 SW3: 1 SW4: 1 btn:1[0m
+[0;32mI (2109) arcade Joypad: SW1: 1 SW2: 1 SW3: 1 SW4: 1 btn:1[0m
+[0;32mI (2129) arcade Joypad: SW1: 1 SW2: 1 SW3: 1 SW4: 1 btn:1[0m
+[0;32mI (2149) arcade Joypad: SW1: 1 SW2: 1 SW3: 1 SW4: 1 btn:1[0m
+[0;32mI (2169) arcade Joypad: SW1: 1 SW2: 1 SW3: 1 SW4: 1 btn:1[0m
+[0;32mI (2189) arcade Joypad: SW1: 1 SW2: 1 SW3: 1 SW4: 1 btn:1[0m
+[0;32mI (2209) arcade Joypad: SW1: 1 SW2: 1 SW3: 1 SW4: 1 btn:1[0m
+[0;32mI (2229) arcade Joypad: SW1: 1 SW2: 1 SW3: 1 SW4: 1 btn:1[0m
+[0;32mI (2249) arcade Joypad: SW1: 1 SW2: 1 SW3: 1 SW4: 1 btn:1[0m
+[0;32mI (2269) arcade Joypad: SW1: 1 SW2: 1 SW3: 1 SW4: 1 btn:1[0m
+[0;32mI (2289) arcade Joypad: SW1: 1 SW2: 1 SW3: 1 SW4: 1 btn:1[0m
+[0;32mI (2309) arcade Joypad: SW1: 1 SW2: 1 SW3: 1 SW4: 1 btn:1[0m
+[0;32mI (2329) arcade Joypad: SW1: 1 SW2: 1 SW3: 1 SW4: 1 btn:1[0m
+[0;32mI (2349) arcade Joypad: SW1: 1 SW2: 1 SW3: 1 SW4: 1 btn:1[0m
+[0;32mI (2369) arcade Joypad: SW1: 1 SW2: 1 SW3: 1 SW4: 1 btn:1[0m
+[0;32mI (2389) arcade Joypad: SW1: 1 SW2: 1 SW3: 1 SW4: 1 btn:1[0m
+[0;32mI (2409) arcade Joypad: SW1: 1 SW2: 1 SW3: 1 SW4: 1 btn:1[0m
+[0;32mI (2429) arcade Joypad: SW1: 1 SW2: 1 SW3: 1 SW4: 1 btn:1[0m
+[0;32mI (2449) arcade Joypad: SW1: 1 SW2: 1 SW3: 1 SW4: 1 btn:1[0m
+[0;32mI (2469) arcade Joypad: SW1: 1 SW2: 1 SW3: 1 SW4: 1 btn:1[0m
+[0;32mI (2489) arcade Joypad: SW1: 1 SW2: 1 SW3: 1 SW4: 1 btn:1[0m
+[0;32mI (2509) arcade Joypad: SW1: 1 SW2: 1 SW3: 1 SW4: 1 btn:1[0m
+[0;32mI (2529) arcade Joypad: SW1: 1 SW2: 1 SW3: 1 SW4: 1 btn:1[0m
+[0;32mI (2549) arcade Joypad: SW1: 1 SW2: 1 SW3: 1 SW4: 1 btn:1[0m
+[0;32mI (2569) arcade Joypad: SW1: 1 SW2: 1 SW3: 1 SW4: 1 btn:1[0m
+[0;32mI (2589) arcade Joypad: SW1: 1 SW2: 1 SW3: 1 SW4: 1 btn:1[0m
+[0;32mI (2609) arcade Joypad: SW1: 1 SW2: 1 SW3: 1 SW4: 1 btn:1[0m
+[0;32mI (2629) arcade Joypad: SW1: 1 SW2: 1 SW3: 1 SW4: 1 btn:1[0m
+[0;32mI (2649) arcade Joypad: SW1: 1 SW2: 1 SW3: 1 SW4: 1 btn:1[0m
+[0;32mI (2669) arcade Joypad: SW1: 1 SW2: 1 SW3: 1 SW4: 1 btn:1[0m
+[0;32mI (2689) arcade Joypad: SW1: 1 SW2: 1 SW3: 1 SW4: 1 btn:1[0m
+[0;32mI (2709) arcade Joypad: SW1: 1 SW2: 1 SW3: 1 SW4: 1 btn:1[0m
+[0;32mI (2729) arcade Joypad: SW1: 1 SW2: 1 SW3: 1 SW4: 1 btn:1[0m
+[0;32mI (2749) arcade Joypad: SW1: 1 SW2: 1 SW3: 1 SW4: 1 btn:1[0m
+[0;32mI (2769) arcade Joypad: SW1: 1 SW2: 1 SW3: 1 SW4: 1 btn:1[0m
+[0;32mI (2789) arcade Joypad: SW1: 1 SW2: 1 SW3: 1 SW4: 1 btn:1[0m
+[0;32mI (2809) arcade Joypad: SW1: 1 SW2: 1 SW3: 1 SW4: 1 btn:1[0m
+[0;32mI (2829) arcade Joypad: SW1: 1 SW2: 1 SW3: 1 SW4: 1 btn:1[0m
+[0;32mI (2849) arcade Joypad: SW1: 1 SW2: 1 SW3: 1 SW4: 1 btn:1[0m
+[0;32mI (2869) arcade Joypad: SW1: 1 SW2: 1 SW3: 1 SW4: 1 btn:1[0m
+[0;32mI (2889) arcade Joypad: SW1: 1 SW2: 1 SW3: 1 SW4: 1 btn:1[0m
+[0;32mI (2909) arcade Joypad: SW1: 1 SW2: 1 SW3: 1 SW4: 1 btn:1[0m
+[0;32mI (2929) arcade Joypad: SW1: 1 SW2: 1 SW3: 1 SW4: 1 btn:1[0m
+[0;32mI (2949) arcade Joypad: SW1: 1 SW2: 1 SW3: 1 SW4: 1 btn:1[0m
+[0;32mI (2969) arcade Joypad: SW1: 1 SW2: 1 SW3: 1 SW4: 1 btn:1[0m
+[0;32mI (2989) arcade Joypad: SW1: 1 SW2: 1 SW3: 1 SW4: 1 btn:1[0m
+[0;32mI (3009) arcade Joypad: SW1: 1 SW2: 1 SW3: 1 SW4: 1 btn:1[0m
+[0;32mI (3029) arcade Joypad: SW1: 1 SW2: 1 SW3: 1 SW4: 1 btn:1[0m
+[0;32mI (3049) arcade Joypad: SW1: 1 SW2: 1 SW3: 1 SW4: 1 btn:1[0m
+[0;32mI (3069) arcade Joypad: SW1: 1 SW2: 1 SW3: 1 SW4: 1 btn:1[0m
+[0;32mI (3089) arcade Joypad: SW1: 1 SW2: 1 SW3: 1 SW4: 1 btn:1[0m
+[0;32mI (3109) arcade Joypad: SW1: 1 SW2: 1 SW3: 1 SW4: 1 btn:1[0m
+[0;32mI (3129) arcade Joypad: SW1: 1 SW2: 1 SW3: 1 SW4: 1 btn:1[0m
+[0;32mI (3149) arcade Joypad: SW1: 1 SW2: 1 SW3: 1 SW4: 1 btn:1[0m
+[0;32mI (3169) arcade Joypad: SW1: 1 SW2: 1 SW3: 1 SW4: 1 btn:1[0m
+[0;32mI (3189) arcade Joypad: SW1: 1 SW2: 1 SW3: 1 SW4: 1 btn:1[0m
+[0;32mI (3209) arcade Joypad: SW1: 1 SW2: 1 SW3: 1 SW4: 1 btn:1[0m
+[0;32mI (3229) arcade Joypad: SW1: 1 SW2: 1 SW3: 1 SW4: 1 btn:1[0m
+[0;32mI (3249) arcade Joypad: SW1: 1 SW2: 1 SW3: 1 SW4: 1 btn:1[0m
+[0;32mI (3269) arcade Joypad: SW1: 1 SW2: 1 SW3: 1 SW4: 1 btn:1[0m
+[0;32mI (3289) arcade Joypad: SW1: 1 SW2: 1 SW3: 1 SW4: 1 btn:1[0m
+[0;32mI (3309) arcade Joypad: SW1: 1 SW2: 1 SW3: 1 SW4: 1 btn:1[0m
+[0;32mI (3329) arcade Joypad: SW1: 1 SW2: 1 SW3: 1 SW4: 1 btn:1[0m
+[0;32mI (3349) arcade Joypad: SW1: 1 SW2: 1 SW3: 1 SW4: 1 btn:1[0m
+[0;32mI (3369) arcade Joypad: SW1: 1 SW2: 1 SW3: 1 SW4: 1 btn:1[0m
+[0;32mI (3389) arcade Joypad: SW1: 1 SW2: 1 SW3: 1 SW4: 1 btn:1[0m
+[0;32mI (3409) arcade Joypad: SW1: 1 SW2: 1 SW3: 1 SW4: 1 btn:1[0m
+[0;32mI (3429) arcade Joypad: SW1: 1 SW2: 1 SW3: 1 SW4: 1 btn:1[0m
+[0;32mI (3449) arcade Joypad: SW1: 1 SW2: 1 SW3: 1 SW4: 1 btn:1[0m
+[0;32mI (3469) arcade Joypad: SW1: 1 SW2: 1 SW3: 1 SW4: 1 btn:1[0m
+[0;32mI (3489) arcade Joypad: SW1: 1 SW2: 1 SW3: 1 SW4: 1 btn:1[0m
+[0;32mI (3509) arcade Joypad: SW1: 1 SW2: 1 SW3: 1 SW4: 1 btn:1[0m
+[0;32mI (3529) arcade Joypad: SW1: 1 SW2: 1 SW3: 1 SW4: 1 btn:1[0m
+[0;32mI (3549) arcade Joypad: SW1: 1 SW2: 1 SW3: 1 SW4: 1 btn:1[0m
+[0;32mI (3569) arcade Joypad: SW1: 1 SW2: 1 SW3: 1 SW4: 1 btn:1[0m
+[0;32mI (3589) arcade Joypad: SW1: 1 SW2: 1 SW3: 1 SW4: 1 btn:1[0m
+[0;32mI (3609) arcade Joypad: SW1: 1 SW2: 1 SW3: 1 SW4: 1 btn:1[0m
+[0;32mI (3629) arcade Joypad: SW1: 1 SW2: 1 SW3: 1 SW4: 1 btn:1[0m
+[0;32mI (3649) arcade Joypad: SW1: 1 SW2: 1 SW3: 1 SW4: 1 btn:1[0m
+[0;32mI (3669) arcade Joypad: SW1: 1 SW2: 1 SW3: 1 SW4: 1 btn:1[0m
+[0;32mI (3689) arcade Joypad: SW1: 1 SW2: 1 SW3: 1 SW4: 1 btn:1[0m
+[0;32mI (3709) arcade Joypad: SW1: 1 SW2: 1 SW3: 1 SW4: 1 btn:1[0m
+[0;32mI (3729) arcade Joypad: SW1: 1 SW2: 1 SW3: 1 SW4: 1 btn:1[0m
+[0;32mI (3749) arcade Joypad: SW1: 1 SW2: 1 SW3: 1 SW4: 1 btn:1[0m
+[0;32mI (3769) arcade Joypad: SW1: 1 SW2: 1 SW3: 1 SW4: 1 btn:1[0m
+[0;32mI (3789) arcade Joypad: SW1: 1 SW2: 1 SW3: 1 SW4: 1 btn:1[0m
+[0;32mI (3809) arcade Joypad: SW1: 1 SW2: 1 SW3: 1 SW4: 1 btn:1[0m
+[0;32mI (3829) arcade Joypad: SW1: 1 SW2: 1 SW3: 1 SW4: 1 btn:1[0m
+[0;32mI (3849) arcade Joypad: SW1: 1 SW2: 1 SW3: 1 SW4: 1 btn:1[0m
+[0;32mI (3869) arcade Joypad: SW1: 1 SW2: 1 SW3: 1 SW4: 1 btn:1[0m
+[0;32mI (3889) arcade Joypad: SW1: 1 SW2: 1 SW3: 1 SW4: 1 btn:1[0m
+[0;32mI (3909) arcade Joypad: SW1: 1 SW2: 1 SW3: 1 SW4: 1 btn:1[0m
+[0;32mI (3929) arcade Joypad: SW1: 1 SW2: 1 SW3: 1 SW4: 1 btn:1[0m
+[0;32mI (3949) arcade Joypad: SW1: 1 SW2: 1 SW3: 1 SW4: 1 btn:1[0m
+[0;32mI (3969) arcade Joypad: SW1: 1 SW2: 1 SW3: 1 SW4: 1 btn:1[0m
+[0;32mI (3989) arcade Joypad: SW1: 1 SW2: 1 SW3: 1 SW4: 1 btn:1[0m
+[0;32mI (4009) arcade Joypad: SW1: 1 SW2: 1 SW3: 1 SW4: 1 btn:1[0m
+[0;32mI (4029) arcade Joypad: SW1: 1 SW2: 1 SW3: 1 SW4: 1 btn:1[0m
+[0;32mI (4049) arcade Joypad: SW1: 1 SW2: 1 SW3: 1 SW4: 1 btn:1[0m
+[0;32mI (4069) arcade Joypad: SW1: 1 SW2: 1 SW3: 1 SW4: 1 btn:1[0m
+[0;32mI (4089) arcade Joypad: SW1: 1 SW2: 1 SW3: 1 SW4: 1 btn:1[0m
+[0;32mI (4109) arcade Joypad: SW1: 1 SW2: 1 SW3: 1 SW4: 1 btn:1[0m
+[0;32mI (4129) arcade Joypad: SW1: 1 SW2: 1 SW3: 1 SW4: 1 btn:1[0m
+[0;32mI (4149) arcade Joypad: SW1: 1 SW2: 1 SW3: 1 SW4: 1 btn:1[0m
+[0;32mI (4169) arcade Joypad: SW1: 1 SW2: 1 SW3: 1 SW4: 1 btn:1[0m
+[0;32mI (4189) arcade Joypad: SW1: 1 SW2: 1 SW3: 1 SW4: 1 btn:1[0m
+[0;32mI (4209) arcade Joypad: SW1: 1 SW2: 1 SW3: 1 SW4: 1 btn:1[0m
+[0;32mI (4229) arcade Joypad: SW1: 1 SW2: 1 SW3: 1 SW4: 1 btn:1[0m
+[0;32mI (4249) arcade Joypad: SW1: 1 SW2: 1 SW3: 1 SW4: 1 btn:1[0m
+[0;32mI (4269) arcade Joypad: SW1: 1 SW2: 1 SW3: 1 SW4: 1 btn:1[0m
+[0;32mI (4289) arcade Joypad: SW1: 1 SW2: 1 SW3: 1 SW4: 1 btn:1[0m
+[0;32mI (4309) arcade Joypad: SW1: 1 SW2: 1 SW3: 1 SW4: 1 btn:1[0m
+[0;32mI (4329) arcade Joypad: SW1: 1 SW2: 1 SW3: 1 SW4: 1 btn:1[0m
+[0;32mI (4349) arcade Joypad: SW1: 1 SW2: 1 SW3: 1 SW4: 1 btn:1[0m
+[0;32mI (4369) arcade Joypad: SW1: 1 SW2: 1 SW3: 1 SW4: 1 btn:1[0m
+[0;32mI (4389) arcade Joypad: SW1: 1 SW2: 1 SW3: 1 SW4: 1 btn:1[0m
+[0;32mI (4409) arcade Joypad: SW1: 1 SW2: 1 SW3: 1 SW4: 1 btn:1[0m
+[0;32mI (4429) arcade Joypad: SW1: 1 SW2: 1 SW3: 1 SW4: 1 btn:1[0m
+[0;32mI (4449) arcade Joypad: SW1: 1 SW2: 1 SW3: 1 SW4: 1 btn:1[0m
+[0;32mI (4469) arcade Joypad: SW1: 1 SW2: 1 SW3: 1 SW4: 1 btn:1[0m
+[0;32mI (4489) arcade Joypad: SW1: 1 SW2: 1 SW3: 1 SW4: 1 btn:1[0m
+[0;32mI (4509) arcade Joypad: SW1: 1 SW2: 1 SW3: 1 SW4: 1 btn:1[0m
+[0;32mI (4529) arcade Joypad: SW1: 1 SW2: 1 SW3: 1 SW4: 1 btn:1[0m
+[0;32mI (4549) arcade Joypad: SW1: 1 SW2: 1 SW3: 1 SW4: 1 btn:1[0m
+[0;32mI (4569) arcade Joypad: SW1: 1 SW2: 1 SW3: 1 SW4: 1 btn:1[0m
+[0;32mI (4589) arcade Joypad: SW1: 1 SW2: 1 SW3: 1 SW4: 1 btn:1[0m
+[0;32mI (4609) arcade Joypad: SW1: 1 SW2: 1 SW3: 1 SW4: 1 btn:1[0m
+[0;32mI (4629) arcade Joypad: SW1: 1 SW2: 1 SW3: 1 SW4: 1 btn:1[0m
+[0;32mI (4649) arcade Joypad: SW1: 1 SW2: 1 SW3: 1 SW4: 1 btn:1[0m
+[0;32mI (4669) arcade Joypad: SW1: 1 SW2: 1 SW3: 1 SW4: 1 btn:1[0m
+[0;32mI (4689) arcade Joypad: SW1: 1 SW2: 1 SW3: 1 SW4: 1 btn:1[0m
+[0;32mI (4709) arcade Joypad: SW1: 1 SW2: 1 SW3: 1 SW4: 1 btn:1[0m
+[0;32mI (4729) arcade Joypad: SW1: 1 SW2: 1 SW3: 1 SW4: 1 btn:1[0m
+[0;32mI (4749) arcade Joypad: SW1: 1 SW2: 1 SW3: 1 SW4: 1 btn:1[0m
+[0;32mI (4769) arcade Joypad: SW1: 1 SW2: 1 SW3: 1 SW4: 1 btn:1[0m
+[0;32mI (4789) arcade Joypad: SW1: 1 SW2: 1 SW3: 1 SW4: 1 btn:1[0m
+[0;32mI (4809) arcade Joypad: SW1: 1 SW2: 1 SW3: 1 SW4: 1 btn:1[0m
+[0;32mI (4829) arcade Joypad: SW1: 1 SW2: 1 SW3: 1 SW4: 1 btn:1[0m
+[0;32mI (4849) arcade Joypad: SW1: 1 SW2: 1 SW3: 1 SW4: 1 btn:1[0m
+[0;32mI (4869) arcade Joypad: SW1: 1 SW2: 1 SW3: 1 SW4: 1 btn:1[0m
+[0;32mI (4889) arcade Joypad: SW1: 1 SW2: 1 SW3: 1 SW4: 1 btn:1[0m
+[0;32mI (4909) arcade Joypad: SW1: 1 SW2: 1 SW3: 1 SW4: 0 btn:1[0m
+[0;32mI (4929) arcade Joypad: SW1: 1 SW2: 1 SW3: 1 SW4: 0 btn:1[0m
+[0;32mI (4949) arcade Joypad: SW1: 1 SW2: 1 SW3: 1 SW4: 0 btn:1[0m
+[0;32mI (4969) arcade Joypad: SW1: 1 SW2: 1 SW3: 1 SW4: 0 btn:1[0m
+[0;32mI (4989) arcade Joypad: SW1: 1 SW2: 1 SW3: 1 SW4: 0 btn:1[0m
+[0;32mI (5009) arcade Joypad: SW1: 1 SW2: 1 SW3: 1 SW4: 0 btn:1[0m
+[0;32mI (5029) arcade Joypad: SW1: 1 SW2: 1 SW3: 1 SW4: 0 btn:1[0m
+[0;32mI (5049) arcade Joypad: SW1: 1 SW2: 1 SW3: 1 SW4: 0 btn:1[0m
+[0;32mI (5069) arcade Joypad: SW1: 1 SW2: 1 SW3: 1 SW4: 0 btn:1[0m
+[0;32mI (5089) arcade Joypad: SW1: 1 SW2: 1 SW3: 1 SW4: 0 btn:1[0m
+[0;32mI (5109) arcade Joypad: SW1: 1 SW2: 1 SW3: 1 SW4: 0 btn:1[0m
+[0;32mI (5129) arcade Joypad: SW1: 1 SW2: 1 SW3: 1 SW4: 0 btn:1[0m
+[0;32mI (5149) arcade Joypad: SW1: 1 SW2: 1 SW3: 1 SW4: 0 btn:1[0m
+[0;32mI (5169) arcade Joypad: SW1: 1 SW2: 1 SW3: 1 SW4: 0 btn:1[0m
+[0;32mI (5189) arcade Joypad: SW1: 1 SW2: 1 SW3: 1 SW4: 0 btn:1[0m
+[0;32mI (5209) arcade Joypad: SW1: 1 SW2: 1 SW3: 1 SW4: 0 btn:1[0m
+[0;32mI (5229) arcade Joypad: SW1: 1 SW2: 1 SW3: 1 SW4: 0 btn:1[0m
+[0;32mI (5249) arcade Joypad: SW1: 1 SW2: 1 SW3: 1 SW4: 0 btn:1[0m
+[0;32mI (5269) arcade Joypad: SW1: 1 SW2: 1 SW3: 1 SW4: 0 btn:1[0m
+[0;32mI (5289) arcade Joypad: SW1: 1 SW2: 1 SW3: 1 SW4: 0 btn:1[0m
+[0;32mI (5309) arcade Joypad: SW1: 1 SW2: 1 SW3: 1 SW4: 0 btn:1[0m
+[0;32mI (5329) arcade Joypad: SW1: 1 SW2: 1 SW3: 1 SW4: 0 btn:1[0m
+[0;32mI (5349) arcade Joypad: SW1: 1 SW2: 1 SW3: 1 SW4: 0 btn:1[0m
+[0;32mI (5369) arcade Joypad: SW1: 1 SW2: 1 SW3: 1 SW4: 0 btn:1[0m
+[0;32mI (5389) arcade Joypad: SW1: 1 SW2: 1 SW3: 1 SW4: 0 btn:1[0m
+[0;32mI (5409) arcade Joypad: SW1: 1 SW2: 1 SW3: 1 SW4: 0 btn:1[0m
+[0;32mI (5429) arcade Joypad: SW1: 1 SW2: 1 SW3: 1 SW4: 0 btn:1[0m
+[0;32mI (5449) arcade Joypad: SW1: 1 SW2: 1 SW3: 1 SW4: 1 btn:1[0m
+[0;32mI (5469) arcade Joypad: SW1: 1 SW2: 1 SW3: 1 SW4: 1 btn:1[0m
+[0;32mI (5489) arcade Joypad: SW1: 1 SW2: 1 SW3: 1 SW4: 1 btn:1[0m
+[0;32mI (5509) arcade Joypad: SW1: 1 SW2: 1 SW3: 1 SW4: 1 btn:1[0m
+[0;32mI (5529) arcade Joypad: SW1: 1 SW2: 1 SW3: 1 SW4: 1 btn:1[0m
+[0;32mI (5549) arcade Joypad: SW1: 1 SW2: 1 SW3: 1 SW4: 1 btn:1[0m
+[0;32mI (5569) arcade Joypad: SW1: 1 SW2: 1 SW3: 1 SW4: 1 btn:1[0m
+[0;32mI (5589) arcade Joypad: SW1: 1 SW2: 1 SW3: 1 SW4: 1 btn:1[0m
+[0;32mI (5609) arcade Joypad: SW1: 1 SW2: 1 SW3: 1 SW4: 1 btn:1[0m
+[0;32mI (5629) arcade Joypad: SW1: 1 SW2: 1 SW3: 1 SW4: 1 btn:1[0m
+[0;32mI (5649) arcade Joypad: SW1: 1 SW2: 1 SW3: 1 SW4: 1 btn:1[0m
+[0;32mI (5669) arcade Joypad: SW1: 1 SW2: 1 SW3: 1 SW4: 1 btn:1[0m
+[0;32mI (5689) arcade Joypad: SW1: 1 SW2: 1 SW3: 1 SW4: 1 btn:1[0m
+[0;32mI (5709) arcade Joypad: SW1: 1 SW2: 1 SW3: 1 SW4: 1 btn:1[0m
+[0;32mI (5729) arcade Joypad: SW1: 1 SW2: 1 SW3: 1 SW4: 1 btn:1[0m
+[0;32mI (5749) arcade Joypad: SW1: 1 SW2: 1 SW3: 1 SW4: 1 btn:1[0m
+[0;32mI (5769) arcade Joypad: SW1: 1 SW2: 1 SW3: 1 SW4: 1 btn:1[0m
+[0;32mI (5789) arcade Joypad: SW1: 1 SW2: 0 SW3: 1 SW4: 1 btn:1[0m
+[0;32mI (5809) arcade Joypad: SW1: 1 SW2: 0 SW3: 1 SW4: 1 btn:1[0m
+[0;32mI (5829) arcade Joypad: SW1: 1 SW2: 0 SW3: 1 SW4: 1 btn:1[0m
+[0;32mI (5849) arcade Joypad: SW1: 1 SW2: 0 SW3: 1 SW4: 1 btn:1[0m
+[0;32mI (5869) arcade Joypad: SW1: 1 SW2: 0 SW3: 1 SW4: 1 btn:1[0m
+[0;32mI (5889) arcade Joypad: SW1: 1 SW2: 0 SW3: 1 SW4: 1 btn:1[0m
+[0;32mI (5909) arcade Joypad: SW1: 1 SW2: 0 SW3: 1 SW4: 1 btn:1[0m
+[0;32mI (5929) arcade Joypad: SW1: 1 SW2: 0 SW3: 1 SW4: 1 btn:1[0m
+[0;32mI (5949) arcade Joypad: SW1: 1 SW2: 0 SW3: 1 SW4: 1 btn:1[0m
+[0;32mI (5969) arcade Joypad: SW1: 1 SW2: 0 SW3: 1 SW4: 1 btn:1[0m
+[0;32mI (5989) arcade Joypad: SW1: 1 SW2: 0 SW3: 1 SW4: 1 btn:1[0m
+[0;32mI (6009) arcade Joypad: SW1: 1 SW2: 0 SW3: 1 SW4: 1 btn:1[0m
+[0;32mI (6029) arcade Joypad: SW1: 1 SW2: 0 SW3: 1 SW4: 1 btn:1[0m
+[0;32mI (6049) arcade Joypad: SW1: 1 SW2: 0 SW3: 1 SW4: 1 btn:1[0m
+[0;32mI (6069) arcade Joypad: SW1: 1 SW2: 0 SW3: 1 SW4: 1 btn:1[0m
+[0;32mI (6089) arcade Joypad: SW1: 1 SW2: 0 SW3: 1 SW4: 1 btn:1[0m
+[0;32mI (6109) arcade Joypad: SW1: 1 SW2: 0 SW3: 1 SW4: 1 btn:1[0m
+[0;32mI (6129) arcade Joypad: SW1: 1 SW2: 0 SW3: 1 SW4: 1 btn:1[0m
+[0;32mI (6149) arcade Joypad: SW1: 1 SW2: 1 SW3: 1 SW4: 1 btn:1[0m
+[0;32mI (6169) arcade Joypad: SW1: 1 SW2: 1 SW3: 1 SW4: 1 btn:1[0m
+[0;32mI (6189) arcade Joypad: SW1: 1 SW2: 1 SW3: 1 SW4: 1 btn:1[0m
+[0;32mI (6209) arcade Joypad: SW1: 1 SW2: 1 SW3: 1 SW4: 1 btn:1[0m
+[0;32mI (6229) arcade Joypad: SW1: 1 SW2: 1 SW3: 1 SW4: 1 btn:1[0m
+[0;32mI (6249) arcade Joypad: SW1: 1 SW2: 1 SW3: 1 SW4: 1 btn:1[0m
+[0;32mI (6269) arcade Joypad: SW1: 1 SW2: 1 SW3: 1 SW4: 1 btn:1[0m
+[0;32mI (6289) arcade Joypad: SW1: 1 SW2: 1 SW3: 1 SW4: 1 btn:1[0m
+[0;32mI (6309) arcade Joypad: SW1: 1 SW2: 1 SW3: 1 SW4: 1 btn:1[0m
+[0;32mI (6329) arcade Joypad: SW1: 1 SW2: 1 SW3: 1 SW4: 1 btn:1[0m
+[0;32mI (6349) arcade Joypad: SW1: 1 SW2: 1 SW3: 1 SW4: 1 btn:1[0m
+[0;32mI (6369) arcade Joypad: SW1: 1 SW2: 1 SW3: 1 SW4: 1 btn:1[0m
+[0;32mI (6389) arcade Joypad: SW1: 1 SW2: 1 SW3: 1 SW4: 1 btn:1[0m
+[0;32mI (6409) arcade Joypad: SW1: 1 SW2: 1 SW3: 1 SW4: 1 btn:1[0m
+[0;32mI (6429) arcade Joypad: SW1: 1 SW2: 1 SW3: 1 SW4: 1 btn:1[0m
+[0;32mI (6449) arcade Joypad: SW1: 1 SW2: 1 SW3: 1 SW4: 1 btn:1[0m
+[0;32mI (6469) arcade Joypad: SW1: 1 SW2: 1 SW3: 1 SW4: 1 btn:1[0m
+[0;32mI (6489) arcade Joypad: SW1: 1 SW2: 1 SW3: 1 SW4: 1 btn:1[0m
+[0;32mI (6509) arcade Joypad: SW1: 1 SW2: 1 SW3: 1 SW4: 1 btn:1[0m
+[0;32mI (6529) arcade Joypad: SW1: 1 SW2: 1 SW3: 1 SW4: 1 btn:1[0m
+[0;32mI (6549) arcade Joypad: SW1: 1 SW2: 1 SW3: 1 SW4: 1 btn:1[0m
+[0;32mI (6569) arcade Joypad: SW1: 1 SW2: 1 SW3: 1 SW4: 1 btn:1[0m
+[0;32mI (6589) arcade Joypad: SW1: 1 SW2: 1 SW3: 1 SW4: 1 btn:1[0m
+[0;32mI (6609) arcade Joypad: SW1: 1 SW2: 1 SW3: 1 SW4: 1 btn:1[0m
+[0;32mI (6629) arcade Joypad: SW1: 1 SW2: 1 SW3: 1 SW4: 1 btn:1[0m
+[0;32mI (6649) arcade Joypad: SW1: 1 SW2: 1 SW3: 1 SW4: 1 btn:1[0m
+[0;32mI (6669) arcade Joypad: SW1: 1 SW2: 1 SW3: 1 SW4: 1 btn:1[0m
+[0;32mI (6689) arcade Joypad: SW1: 1 SW2: 1 SW3: 1 SW4: 1 btn:1[0m
+[0;32mI (6709) arcade Joypad: SW1: 1 SW2: 1 SW3: 1 SW4: 1 btn:1[0m
+[0;32mI (6729) arcade Joypad: SW1: 1 SW2: 1 SW3: 1 SW4: 1 btn:1[0m
+[0;32mI (6749) arcade Joypad: SW1: 1 SW2: 1 SW3: 1 SW4: 1 btn:1[0m
+[0;32mI (6769) arcade Joypad: SW1: 1 SW2: 1 SW3: 1 SW4: 1 btn:1[0m
+[0;32mI (6789) arcade Joypad: SW1: 1 SW2: 1 SW3: 1 SW4: 1 btn:1[0m
+[0;32mI (6809) arcade Joypad: SW1: 1 SW2: 1 SW3: 1 SW4: 1 btn:1[0m
+[0;32mI (6829) arcade Joypad: SW1: 1 SW2: 1 SW3: 1 SW4: 1 btn:1[0m
+[0;32mI (6849) arcade Joypad: SW1: 1 SW2: 1 SW3: 1 SW4: 1 btn:1[0m
+[0;32mI (6869) arcade Joypad: SW1: 1 SW2: 1 SW3: 1 SW4: 1 btn:1[0m
+[0;32mI (6889) arcade Joypad: SW1: 1 SW2: 1 SW3: 1 SW4: 1 btn:1[0m
+[0;32mI (6909) arcade Joypad: SW1: 1 SW2: 1 SW3: 1 SW4: 1 btn:1[0m
+[0;32mI (6929) arcade Joypad: SW1: 1 SW2: 1 SW3: 1 SW4: 1 btn:1[0m
+[0;32mI (6949) arcade Joypad: SW1: 1 SW2: 1 SW3: 1 SW4: 1 btn:1[0m
+[0;32mI (6969) arcade Joypad: SW1: 1 SW2: 1 SW3: 1 SW4: 1 btn:1[0m
+[0;32mI (6989) arcade Joypad: SW1: 1 SW2: 1 SW3: 1 SW4: 1 btn:1[0m
+[0;32mI (7009) arcade Joypad: SW1: 1 SW2: 1 SW3: 1 SW4: 1 btn:1[0m
+[0;32mI (7029) arcade Joypad: SW1: 1 SW2: 1 SW3: 1 SW4: 1 btn:1[0m
+[0;32mI (7049) arcade Joypad: SW1: 1 SW2: 1 SW3: 1 SW4: 1 btn:1[0m
+[0;32mI (7069) arcade Joypad: SW1: 1 SW2: 1 SW3: 1 SW4: 1 btn:1[0m
+[0;32mI (7089) arcade Joypad: SW1: 1 SW2: 1 SW3: 1 SW4: 1 btn:1[0m
+[0;32mI (7109) arcade Joypad: SW1: 1 SW2: 1 SW3: 1 SW4: 1 btn:1[0m
+[0;32mI (7129) arcade Joypad: SW1: 1 SW2: 1 SW3: 1 SW4: 1 btn:1[0m
+[0;32mI (7149) arcade Joypad: SW1: 1 SW2: 1 SW3: 1 SW4: 1 btn:1[0m
+[0;32mI (7169) arcade Joypad: SW1: 1 SW2: 1 SW3: 1 SW4: 1 btn:1[0m
+[0;32mI (7189) arcade Joypad: SW1: 1 SW2: 1 SW3: 1 SW4: 1 btn:1[0m
+[0;32mI (7209) arcade Joypad: SW1: 1 SW2: 1 SW3: 1 SW4: 1 btn:1[0m
+[0;32mI (7229) arcade Joypad: SW1: 1 SW2: 1 SW3: 1 SW4: 1 btn:1[0m
+[0;32mI (7249) arcade Joypad: SW1: 1 SW2: 1 SW3: 1 SW4: 1 btn:1[0m
+[0;32mI (7269) arcade Joypad: SW1: 1 SW2: 1 SW3: 1 SW4: 1 btn:1[0m
+[0;32mI (7289) arcade Joypad: SW1: 1 SW2: 1 SW3: 1 SW4: 1 btn:1[0m
+[0;32mI (7309) arcade Joypad: SW1: 1 SW2: 1 SW3: 1 SW4: 1 btn:1[0m
+[0;32mI (7329) arcade Joypad: SW1: 1 SW2: 1 SW3: 1 SW4: 1 btn:1[0m
+[0;32mI (7349) arcade Joypad: SW1: 1 SW2: 1 SW3: 1 SW4: 1 btn:1[0m
+[0;32mI (7369) arcade Joypad: SW1: 1 SW2: 1 SW3: 1 SW4: 1 btn:1[0m
+[0;32mI (7389) arcade Joypad: SW1: 1 SW2: 1 SW3: 1 SW4: 1 btn:1[0m
+[0;32mI (7409) arcade Joypad: SW1: 1 SW2: 1 SW3: 1 SW4: 1 btn:1[0m
+[0;32mI (7429) arcade Joypad: SW1: 1 SW2: 1 SW3: 1 SW4: 1 btn:1[0m
+[0;32mI (7449) arcade Joypad: SW1: 1 SW2: 1 SW3: 1 SW4: 1 btn:1[0m
+[0;32mI (7469) arcade Joypad: SW1: 1 SW2: 1 SW3: 1 SW4: 1 btn:1[0m
+[0;32mI (7489) arcade Joypad: SW1: 1 SW2: 1 SW3: 1 SW4: 1 btn:1[0m
+[0;32mI (7509) arcade Joypad: SW1: 1 SW2: 1 SW3: 1 SW4: 1 btn:1[0m
+[0;32mI (7529) arcade Joypad: SW1: 1 SW2: 1 SW3: 1 SW4: 1 btn:1[0m
+[0;32mI (7549) arcade Joypad: SW1: 1 SW2: 1 SW3: 1 SW4: 1 btn:1[0m
+[0;32mI (7569) arcade Joypad: SW1: 1 SW2: 1 SW3: 1 SW4: 1 btn:1[0m
+[0;32mI (7589) arcade Joypad: SW1: 1 SW2: 1 SW3: 1 SW4: 1 btn:1[0m
+[0;32mI (7609) arcade Joypad: SW1: 1 SW2: 1 SW3: 1 SW4: 1 btn:1[0m
+[0;32mI (7629) arcade Joypad: SW1: 1 SW2: 1 SW3: 1 SW4: 1 btn:1[0m
+[0;32mI (7649) arcade Joypad: SW1: 1 SW2: 1 SW3: 1 SW4: 1 btn:1[0m
+[0;32mI (7669) arcade Joypad: SW1: 1 SW2: 1 SW3: 1 SW4: 1 btn:1[0m
+[0;32mI (7689) arcade Joypad: SW1: 1 SW2: 1 SW3: 1 SW4: 1 btn:1[0m
+[0;32mI (7709) arcade Joypad: SW1: 1 SW2: 1 SW3: 1 SW4: 1 btn:1[0m
+[0;32mI (7729) arcade Joypad: SW1: 1 SW2: 1 SW3: 1 SW4: 1 btn:1[0m
+[0;32mI (7749) arcade Joypad: SW1: 1 SW2: 1 SW3: 1 SW4: 1 btn:1[0m
+[0;32mI (7769) arcade Joypad: SW1: 1 SW2: 1 SW3: 1 SW4: 1 btn:1[0m
+[0;32mI (7789) arcade Joypad: SW1: 1 SW2: 1 SW3: 1 SW4: 1 btn:1[0m
+[0;32mI (7809) arcade Joypad: SW1: 1 SW2: 1 SW3: 1 SW4: 1 btn:1[0m
+[0;32mI (7829) arcade Joypad: SW1: 1 SW2: 1 SW3: 1 SW4: 1 btn:1[0m
+[0;32mI (7849) arcade Joypad: SW1: 1 SW2: 1 SW3: 1 SW4: 1 btn:1[0m
+[0;32mI (7869) arcade Joypad: SW1: 1 SW2: 1 SW3: 1 SW4: 1 btn:1[0m
+[0;32mI (7889) arcade Joypad: SW1: 1 SW2: 1 SW3: 1 SW4: 1 btn:1[0m
+[0;32mI (7909) arcade Joypad: SW1: 1 SW2: 1 SW3: 1 SW4: 1 btn:1[0m
+[0;32mI (7929) arcade Joypad: SW1: 1 SW2: 1 SW3: 1 SW4: 1 btn:1[0m
+[0;32mI (7949) arcade Joypad: SW1: 1 SW2: 1 SW3: 1 SW4: 1 btn:1[0m
+[0;32mI (7969) arcade Joypad: SW1: 1 SW2: 1 SW3: 1 SW4: 1 btn:1[0m
+[0;32mI (7989) arcade Joypad: SW1: 1 SW2: 1 SW3: 1 SW4: 1 btn:1[0m
+[0;32mI (8009) arcade Joypad: SW1: 1 SW2: 1 SW3: 1 SW4: 1 btn:1[0m
+[0;32mI (8029) arcade Joypad: SW1: 1 SW2: 1 SW3: 1 SW4: 1 btn:1[0m
+[0;32mI (8049) arcade Joypad: SW1: 1 SW2: 1 SW3: 1 SW4: 1 btn:1[0m
+[0;32mI (8069) arcade Joypad: SW1: 1 SW2: 1 SW3: 1 SW4: 1 btn:1[0m
+[0;32mI (8089) arcade Joypad: SW1: 1 SW2: 1 SW3: 1 SW4: 1 btn:1[0m
+[0;32mI (8109) arcade Joypad: SW1: 1 SW2: 1 SW3: 1 SW4: 1 btn:1[0m
+[0;32mI (8129) arcade Joypad: SW1: 1 SW2: 1 SW3: 1 SW4: 1 btn:1[0m
+[0;32mI (8149) arcade Joypad: SW1: 1 SW2: 1 SW3: 1 SW4: 1 btn:1[0m
+[0;32mI (8169) arcade Joypad: SW1: 1 SW2: 1 SW3: 1 SW4: 1 btn:1[0m
+[0;32mI (8189) arcade Joypad: SW1: 1 SW2: 1 SW3: 1 SW4: 1 btn:1[0m
+[0;32mI (8209) arcade Joypad: SW1: 1 SW2: 1 SW3: 1 SW4: 1 btn:1[0m
+[0;32mI (8229) arcade Joypad: SW1: 1 SW2: 1 SW3: 1 SW4: 1 btn:1[0m
+[0;32mI (8249) arcade Joypad: SW1: 1 SW2: 1 SW3: 1 SW4: 1 btn:1[0m
+[0;32mI (8269) arcade Joypad: SW1: 1 SW2: 1 SW3: 1 SW4: 1 btn:1[0m
+[0;32mI (8289) arcade Joypad: SW1: 1 SW2: 1 SW3: 1 SW4: 1 btn:1[0m
+[0;32mI (8309) arcade Joypad: SW1: 1 SW2: 1 SW3: 1 SW4: 1 btn:1[0m
+[0;32mI (8329) arcade Joypad: SW1: 1 SW2: 1 SW3: 1 SW4: 1 btn:1[0m
+[0;32mI (8349) arcade Joypad: SW1: 1 SW2: 1 SW3: 1 SW4: 1 btn:1[0m
+[0;32mI (8369) arcade Joypad: SW1: 1 SW2: 1 SW3: 1 SW4: 1 btn:1[0m
+[0;32mI (8389) arcade Joypad: SW1: 1 SW2: 1 SW3: 1 SW4: 1 btn:1[0m
+[0;32mI (8409) arcade Joypad: SW1: 1 SW2: 1 SW3: 1 SW4: 1 btn:1[0m
+[0;32mI (8429) arcade Joypad: SW1: 1 SW2: 1 SW3: 1 SW4: 1 btn:1[0m
+[0;32mI (8449) arcade Joypad: SW1: 1 SW2: 1 SW3: 1 SW4: 1 btn:1[0m
+[0;32mI (8469) arcade Joypad: SW1: 1 SW2: 1 SW3: 1 SW4: 1 btn:1[0m
+[0;32mI (8489) arcade Joypad: SW1: 1 SW2: 1 SW3: 1 SW4: 1 btn:1[0m
+[0;32mI (8509) arcade Joypad: SW1: 1 SW2: 1 SW3: 1 SW4: 1 btn:1[0m
+[0;32mI (8529) arcade Joypad: SW1: 1 SW2: 1 SW3: 1 SW4: 1 btn:1[0m
+[0;32mI (8549) arcade Joypad: SW1: 1 SW2: 1 SW3: 1 SW4: 1 btn:1[0m
+[0;32mI (8569) arcade Joypad: SW1: 1 SW2: 1 SW3: 1 SW4: 1 btn:1[0m
+[0;32mI (8589) arcade Joypad: SW1: 1 SW2: 1 SW3: 1 SW4: 1 btn:1[0m
+[0;32mI (8609) arcade Joypad: SW1: 1 SW2: 1 SW3: 1 SW4: 1 btn:1[0m
+[0;32mI (8629) arcade Joypad: SW1: 1 SW2: 1 SW3: 1 SW4: 1 btn:1[0m
+[0;32mI (8649) arcade Joypad: SW1: 1 SW2: 1 SW3: 1 SW4: 1 btn:1[0m
+[0;32mI (8669) arcade Joypad: SW1: 1 SW2: 1 SW3: 1 SW4: 1 btn:1[0m
+[0;32mI (8689) arcade Joypad: SW1: 1 SW2: 1 SW3: 1 SW4: 1 btn:1[0m
+[0;32mI (8709) arcade Joypad: SW1: 1 SW2: 1 SW3: 1 SW4: 1 btn:1[0m
+[0;32mI (8729) arcade Joypad: SW1: 1 SW2: 1 SW3: 1 SW4: 1 btn:1[0m
+[0;32mI (8749) arcade Joypad: SW1: 1 SW2: 1 SW3: 1 SW4: 1 btn:1[0m
+[0;32mI (8769) arcade Joypad: SW1: 1 SW2: 1 SW3: 1 SW4: 1 btn:1[0m
+[0;32mI (8789) arcade Joypad: SW1: 1 SW2: 1 SW3: 1 SW4: 1 btn:1[0m
+[0;32mI (8809) arcade Joypad: SW1: 1 SW2: 1 SW3: 1 SW4: 1 btn:1[0m
+[0;32mI (8829) arcade Joypad: SW1: 1 SW2: 1 SW3: 1 SW4: 1 btn:1[0m
+[0;32mI (8849) arcade Joypad: SW1: 1 SW2: 1 SW3: 1 SW4: 1 btn:1[0m
+[0;32mI (8869) arcade Joypad: SW1: 1 SW2: 1 SW3: 1 SW4: 1 btn:1[0m
+[0;32mI (8889) arcade Joypad: SW1: 1 SW2: 1 SW3: 1 SW4: 1 btn:1[0m
+[0;32mI (8909) arcade Joypad: SW1: 1 SW2: 1 SW3: 1 SW4: 1 btn:1[0m
+[0;32mI (8929) arcade Joypad: SW1: 1 SW2: 1 SW3: 1 SW4: 1 btn:1[0m
+[0;32mI (8949) arcade Joypad: SW1: 1 SW2: 1 SW3: 1 SW4: 1 btn:1[0m
+[0;32mI (8969) arcade Joypad: SW1: 1 SW2: 1 SW3: 1 SW4: 1 btn:1[0m
+[0;32mI (8989) arcade Joypad: SW1: 1 SW2: 1 SW3: 1 SW4: 1 btn:1[0m
+[0;32mI (9009) arcade Joypad: SW1: 1 SW2: 1 SW3: 1 SW4: 1 btn:1[0m
+[0;32mI (9029) arcade Joypad: SW1: 1 SW2: 1 SW3: 1 SW4: 1 btn:1[0m

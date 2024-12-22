@@ -1,7 +1,7 @@
 {
     "version":            "1",
     "project_name":       "arcadeJoypad",
-    "project_version":    "0ea7c87-dirty",
+    "project_version":    "3fd2885-dirty",
     "project_path":       "C:/espressif5.0/frameworks/arcadeJoypad",
     "idf_path":           "C:/espressif5.0/frameworks/esp-idf-v5.0.3",
     "build_dir":          "C:/espressif5.0/frameworks/arcadeJoypad/build",

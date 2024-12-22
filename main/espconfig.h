@@ -29,11 +29,12 @@
 #define ID_TO       5
 
 //controller status index :_sendbuf
-#define ID_COM      6
-#define ID_DIR      7
-#define ID_SPD      10
-#define ID_DELI1    15
-#define ID_DELI2    16
+
+#define ID_DIR      6
+#define ID_SPD      8
+#define ID_SOL      10
+#define ID_DELI1    11
+#define ID_DELI2    12
 
 //receiver Packet : rPacket.msg
 #define ID_CRCL     10
