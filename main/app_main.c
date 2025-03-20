@@ -43,7 +43,13 @@
 #define CCW                     2
 #define ORIGIN                  0
 
-#define MOTOR_SPD               150     
+#define LED_RED               1
+#define LED_YELLOW            2
+#define LED_BLUE              3
+#define LED_WHITE             4
+#define ROBOT_OFF             0
+
+#define MOTOR_SPD               200     
 
 static const char *TAG = "arcade Joypad";
 
@@ -194,7 +200,7 @@ void app_main(void)
     memset(_sendbuf, 0, PACKET_LENGTH);    
     _sendbuf[ID_START1] =   0x54;
     _sendbuf[ID_START2] =   0x55;
-    _sendbuf[ID_INFO]   =   0x00;
+    _sendbuf[ID_INFO]   =   LED_RED;
     _sendbuf[ID_LEN]    =   5;
     _sendbuf[ID_FROM]   =   0;
     _sendbuf[ID_TO]     =   0;
@@ -230,13 +236,13 @@ void app_main(void)
     {
         
         sleepLapseTime = esp_timer_get_time();
-        if((sleepLapseTime - sleepStartTime) > (SLEEP_WAIT_TIME * 5))
+        if((sleepLapseTime - sleepStartTime) > (SLEEP_WAIT_TIME))
         {
-            esp_deep_sleep_enable_gpio_wakeup(BIT(BTN_PIN), ESP_GPIO_WAKEUP_GPIO_LOW);
-            gpio_set_level(LED_PIN, 0);
-            ESP_LOGI(TAG, "Entering deep sleep mode...\n");
-            vTaskDelay(pdMS_TO_TICKS(1000));
-            esp_deep_sleep_start();
+            //esp_deep_sleep_enable_gpio_wakeup(BIT(BTN_PIN), ESP_GPIO_WAKEUP_GPIO_LOW);
+            //gpio_set_level(LED_PIN, 0);
+            //ESP_LOGI(TAG, "Entering deep sleep mode...\n");
+            //vTaskDelay(pdMS_TO_TICKS(1000));
+            //esp_deep_sleep_start();
         }        
 
         // 페어링 모드 버튼 확인       
@@ -250,7 +256,7 @@ void app_main(void)
             int sw3 = gpio_get_level(SW3_PIN);
             int sw4 = gpio_get_level(SW4_PIN);
             int btn = gpio_get_level(BTN_PIN);
-            //ESP_LOGI(TAG, "SW_UP: %d SW_DN: %d SW_R: %d SW_L: %d btn:%d", sw1, sw2, sw3, sw4, btn);
+            ESP_LOGI(TAG, "SW_UP: %d SW_DN: %d SW_R: %d SW_L: %d btn:%d", sw1, sw2, sw3, sw4, btn);
 
             if ((!sw1) && (sw2) && (sw3) && (sw4))      // STICK UP
             {
@@ -258,6 +264,7 @@ void app_main(void)
                 _sendbuf[ID_SPD] = MOTOR_SPD;
                 _sendbuf[ID_DIR + 1] = CCW;
                 _sendbuf[ID_SPD + 1] = MOTOR_SPD;
+                //ESP_LOGI(TAG, "STICK UP!");
             }
             else if ((sw1) && (!sw2) && (sw3) && (sw4))  // STICK DOWN
             {
@@ -265,48 +272,55 @@ void app_main(void)
                 _sendbuf[ID_SPD] = MOTOR_SPD;
                 _sendbuf[ID_DIR + 1] = CW;
                 _sendbuf[ID_SPD + 1] = MOTOR_SPD;
+                //ESP_LOGI(TAG, "STICK DOWN!");
             }
             else if ((sw1) && (sw2) && (!sw3) && (sw4)) // STICK RIGHT
             {
-                _sendbuf[ID_DIR] = CCW;
-                _sendbuf[ID_SPD] = MOTOR_SPD;
-                _sendbuf[ID_DIR + 1] = CCW;
-                _sendbuf[ID_SPD + 1] = MOTOR_SPD;
+                _sendbuf[ID_DIR] = CW;
+                _sendbuf[ID_SPD] = MOTOR_SPD - 30;
+                _sendbuf[ID_DIR + 1] = CW;
+                _sendbuf[ID_SPD + 1] = MOTOR_SPD - 30;
+                //ESP_LOGI(TAG, "STICK RIGHT!");
             }
             else if ((sw1) && (sw2) && (sw3) && (!sw4)) // STICK LEFT
             {
-                _sendbuf[ID_DIR] = CW;
-                _sendbuf[ID_SPD] = MOTOR_SPD;
-                _sendbuf[ID_DIR + 1] = CW;
-                _sendbuf[ID_SPD + 1] = MOTOR_SPD;
+                _sendbuf[ID_DIR] = CCW;
+                _sendbuf[ID_SPD] = MOTOR_SPD - 30;
+                _sendbuf[ID_DIR + 1] = CCW;
+                _sendbuf[ID_SPD + 1] = MOTOR_SPD - 30;
+                //ESP_LOGI(TAG, "STICK LEFT!");
             }
             else if ((!sw1) && (sw2) && (sw3) && (!sw4)) // STICK UP-LEFT
-            {
-                _sendbuf[ID_DIR] = CW;
-                _sendbuf[ID_SPD] = MOTOR_SPD;
-                _sendbuf[ID_DIR + 1] = ORIGIN;
-                _sendbuf[ID_SPD + 1] = 0;
-            }
-            else if ((!sw1) && (sw2) && (!sw3) && (sw4)) // STICK UP-RIGHT
             {
                 _sendbuf[ID_DIR] = ORIGIN;
                 _sendbuf[ID_SPD] = 0;
                 _sendbuf[ID_DIR + 1] = CCW;
                 _sendbuf[ID_SPD + 1] = MOTOR_SPD;
+                //ESP_LOGI(TAG, "STICK UP-LEFT!");
+            }
+            else if ((!sw1) && (sw2) && (!sw3) && (sw4)) // STICK UP-RIGHT
+            {
+                _sendbuf[ID_DIR] = CW;
+                _sendbuf[ID_SPD] = MOTOR_SPD;
+                _sendbuf[ID_DIR + 1] = ORIGIN;
+                _sendbuf[ID_SPD + 1] = 0;
+                //ESP_LOGI(TAG, "STICK UP-RIGHT!");
             }
             else if ((sw1) && (!sw2) && (sw3) && (!sw4)) // STICK DOWN-LEFT
+            {
+                _sendbuf[ID_DIR] = ORIGIN;
+                _sendbuf[ID_SPD] = 0;
+                _sendbuf[ID_DIR + 1] = CW;
+                _sendbuf[ID_SPD + 1] = MOTOR_SPD;
+                ESP_LOGI(TAG, "STICK DOWN-LEFT!");
+            }
+            else if ((sw1) && (!sw2) && (!sw3) && (sw4)) // STICK DOWN-RIGHT
             {
                 _sendbuf[ID_DIR] = CCW;
                 _sendbuf[ID_SPD] = MOTOR_SPD;
                 _sendbuf[ID_DIR + 1] = ORIGIN;
                 _sendbuf[ID_SPD + 1] = 0;
-            }
-            else if ((sw1) && (!sw2) && (!sw3) && (sw4)) // STICK DOWN-LEFT
-            {
-                _sendbuf[ID_DIR] = 0;
-                _sendbuf[ID_SPD] = MOTOR_SPD;
-                _sendbuf[ID_DIR + 1] = CW;
-                _sendbuf[ID_SPD + 1] = MOTOR_SPD;
+                //ESP_LOGI(TAG, "STICK DOWN-RIGHT!");
             }
             else if ((sw1) && (sw2) && (sw3) && (sw4)) // STICK STOP
             {
@@ -314,6 +328,7 @@ void app_main(void)
                 _sendbuf[ID_SPD] = 0;
                 _sendbuf[ID_DIR + 1] = ORIGIN;
                 _sendbuf[ID_SPD + 1] = 0;
+                //ESP_LOGI(TAG, "STICK STOP!");
             } 
 
             if(btn == BTN_PRESS)  _sendbuf[ID_SOL] = 1;

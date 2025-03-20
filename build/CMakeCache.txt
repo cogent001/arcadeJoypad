@@ -160,7 +160,7 @@ CMAKE_INSTALL_MANDIR:PATH=
 CMAKE_INSTALL_OLDINCLUDEDIR:PATH=/usr/include
 
 //Install path prefix, prepended onto install directories.
-CMAKE_INSTALL_PREFIX:PATH=C:/Program Files (x86)/IQkey_remocon
+CMAKE_INSTALL_PREFIX:PATH=C:/Program Files (x86)/arcadeJoypad
 
 //Run-time variable data (LOCALSTATEDIR/run)
 CMAKE_INSTALL_RUNSTATEDIR:PATH=
@@ -309,15 +309,6 @@ IDF_TOOLCHAIN:STRING=gcc
 
 //Install mbed TLS headers.
 INSTALL_MBEDTLS_HEADERS:BOOL=ON
-
-//Value Computed by CMake
-IQkey_remocon_BINARY_DIR:STATIC=C:/espressif5.0/frameworks/arcadeJoypad/build
-
-//Value Computed by CMake
-IQkey_remocon_IS_TOP_LEVEL:STATIC=ON
-
-//Value Computed by CMake
-IQkey_remocon_SOURCE_DIR:STATIC=C:/espressif5.0/frameworks/arcadeJoypad
 
 //Explicitly link mbed TLS library to pthread.
 LINK_WITH_PTHREAD:BOOL=OFF
@@ -582,7 +573,7 @@ HAVE_TIME_T_SIZE:INTERNAL=TRUE
 //CHECK_TYPE_SIZE: sizeof(time_t)
 TIME_T_SIZE:INTERNAL=8
 //CMAKE_INSTALL_PREFIX during last run
-_GNUInstallDirs_LAST_CMAKE_INSTALL_PREFIX:INTERNAL=C:/Program Files (x86)/IQkey_remocon
+_GNUInstallDirs_LAST_CMAKE_INSTALL_PREFIX:INTERNAL=C:/Program Files (x86)/arcadeJoypad
 _Python3_EXECUTABLE:INTERNAL=C:/Espressif5.0/python_env/idf5.0_py3.11_env/Scripts/python.exe
 //Python3 Properties
 _Python3_INTERPRETER_PROPERTIES:INTERNAL=Python;3;11;2;32;;;C:\espressif5.0\tools\idf-python\3.11.2\Lib;C:\espressif5.0\tools\idf-python\3.11.2\Lib;C:\Espressif5.0\python_env\idf5.0_py3.11_env\Lib\site-packages;C:\Espressif5.0\python_env\idf5.0_py3.11_env\Lib\site-packages

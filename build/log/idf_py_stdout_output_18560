@@ -1,0 +1,44 @@
+-- Found Git: C:/Espressif/tools/idf-git/2.39.2/cmd/git.exe (found version "2.39.2.windows.1") 
+-- ccache will be used for faster recompilation
+-- The C compiler identification is GNU 11.2.0
+-- The CXX compiler identification is GNU 11.2.0
+-- The ASM compiler identification is GNU
+-- Found assembler: C:/espressif5.0/tools/riscv32-esp-elf/esp-2022r1-11.2.0/riscv32-esp-elf/bin/riscv32-esp-elf-gcc.exe
+-- Detecting C compiler ABI info
+-- Detecting C compiler ABI info - done
+-- Check for working C compiler: C:/espressif5.0/tools/riscv32-esp-elf/esp-2022r1-11.2.0/riscv32-esp-elf/bin/riscv32-esp-elf-gcc.exe - skipped
+-- Detecting C compile features
+-- Detecting C compile features - done
+-- Detecting CXX compiler ABI info
+-- Detecting CXX compiler ABI info - done
+-- Check for working CXX compiler: C:/espressif5.0/tools/riscv32-esp-elf/esp-2022r1-11.2.0/riscv32-esp-elf/bin/riscv32-esp-elf-g++.exe - skipped
+-- Detecting CXX compile features
+-- Detecting CXX compile features - done
+-- Building ESP-IDF components for target esp32c3
+-- Project sdkconfig file C:/espressif5.0/frameworks/arcadeJoypad/sdkconfig
+-- Looking for sys/types.h
+-- Looking for sys/types.h - found
+-- Looking for stdint.h
+-- Looking for stdint.h - found
+-- Looking for stddef.h
+-- Looking for stddef.h - found
+-- Check size of time_t
+-- Check size of time_t - done
+-- Found Python3: C:/Espressif5.0/python_env/idf5.0_py3.11_env/Scripts/python.exe (found version "3.11.2") found components: Interpreter 
+-- Performing Test C_COMPILER_SUPPORTS_WFORMAT_SIGNEDNESS
+-- Performing Test C_COMPILER_SUPPORTS_WFORMAT_SIGNEDNESS - Success
+-- App "arcadeJoypad" version: 72305d1-dirty
+-- Adding linker script C:/espressif5.0/frameworks/arcadeJoypad/build/esp-idf/esp_system/ld/memory.ld
+-- Adding linker script C:/espressif5.0/frameworks/esp-idf-v5.0.3/components/esp_system/ld/esp32c3/sections.ld.in
+-- Adding linker script C:/espressif5.0/frameworks/esp-idf-v5.0.3/components/esp_rom/esp32c3/ld/esp32c3.rom.ld
+-- Adding linker script C:/espressif5.0/frameworks/esp-idf-v5.0.3/components/esp_rom/esp32c3/ld/esp32c3.rom.api.ld
+-- Adding linker script C:/espressif5.0/frameworks/esp-idf-v5.0.3/components/esp_rom/esp32c3/ld/esp32c3.rom.libgcc.ld
+-- Adding linker script C:/espressif5.0/frameworks/esp-idf-v5.0.3/components/esp_rom/esp32c3/ld/esp32c3.rom.newlib.ld
+-- Adding linker script C:/espressif5.0/frameworks/esp-idf-v5.0.3/components/esp_rom/esp32c3/ld/esp32c3.rom.version.ld
+-- Adding linker script C:/espressif5.0/frameworks/esp-idf-v5.0.3/components/esp_rom/esp32c3/ld/esp32c3.rom.eco3.ld
+-- Adding linker script C:/espressif5.0/frameworks/esp-idf-v5.0.3/components/soc/esp32c3/ld/esp32c3.peripherals.ld
+-- Components: app_trace app_update bootloader bootloader_support bt cmock console cxx driver efuse esp-tls esp_adc esp_app_format esp_common esp_eth esp_event esp_gdbstub esp_hid esp_http_client esp_http_server esp_https_ota esp_https_server esp_hw_support esp_lcd esp_local_ctrl esp_netif esp_partition esp_phy esp_pm esp_psram esp_ringbuf esp_rom esp_system esp_timer esp_wifi espcoredump esptool_py fatfs freertos hal heap http_parser idf_test ieee802154 json log lwip main mbedtls mqtt newlib nvs_flash openthread partition_table protobuf-c protocomm pthread riscv sdmmc soc spi_flash spiffs tcp_transport ulp unity usb vfs wear_levelling wifi_provisioning wpa_supplicant
+-- Component paths: C:/espressif5.0/frameworks/esp-idf-v5.0.3/components/app_trace C:/espressif5.0/frameworks/esp-idf-v5.0.3/components/app_update C:/espressif5.0/frameworks/esp-idf-v5.0.3/components/bootloader C:/espressif5.0/frameworks/esp-idf-v5.0.3/components/bootloader_support C:/espressif5.0/frameworks/esp-idf-v5.0.3/components/bt C:/espressif5.0/frameworks/esp-idf-v5.0.3/components/cmock C:/espressif5.0/frameworks/esp-idf-v5.0.3/components/console C:/espressif5.0/frameworks/esp-idf-v5.0.3/components/cxx C:/espressif5.0/frameworks/esp-idf-v5.0.3/components/driver C:/espressif5.0/frameworks/esp-idf-v5.0.3/components/efuse C:/espressif5.0/frameworks/esp-idf-v5.0.3/components/esp-tls C:/espressif5.0/frameworks/esp-idf-v5.0.3/components/esp_adc C:/espressif5.0/frameworks/esp-idf-v5.0.3/components/esp_app_format C:/espressif5.0/frameworks/esp-idf-v5.0.3/components/esp_common C:/espressif5.0/frameworks/esp-idf-v5.0.3/components/esp_eth C:/espressif5.0/frameworks/esp-idf-v5.0.3/components/esp_event C:/espressif5.0/frameworks/esp-idf-v5.0.3/components/esp_gdbstub C:/espressif5.0/frameworks/esp-idf-v5.0.3/components/esp_hid C:/espressif5.0/frameworks/esp-idf-v5.0.3/components/esp_http_client C:/espressif5.0/frameworks/esp-idf-v5.0.3/components/esp_http_server C:/espressif5.0/frameworks/esp-idf-v5.0.3/components/esp_https_ota C:/espressif5.0/frameworks/esp-idf-v5.0.3/components/esp_https_server C:/espressif5.0/frameworks/esp-idf-v5.0.3/components/esp_hw_support C:/espressif5.0/frameworks/esp-idf-v5.0.3/components/esp_lcd C:/espressif5.0/frameworks/esp-idf-v5.0.3/components/esp_local_ctrl C:/espressif5.0/frameworks/esp-idf-v5.0.3/components/esp_netif C:/espressif5.0/frameworks/esp-idf-v5.0.3/components/esp_partition C:/espressif5.0/frameworks/esp-idf-v5.0.3/components/esp_phy C:/espressif5.0/frameworks/esp-idf-v5.0.3/components/esp_pm C:/espressif5.0/frameworks/esp-idf-v5.0.3/components/esp_psram C:/espressif5.0/frameworks/esp-idf-v5.0.3/components/esp_ringbuf C:/espressif5.0/frameworks/esp-idf-v5.0.3/components/esp_rom C:/espressif5.0/frameworks/esp-idf-v5.0.3/components/esp_system C:/espressif5.0/frameworks/esp-idf-v5.0.3/components/esp_timer C:/espressif5.0/frameworks/esp-idf-v5.0.3/components/esp_wifi C:/espressif5.0/frameworks/esp-idf-v5.0.3/components/espcoredump C:/espressif5.0/frameworks/esp-idf-v5.0.3/components/esptool_py C:/espressif5.0/frameworks/esp-idf-v5.0.3/components/fatfs C:/espressif5.0/frameworks/esp-idf-v5.0.3/components/freertos C:/espressif5.0/frameworks/esp-idf-v5.0.3/components/hal C:/espressif5.0/frameworks/esp-idf-v5.0.3/components/heap C:/espressif5.0/frameworks/esp-idf-v5.0.3/components/http_parser C:/espressif5.0/frameworks/esp-idf-v5.0.3/components/idf_test C:/espressif5.0/frameworks/esp-idf-v5.0.3/components/ieee802154 C:/espressif5.0/frameworks/esp-idf-v5.0.3/components/json C:/espressif5.0/frameworks/esp-idf-v5.0.3/components/log C:/espressif5.0/frameworks/esp-idf-v5.0.3/components/lwip C:/espressif5.0/frameworks/arcadeJoypad/main C:/espressif5.0/frameworks/esp-idf-v5.0.3/components/mbedtls C:/espressif5.0/frameworks/esp-idf-v5.0.3/components/mqtt C:/espressif5.0/frameworks/esp-idf-v5.0.3/components/newlib C:/espressif5.0/frameworks/esp-idf-v5.0.3/components/nvs_flash C:/espressif5.0/frameworks/esp-idf-v5.0.3/components/openthread C:/espressif5.0/frameworks/esp-idf-v5.0.3/components/partition_table C:/espressif5.0/frameworks/esp-idf-v5.0.3/components/protobuf-c C:/espressif5.0/frameworks/esp-idf-v5.0.3/components/protocomm C:/espressif5.0/frameworks/esp-idf-v5.0.3/components/pthread C:/espressif5.0/frameworks/esp-idf-v5.0.3/components/riscv C:/espressif5.0/frameworks/esp-idf-v5.0.3/components/sdmmc C:/espressif5.0/frameworks/esp-idf-v5.0.3/components/soc C:/espressif5.0/frameworks/esp-idf-v5.0.3/components/spi_flash C:/espressif5.0/frameworks/esp-idf-v5.0.3/components/spiffs C:/espressif5.0/frameworks/esp-idf-v5.0.3/components/tcp_transport C:/espressif5.0/frameworks/esp-idf-v5.0.3/components/ulp C:/espressif5.0/frameworks/esp-idf-v5.0.3/components/unity C:/espressif5.0/frameworks/esp-idf-v5.0.3/components/usb C:/espressif5.0/frameworks/esp-idf-v5.0.3/components/vfs C:/espressif5.0/frameworks/esp-idf-v5.0.3/components/wear_levelling C:/espressif5.0/frameworks/esp-idf-v5.0.3/components/wifi_provisioning C:/espressif5.0/frameworks/esp-idf-v5.0.3/components/wpa_supplicant
+-- Configuring done
+-- Generating done
+-- Build files have been written to: C:/espressif5.0/frameworks/arcadeJoypad/build
