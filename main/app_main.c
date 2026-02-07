@@ -49,7 +49,8 @@
 #define LED_WHITE             4
 #define ROBOT_OFF             0
 
-#define MOTOR_SPD               200     
+#define MOTOR_SPD               230
+#define SPD_OFFSET              100     
 
 static const char *TAG = "arcade Joypad";
 
@@ -200,7 +201,8 @@ void app_main(void)
     memset(_sendbuf, 0, PACKET_LENGTH);    
     _sendbuf[ID_START1] =   0x54;
     _sendbuf[ID_START2] =   0x55;
-    _sendbuf[ID_INFO]   =   LED_RED;
+    //_sendbuf[ID_INFO]   =   LED_YELLOW; //JOYSTICK1
+    _sendbuf[ID_INFO] = LED_RED;    //JOYSTICK2
     _sendbuf[ID_LEN]    =   5;
     _sendbuf[ID_FROM]   =   0;
     _sendbuf[ID_TO]     =   0;
@@ -256,7 +258,7 @@ void app_main(void)
             int sw3 = gpio_get_level(SW3_PIN);
             int sw4 = gpio_get_level(SW4_PIN);
             int btn = gpio_get_level(BTN_PIN);
-            ESP_LOGI(TAG, "SW_UP: %d SW_DN: %d SW_R: %d SW_L: %d btn:%d", sw1, sw2, sw3, sw4, btn);
+            //ESP_LOGI(TAG, "SW_UP: %d SW_DN: %d SW_R: %d SW_L: %d btn:%d", sw1, sw2, sw3, sw4, btn);
 
             if ((!sw1) && (sw2) && (sw3) && (sw4))      // STICK UP
             {
@@ -265,6 +267,13 @@ void app_main(void)
                 _sendbuf[ID_DIR + 1] = CCW;
                 _sendbuf[ID_SPD + 1] = MOTOR_SPD;
                 //ESP_LOGI(TAG, "STICK UP!");
+
+                //for reverse mode
+                //_sendbuf[ID_DIR] = CCW;
+                //_sendbuf[ID_SPD] = MOTOR_SPD;
+                //_sendbuf[ID_DIR + 1] = CW;
+                //_sendbuf[ID_SPD + 1] = MOTOR_SPD;
+                //ESP_LOGI(TAG, "STICK DOWN!");
             }
             else if ((sw1) && (!sw2) && (sw3) && (sw4))  // STICK DOWN
             {
@@ -273,54 +282,127 @@ void app_main(void)
                 _sendbuf[ID_DIR + 1] = CW;
                 _sendbuf[ID_SPD + 1] = MOTOR_SPD;
                 //ESP_LOGI(TAG, "STICK DOWN!");
+
+                //for reverse mode
+                //_sendbuf[ID_DIR] = CW;
+                //_sendbuf[ID_SPD] = MOTOR_SPD;
+                //_sendbuf[ID_DIR + 1] = CCW;
+                //_sendbuf[ID_SPD + 1] = MOTOR_SPD;
+                //ESP_LOGI(TAG, "STICK UP!");
             }
             else if ((sw1) && (sw2) && (!sw3) && (sw4)) // STICK RIGHT
             {
                 _sendbuf[ID_DIR] = CW;
-                _sendbuf[ID_SPD] = MOTOR_SPD - 30;
+                _sendbuf[ID_SPD] = MOTOR_SPD - SPD_OFFSET;
                 _sendbuf[ID_DIR + 1] = CW;
-                _sendbuf[ID_SPD + 1] = MOTOR_SPD - 30;
+                _sendbuf[ID_SPD + 1] = MOTOR_SPD - SPD_OFFSET;
                 //ESP_LOGI(TAG, "STICK RIGHT!");
+
+                //for reverse mode
+                //_sendbuf[ID_DIR] = CCW;
+                //_sendbuf[ID_SPD] = MOTOR_SPD - SPD_OFFSET;
+                //_sendbuf[ID_DIR + 1] = CCW;
+                //_sendbuf[ID_SPD + 1] = MOTOR_SPD - SPD_OFFSET;
+                //ESP_LOGI(TAG, "STICK LEFT!");
             }
             else if ((sw1) && (sw2) && (sw3) && (!sw4)) // STICK LEFT
             {
                 _sendbuf[ID_DIR] = CCW;
-                _sendbuf[ID_SPD] = MOTOR_SPD - 30;
+                _sendbuf[ID_SPD] = MOTOR_SPD - SPD_OFFSET;
                 _sendbuf[ID_DIR + 1] = CCW;
-                _sendbuf[ID_SPD + 1] = MOTOR_SPD - 30;
+                _sendbuf[ID_SPD + 1] = MOTOR_SPD - SPD_OFFSET;
                 //ESP_LOGI(TAG, "STICK LEFT!");
+
+                //for reverse mode
+                //_sendbuf[ID_DIR] = CW;
+                //_sendbuf[ID_SPD] = MOTOR_SPD - SPD_OFFSET;
+                //_sendbuf[ID_DIR + 1] = CW;
+                //_sendbuf[ID_SPD + 1] = MOTOR_SPD - SPD_OFFSET;
+                //ESP_LOGI(TAG, "STICK RIGHT!");
             }
             else if ((!sw1) && (sw2) && (sw3) && (!sw4)) // STICK UP-LEFT
             {
-                _sendbuf[ID_DIR] = ORIGIN;
-                _sendbuf[ID_SPD] = 0;
+                //_sendbuf[ID_DIR] = ORIGIN;
+                //_sendbuf[ID_SPD] = 0;
+                //_sendbuf[ID_DIR + 1] = CCW;
+                //_sendbuf[ID_SPD + 1] = MOTOR_SPD;
+                //ESP_LOGI(TAG, "STICK UP-LEFT!");
+                
+                _sendbuf[ID_DIR] = CW;
+                _sendbuf[ID_SPD] = MOTOR_SPD;
                 _sendbuf[ID_DIR + 1] = CCW;
                 _sendbuf[ID_SPD + 1] = MOTOR_SPD;
-                //ESP_LOGI(TAG, "STICK UP-LEFT!");
+                //ESP_LOGI(TAG, "STICK UP!");
+
+                // for reverse mode
+                //_sendbuf[ID_DIR] = CCW;
+                //_sendbuf[ID_SPD] = MOTOR_SPD;
+                //_sendbuf[ID_DIR + 1] = CW;
+                //_sendbuf[ID_SPD + 1] = MOTOR_SPD;
+                //ESP_LOGI(TAG, "STICK DOWN!");                
             }
             else if ((!sw1) && (sw2) && (!sw3) && (sw4)) // STICK UP-RIGHT
             {
+                //_sendbuf[ID_DIR] = CW;
+                //_sendbuf[ID_SPD] = MOTOR_SPD;
+                //_sendbuf[ID_DIR + 1] = ORIGIN;
+                //_sendbuf[ID_SPD + 1] = 0;
+                //ESP_LOGI(TAG, "STICK UP-RIGHT!");
+
                 _sendbuf[ID_DIR] = CW;
                 _sendbuf[ID_SPD] = MOTOR_SPD;
-                _sendbuf[ID_DIR + 1] = ORIGIN;
-                _sendbuf[ID_SPD + 1] = 0;
-                //ESP_LOGI(TAG, "STICK UP-RIGHT!");
+                _sendbuf[ID_DIR + 1] = CCW;
+                _sendbuf[ID_SPD + 1] = MOTOR_SPD;
+                //ESP_LOGI(TAG, "STICK UP!");
+
+                // for reverse mode
+                //_sendbuf[ID_DIR] = CCW;
+                //_sendbuf[ID_SPD] = MOTOR_SPD;
+                //_sendbuf[ID_DIR + 1] = CW;
+                //_sendbuf[ID_SPD + 1] = MOTOR_SPD;
+                //ESP_LOGI(TAG, "STICK DOWN!");
             }
             else if ((sw1) && (!sw2) && (sw3) && (!sw4)) // STICK DOWN-LEFT
             {
-                _sendbuf[ID_DIR] = ORIGIN;
-                _sendbuf[ID_SPD] = 0;
+                //_sendbuf[ID_DIR] = ORIGIN;
+                //_sendbuf[ID_SPD] = 0;
+                //_sendbuf[ID_DIR + 1] = CW;
+                //_sendbuf[ID_SPD + 1] = MOTOR_SPD;
+                //ESP_LOGI(TAG, "STICK DOWN-LEFT!");
+                
+                _sendbuf[ID_DIR] = CCW;
+                _sendbuf[ID_SPD] = MOTOR_SPD;
                 _sendbuf[ID_DIR + 1] = CW;
                 _sendbuf[ID_SPD + 1] = MOTOR_SPD;
-                ESP_LOGI(TAG, "STICK DOWN-LEFT!");
+                //ESP_LOGI(TAG, "STICK DOWN!");
+
+                // for reverse mode
+                //_sendbuf[ID_DIR] = CW;
+                //_sendbuf[ID_SPD] = MOTOR_SPD;
+                //_sendbuf[ID_DIR + 1] = CCW;
+                //_sendbuf[ID_SPD + 1] = MOTOR_SPD;
+                //ESP_LOGI(TAG, "STICK UP!");
             }
             else if ((sw1) && (!sw2) && (!sw3) && (sw4)) // STICK DOWN-RIGHT
             {
+                //_sendbuf[ID_DIR] = CCW;
+                //_sendbuf[ID_SPD] = MOTOR_SPD;
+                //_sendbuf[ID_DIR + 1] = ORIGIN;
+                //_sendbuf[ID_SPD + 1] = 0;
+                //ESP_LOGI(TAG, "STICK DOWN-RIGHT!");
+                
                 _sendbuf[ID_DIR] = CCW;
                 _sendbuf[ID_SPD] = MOTOR_SPD;
-                _sendbuf[ID_DIR + 1] = ORIGIN;
-                _sendbuf[ID_SPD + 1] = 0;
-                //ESP_LOGI(TAG, "STICK DOWN-RIGHT!");
+                _sendbuf[ID_DIR + 1] = CW;
+                _sendbuf[ID_SPD + 1] = MOTOR_SPD;
+                //ESP_LOGI(TAG, "STICK DOWN!");
+
+                // for reverse mode
+                //_sendbuf[ID_DIR] = CW;
+                //_sendbuf[ID_SPD] = MOTOR_SPD;
+                //_sendbuf[ID_DIR + 1] = CCW;
+                //_sendbuf[ID_SPD + 1] = MOTOR_SPD;
+                //ESP_LOGI(TAG, "STICK UP!");
             }
             else if ((sw1) && (sw2) && (sw3) && (sw4)) // STICK STOP
             {
@@ -336,6 +418,12 @@ void app_main(void)
             
             if (gCount >= SEND_PACKET_TERM)
             {            
+               // ESP_LOGI(TAG,
+               //          "_sendbuf: %02X %02X %02X %02X %02X %02X %02X %02X %02X %02X %02X %02X %02X",
+               //          (uint8_t)_sendbuf[0], (uint8_t)_sendbuf[1], (uint8_t)_sendbuf[2], (uint8_t)_sendbuf[3],
+               //          (uint8_t)_sendbuf[4], (uint8_t)_sendbuf[5], (uint8_t)_sendbuf[6], (uint8_t)_sendbuf[7],
+               //          (uint8_t)_sendbuf[8], (uint8_t)_sendbuf[9], (uint8_t)_sendbuf[10], (uint8_t)_sendbuf[11],
+               //          (uint8_t)_sendbuf[12]);
                 gCount = 0;
                 memcpy(sPacket.msg, _sendbuf, PACKET_LENGTH); //컨트롤러 패킷을 복사  - 그렇지 않으면 엔트리 패킷 반영
                 sPacket.rxBytes = PACKET_LENGTH;

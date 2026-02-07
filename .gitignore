@@ -1,0 +1,23 @@
+# Build directory
+build/
+
+# SDK config backup
+sdkconfig.old
+
+# Dependencies lock file
+dependencies.lock
+
+# Managed components
+managed_components/
+
+# Python cache
+__pycache__/
+*.pyc
+
+# IDE
+.vscode/
+.idea/
+
+# OS
+.DS_Store
+Thumbs.db
