@@ -42,9 +42,10 @@ static void sent_cb(const uint8_t *mac_addr, esp_now_send_status_t status)
     // xEventGroupSetBits(s_evt_group, BIT(status));
 }
 
-static void recv_cb(const uint8_t *mac_addr, const uint8_t *data, int len)
+static void recv_cb(const esp_now_recv_info_t *recv_info, const uint8_t *data, int len)
 {
     static resp_packet_t respPacket;
+    const uint8_t *mac_addr = recv_info->src_addr;
 
     //ESP_LOGI(TAG, "%d bytes incoming from " MACSTR, len, MAC2STR(mac_addr));
 
