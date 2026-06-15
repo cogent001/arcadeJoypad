@@ -50,10 +50,15 @@
 
 
 #define INFO_SENSOR     1
+#define INFO_BROAD      2
 #define INFO_ADVERTISE  0xE2
 #define INFO_ACK        0xE3
 #define DEV_RECEIVER    0
 #define DEV_REMOCON     1
+#define DEV_SCORE_MANAGER 2
+#define DEV_ALL         2
+#define GAME_START      1
+#define GAME_STOP       2
 #define STAT_READY      0
 #define STAT_PROCESS    1
 
@@ -63,7 +68,7 @@
 #define MAC_CH_NUMBER       7
 #define MAC_NUMBER          6
 #define USED_CHANNEL        0
-#define DEFAULT_CHANNEL     1
+#define DEFAULT_CHANNEL     13
 #define BROADCAST_CHANNEL   13
 
 #define APP_APPLICATION_MODE     1

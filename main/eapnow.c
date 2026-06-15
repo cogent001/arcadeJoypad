@@ -31,6 +31,26 @@ static TaskHandle_t xSendHandle = NULL;
 static int _espnowStat = ESP_TASK_READY;
 static uint8_t myMAC[7];
 
+static bool is_broadcast_mac(const uint8_t *mac)
+{
+    for (int i = 0; i < MAC_NUMBER; i++)
+    {
+        if (mac[i] != 0xFF)
+            return false;
+    }
+    return true;
+}
+
+static bool is_zero_mac(const uint8_t *mac)
+{
+    for (int i = 0; i < MAC_NUMBER; i++)
+    {
+        if (mac[i] != 0x00)
+            return false;
+    }
+    return true;
+}
+
 static void sent_cb(const uint8_t *mac_addr, esp_now_send_status_t status)
 {
     if (mac_addr == NULL)
@@ -103,7 +123,11 @@ static void send_process_task(void *arg) // send packet to IQKey_receiver
 
         //ESP_LOGI(TAG, "recv_task: %s", sPacket.msg);
 
-        esp_err_t err = esp_now_send(destination_mac, (uint8_t *)&sPacket.msg, sPacket.rxBytes);
+        const uint8_t *target_mac = destination_mac;
+        if (!is_zero_mac(sPacket.mac_addr) && esp_now_is_peer_exist(sPacket.mac_addr))
+            target_mac = sPacket.mac_addr;
+
+        esp_err_t err = esp_now_send(target_mac, (uint8_t *)&sPacket.msg, sPacket.rxBytes);
         if (err != ESP_OK)
         {
             //ESP_LOGE(TAG, "Send error (%d)", err);
@@ -129,7 +153,7 @@ void init_espnow_slave(unsigned int _mac[MAC_CH_NUMBER])
 {     
     //memcpy(myMAC, (uint8_t)_mac, MAC_CH_NUMBER);
     //uint8_t _ch = myMAC[6];
-    uint8_t _ch = _mac[6];
+    uint8_t _ch = (_mac[6] == USED_CHANNEL) ? DEFAULT_CHANNEL : _mac[6];
     myMAC[0] = (uint8_t)_mac[0];
     myMAC[1] = (uint8_t)_mac[1];
     myMAC[2] = (uint8_t)_mac[2];
@@ -156,22 +180,20 @@ void init_espnow_slave(unsigned int _mac[MAC_CH_NUMBER])
     ESP_ERROR_CHECK(esp_now_register_send_cb(sent_cb));
     ESP_ERROR_CHECK(esp_now_set_pmk((const uint8_t *)MY_ESPNOW_PMK));
 
-    if (_ch == BROADCAST_CHANNEL)
+    esp_now_peer_info_t broadcastMac = {0};
+    const uint8_t broadcast_addr[] = BROADCAST_MAC;
+
+    memcpy(broadcastMac.peer_addr, broadcast_addr, MAC_NUMBER);
+    broadcastMac.channel = _ch;
+    broadcastMac.ifidx = MY_ESPNOW_WIFI_IF;
+    broadcastMac.encrypt = false;
+    ESP_ERROR_CHECK(esp_now_add_peer(&broadcastMac));
+
+    if (!is_broadcast_mac(myMAC))
     {
-        const esp_now_peer_info_t pairingMac = 
-        {
-            .peer_addr = BROADCAST_MAC,
-            .channel = _ch,
-            .ifidx = MY_ESPNOW_WIFI_IF,
-            .encrypt = false
-        };
-        ESP_ERROR_CHECK(esp_now_add_peer(&pairingMac));
-    }
-    else
-    {
-        esp_now_peer_info_t destinationMac;
+        esp_now_peer_info_t destinationMac = {0};
         
-        memcpy(destinationMac.peer_addr, myMAC, 6);
+        memcpy(destinationMac.peer_addr, myMAC, MAC_NUMBER);
         destinationMac.channel = _ch;
         destinationMac.ifidx = MY_ESPNOW_WIFI_IF;
         destinationMac.encrypt = false;

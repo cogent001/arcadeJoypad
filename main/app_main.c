@@ -173,6 +173,69 @@ void shutdown_handler(void)
     printf("System is shutting down!\n");
 }
 
+static void fill_broadcast_event_packet(resp_packet_t *packet, uint8_t event)
+{
+    memset(packet, 0, sizeof(resp_packet_t));
+    memset(packet->mac_addr, 0xFF, MAC_NUMBER);
+    memcpy(packet->msg, usbTxPacket.msg, RECV_PACKET_LENGTH);
+    packet->msg[ID_INFO] = INFO_BROAD;
+    packet->msg[ID_FROM] = DEV_REMOCON;
+    packet->msg[ID_TO] = DEV_ALL;
+    packet->msg[ID_SEN] = event;
+    packet->rxBytes = RECV_PACKET_LENGTH;
+}
+
+static void send_game_start_broadcast(void)
+{
+    resp_packet_t broadPacket;
+    fill_broadcast_event_packet(&broadPacket, GAME_START);
+
+    ESP_LOGI(TAG, "GAME START BROADCAST SEND START!");
+    for (int k = 0; k < 3; k++)
+    {
+        BaseType_t result = xQueueSend(xQueueESPnowSend, &broadPacket, portMAX_DELAY);
+        if (result == pdTRUE)
+            ESP_LOGI(TAG, "GAME START BROADCAST SEND %d/3 OK!", k + 1);
+        else
+            ESP_LOGE(TAG, "GAME START BROADCAST SEND %d/3 FAIL!", k + 1);
+        vTaskDelay(pdMS_TO_TICKS(100));
+    }
+}
+
+static bool is_game_stop_packet(const resp_packet_t *packet)
+{
+    return packet->rxBytes >= RECV_PACKET_LENGTH &&
+           packet->msg[ID_START1] == 0x54 &&
+           packet->msg[ID_START2] == 0x55 &&
+           packet->msg[ID_INFO] == INFO_BROAD &&
+           packet->msg[ID_FROM] == DEV_SCORE_MANAGER &&
+           packet->msg[ID_TO] == DEV_ALL &&
+           packet->msg[ID_SEN] == GAME_STOP;
+}
+
+static void stop_robot_and_reset(void)
+{
+    resp_packet_t stopPacket;
+
+    memset(&stopPacket, 0, sizeof(stopPacket));
+    memcpy(stopPacket.msg, _sendbuf, PACKET_LENGTH);
+    stopPacket.msg[ID_DIR] = ORIGIN;
+    stopPacket.msg[ID_SPD] = 0;
+    stopPacket.msg[ID_DIR + 1] = ORIGIN;
+    stopPacket.msg[ID_SPD + 1] = 0;
+    stopPacket.msg[ID_SOL] = 0;
+    stopPacket.rxBytes = PACKET_LENGTH;
+
+    for (int k = 0; k < 3; k++)
+    {
+        xQueueSend(xQueueESPnowSend, &stopPacket, portMAX_DELAY);
+        vTaskDelay(pdMS_TO_TICKS(100));
+    }
+
+    vTaskDelay(pdMS_TO_TICKS(5000));
+    esp_restart();
+}
+
 void app_main(void)
 {
     ESP_LOGI(TAG, "ARCADE JOYPAD START!");
@@ -223,7 +286,7 @@ void app_main(void)
     init_spiffs();
 
     unsigned int _mode[1] = {APP_APPLICATION_MODE};
-    unsigned int destMAC[7] = {0xA0, 0xA0, 0xA0, 0xA0, 0xA0, 0xA0, 1}; // for example
+    unsigned int destMAC[7] = {0xA0, 0xA0, 0xA0, 0xA0, 0xA0, 0xA0, DEFAULT_CHANNEL}; // for example
     unsigned int broadMAC[7] = {0xFF, 0xFF, 0xFF, 0xFF, 0xFF, 0xFF, BROADCAST_CHANNEL};
 
     // run first time..
@@ -361,6 +424,14 @@ void app_main(void)
             int sw3 = 0;
             int sw4 = 0;
             int btn = gpio_get_level(BTN_PIN);
+            static int prevBtn = BTN_RELEASE;
+            static bool gameStartSent = false;
+
+            if (_stat == pdTRUE && is_game_stop_packet(&rPacket))
+            {
+                ESP_LOGI(TAG, "GAME STOP!");
+                stop_robot_and_reset();
+            }
 
             if (val4 < 100)
                 sw2 = 0; // joysitck UP
@@ -475,9 +546,25 @@ void app_main(void)
             }
 
             if (btn == BTN_PRESS)
+            {
                 _sendbuf[ID_SOL] = 1;
+                if (prevBtn != BTN_PRESS)
+                {
+                    ESP_LOGI(TAG, "BUTTON PRESS!");
+                    if (gameStartSent == false)
+                    {
+                        send_game_start_broadcast();
+                        gameStartSent = true;
+                    }
+                }
+            }
             else
+            {
                 _sendbuf[ID_SOL] = 0;
+                if (prevBtn != BTN_RELEASE)
+                    ESP_LOGI(TAG, "BUTTON RELEASE!");
+            }
+            prevBtn = btn;
 
             if (gCount >= SEND_PACKET_TERM)
             {
