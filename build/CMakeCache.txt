@@ -559,7 +559,7 @@ C_COMPILER_SUPPORTS_WFORMAT_SIGNEDNESS:INTERNAL=1
 //Details about finding Git
 FIND_PACKAGE_MESSAGE_DETAILS_Git:INTERNAL=[C:/Espressif/tools/idf-git/2.39.2/cmd/git.exe][v2.39.2.windows.1()]
 //Details about finding Python3
-FIND_PACKAGE_MESSAGE_DETAILS_Python3:INTERNAL=[C:/Espressif5.0/python_env/idf5.0_py3.11_env/Scripts/python.exe][cfound components: Interpreter ][v3.11.2()]
+FIND_PACKAGE_MESSAGE_DETAILS_Python3:INTERNAL=[C:/espressif5.0/python_env/idf5.0_py3.11_env/Scripts/python.exe][cfound components: Interpreter ][v3.11.2()]
 //ADVANCED property for variable: GIT_EXECUTABLE
 GIT_EXECUTABLE-ADVANCED:INTERNAL=1
 //Have include stddef.h
@@ -574,8 +574,8 @@ HAVE_TIME_T_SIZE:INTERNAL=TRUE
 TIME_T_SIZE:INTERNAL=8
 //CMAKE_INSTALL_PREFIX during last run
 _GNUInstallDirs_LAST_CMAKE_INSTALL_PREFIX:INTERNAL=C:/Program Files (x86)/arcadeJoypad
-_Python3_EXECUTABLE:INTERNAL=C:/Espressif5.0/python_env/idf5.0_py3.11_env/Scripts/python.exe
+_Python3_EXECUTABLE:INTERNAL=C:/espressif5.0/python_env/idf5.0_py3.11_env/Scripts/python.exe
 //Python3 Properties
-_Python3_INTERPRETER_PROPERTIES:INTERNAL=Python;3;11;2;32;;;C:\espressif5.0\tools\idf-python\3.11.2\Lib;C:\espressif5.0\tools\idf-python\3.11.2\Lib;C:\Espressif5.0\python_env\idf5.0_py3.11_env\Lib\site-packages;C:\Espressif5.0\python_env\idf5.0_py3.11_env\Lib\site-packages
-_Python3_INTERPRETER_SIGNATURE:INTERNAL=fa5710cd9f9f28fcccc82e6a4d92dd15
+_Python3_INTERPRETER_PROPERTIES:INTERNAL=Python;3;11;2;32;;;C:\espressif5.0\tools\idf-python\3.11.2\Lib;C:\espressif5.0\tools\idf-python\3.11.2\Lib;C:\espressif5.0\python_env\idf5.0_py3.11_env\Lib\site-packages;C:\espressif5.0\python_env\idf5.0_py3.11_env\Lib\site-packages
+_Python3_INTERPRETER_SIGNATURE:INTERNAL=1ba0b25b1bbe0568e57b0040f2320e7e
 

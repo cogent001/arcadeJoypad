@@ -177,7 +177,7 @@ build rebuild_cache: phony CMakeFiles/rebuild_cache.util
 # Custom command for CMakeFiles\menuconfig
 
 build CMakeFiles/menuconfig | ${cmake_ninja_workdir}CMakeFiles/menuconfig: CUSTOM_COMMAND
-  COMMAND = cmd.exe /C "cd /D C:\espressif5.0\frameworks\arcadeJoypad\build\bootloader && C:\Espressif5.0\python_env\idf5.0_py3.11_env\Scripts\python.exe C:/espressif5.0/frameworks/esp-idf-v5.0.3/tools/kconfig_new/prepare_kconfig_files.py --list-separator=semicolon --env-file C:/espressif5.0/frameworks/arcadeJoypad/build/bootloader/config.env && C:\Espressif5.0\python_env\idf5.0_py3.11_env\Scripts\python.exe C:/espressif5.0/frameworks/esp-idf-v5.0.3/tools/kconfig_new/confgen.py --list-separator=semicolon --kconfig C:/espressif5.0/frameworks/esp-idf-v5.0.3/Kconfig --sdkconfig-rename C:/espressif5.0/frameworks/esp-idf-v5.0.3/sdkconfig.rename --config C:/espressif5.0/frameworks/arcadeJoypad/sdkconfig --env-file C:/espressif5.0/frameworks/arcadeJoypad/build/bootloader/config.env --env IDF_TARGET=esp32c3 --env IDF_ENV_FPGA= --dont-write-deprecated --output config C:/espressif5.0/frameworks/arcadeJoypad/sdkconfig && C:\Espressif5.0\python_env\idf5.0_py3.11_env\Scripts\python.exe C:/espressif5.0/frameworks/esp-idf-v5.0.3/tools/check_term.py && C:\espressif5.0\tools\cmake\3.24.0\bin\cmake.exe -E env COMPONENT_KCONFIGS_SOURCE_FILE=C:/espressif5.0/frameworks/arcadeJoypad/build/bootloader/kconfigs.in COMPONENT_KCONFIGS_PROJBUILD_SOURCE_FILE=C:/espressif5.0/frameworks/arcadeJoypad/build/bootloader/kconfigs_projbuild.in KCONFIG_CONFIG=C:/espressif5.0/frameworks/arcadeJoypad/sdkconfig IDF_TARGET=esp32c3 IDF_ENV_FPGA= C:/Espressif5.0/python_env/idf5.0_py3.11_env/Scripts/python.exe -m menuconfig C:/espressif5.0/frameworks/esp-idf-v5.0.3/Kconfig && C:\Espressif5.0\python_env\idf5.0_py3.11_env\Scripts\python.exe C:/espressif5.0/frameworks/esp-idf-v5.0.3/tools/kconfig_new/confgen.py --list-separator=semicolon --kconfig C:/espressif5.0/frameworks/esp-idf-v5.0.3/Kconfig --sdkconfig-rename C:/espressif5.0/frameworks/esp-idf-v5.0.3/sdkconfig.rename --config C:/espressif5.0/frameworks/arcadeJoypad/sdkconfig --env-file C:/espressif5.0/frameworks/arcadeJoypad/build/bootloader/config.env --env IDF_TARGET=esp32c3 --env IDF_ENV_FPGA= --output config C:/espressif5.0/frameworks/arcadeJoypad/sdkconfig"
+  COMMAND = cmd.exe /C "cd /D C:\espressif5.0\frameworks\arcadeJoypad\build\bootloader && C:\espressif5.0\python_env\idf5.0_py3.11_env\Scripts\python.exe C:/espressif5.0/frameworks/esp-idf-v5.0.3/tools/kconfig_new/prepare_kconfig_files.py --list-separator=semicolon --env-file C:/espressif5.0/frameworks/arcadeJoypad/build/bootloader/config.env && C:\espressif5.0\python_env\idf5.0_py3.11_env\Scripts\python.exe C:/espressif5.0/frameworks/esp-idf-v5.0.3/tools/kconfig_new/confgen.py --list-separator=semicolon --kconfig C:/espressif5.0/frameworks/esp-idf-v5.0.3/Kconfig --sdkconfig-rename C:/espressif5.0/frameworks/esp-idf-v5.0.3/sdkconfig.rename --config C:/espressif5.0/frameworks/arcadeJoypad/sdkconfig --env-file C:/espressif5.0/frameworks/arcadeJoypad/build/bootloader/config.env --env IDF_TARGET=esp32c3 --env IDF_ENV_FPGA= --dont-write-deprecated --output config C:/espressif5.0/frameworks/arcadeJoypad/sdkconfig && C:\espressif5.0\python_env\idf5.0_py3.11_env\Scripts\python.exe C:/espressif5.0/frameworks/esp-idf-v5.0.3/tools/check_term.py && C:\espressif5.0\tools\cmake\3.24.0\bin\cmake.exe -E env COMPONENT_KCONFIGS_SOURCE_FILE=C:/espressif5.0/frameworks/arcadeJoypad/build/bootloader/kconfigs.in COMPONENT_KCONFIGS_PROJBUILD_SOURCE_FILE=C:/espressif5.0/frameworks/arcadeJoypad/build/bootloader/kconfigs_projbuild.in KCONFIG_CONFIG=C:/espressif5.0/frameworks/arcadeJoypad/sdkconfig IDF_TARGET=esp32c3 IDF_ENV_FPGA= C:/espressif5.0/python_env/idf5.0_py3.11_env/Scripts/python.exe -m menuconfig C:/espressif5.0/frameworks/esp-idf-v5.0.3/Kconfig && C:\espressif5.0\python_env\idf5.0_py3.11_env\Scripts\python.exe C:/espressif5.0/frameworks/esp-idf-v5.0.3/tools/kconfig_new/confgen.py --list-separator=semicolon --kconfig C:/espressif5.0/frameworks/esp-idf-v5.0.3/Kconfig --sdkconfig-rename C:/espressif5.0/frameworks/esp-idf-v5.0.3/sdkconfig.rename --config C:/espressif5.0/frameworks/arcadeJoypad/sdkconfig --env-file C:/espressif5.0/frameworks/arcadeJoypad/build/bootloader/config.env --env IDF_TARGET=esp32c3 --env IDF_ENV_FPGA= --output config C:/espressif5.0/frameworks/arcadeJoypad/sdkconfig"
   pool = console
 
 
@@ -185,7 +185,7 @@ build CMakeFiles/menuconfig | ${cmake_ninja_workdir}CMakeFiles/menuconfig: CUSTO
 # Custom command for CMakeFiles\confserver
 
 build CMakeFiles/confserver | ${cmake_ninja_workdir}CMakeFiles/confserver: CUSTOM_COMMAND
-  COMMAND = cmd.exe /C "cd /D C:\espressif5.0\frameworks\arcadeJoypad\build\bootloader && C:\Espressif5.0\python_env\idf5.0_py3.11_env\Scripts\python.exe C:/espressif5.0/frameworks/esp-idf-v5.0.3/tools/kconfig_new/prepare_kconfig_files.py --list-separator=semicolon --env-file C:/espressif5.0/frameworks/arcadeJoypad/build/bootloader/config.env && C:\Espressif5.0\python_env\idf5.0_py3.11_env\Scripts\python.exe C:/espressif5.0/frameworks/esp-idf-v5.0.3/tools/kconfig_new/confserver.py --env-file C:/espressif5.0/frameworks/arcadeJoypad/build/bootloader/config.env --kconfig C:/espressif5.0/frameworks/esp-idf-v5.0.3/Kconfig --sdkconfig-rename C:/espressif5.0/frameworks/esp-idf-v5.0.3/sdkconfig.rename --config C:/espressif5.0/frameworks/arcadeJoypad/sdkconfig"
+  COMMAND = cmd.exe /C "cd /D C:\espressif5.0\frameworks\arcadeJoypad\build\bootloader && C:\espressif5.0\python_env\idf5.0_py3.11_env\Scripts\python.exe C:/espressif5.0/frameworks/esp-idf-v5.0.3/tools/kconfig_new/prepare_kconfig_files.py --list-separator=semicolon --env-file C:/espressif5.0/frameworks/arcadeJoypad/build/bootloader/config.env && C:\espressif5.0\python_env\idf5.0_py3.11_env\Scripts\python.exe C:/espressif5.0/frameworks/esp-idf-v5.0.3/tools/kconfig_new/confserver.py --env-file C:/espressif5.0/frameworks/arcadeJoypad/build/bootloader/config.env --kconfig C:/espressif5.0/frameworks/esp-idf-v5.0.3/Kconfig --sdkconfig-rename C:/espressif5.0/frameworks/esp-idf-v5.0.3/sdkconfig.rename --config C:/espressif5.0/frameworks/arcadeJoypad/sdkconfig"
   pool = console
 
 
@@ -193,7 +193,7 @@ build CMakeFiles/confserver | ${cmake_ninja_workdir}CMakeFiles/confserver: CUSTO
 # Custom command for CMakeFiles\save-defconfig
 
 build CMakeFiles/save-defconfig | ${cmake_ninja_workdir}CMakeFiles/save-defconfig: CUSTOM_COMMAND
-  COMMAND = cmd.exe /C "cd /D C:\espressif5.0\frameworks\arcadeJoypad\build\bootloader && C:\Espressif5.0\python_env\idf5.0_py3.11_env\Scripts\python.exe C:/espressif5.0/frameworks/esp-idf-v5.0.3/tools/kconfig_new/prepare_kconfig_files.py --list-separator=semicolon --env-file C:/espressif5.0/frameworks/arcadeJoypad/build/bootloader/config.env && C:\Espressif5.0\python_env\idf5.0_py3.11_env\Scripts\python.exe C:/espressif5.0/frameworks/esp-idf-v5.0.3/tools/kconfig_new/confgen.py --list-separator=semicolon --kconfig C:/espressif5.0/frameworks/esp-idf-v5.0.3/Kconfig --sdkconfig-rename C:/espressif5.0/frameworks/esp-idf-v5.0.3/sdkconfig.rename --config C:/espressif5.0/frameworks/arcadeJoypad/sdkconfig --env-file C:/espressif5.0/frameworks/arcadeJoypad/build/bootloader/config.env --dont-write-deprecated --output savedefconfig C:/espressif5.0/frameworks/esp-idf-v5.0.3/components/bootloader/subproject/sdkconfig.defaults"
+  COMMAND = cmd.exe /C "cd /D C:\espressif5.0\frameworks\arcadeJoypad\build\bootloader && C:\espressif5.0\python_env\idf5.0_py3.11_env\Scripts\python.exe C:/espressif5.0/frameworks/esp-idf-v5.0.3/tools/kconfig_new/prepare_kconfig_files.py --list-separator=semicolon --env-file C:/espressif5.0/frameworks/arcadeJoypad/build/bootloader/config.env && C:\espressif5.0\python_env\idf5.0_py3.11_env\Scripts\python.exe C:/espressif5.0/frameworks/esp-idf-v5.0.3/tools/kconfig_new/confgen.py --list-separator=semicolon --kconfig C:/espressif5.0/frameworks/esp-idf-v5.0.3/Kconfig --sdkconfig-rename C:/espressif5.0/frameworks/esp-idf-v5.0.3/sdkconfig.rename --config C:/espressif5.0/frameworks/arcadeJoypad/sdkconfig --env-file C:/espressif5.0/frameworks/arcadeJoypad/build/bootloader/config.env --dont-write-deprecated --output savedefconfig C:/espressif5.0/frameworks/esp-idf-v5.0.3/components/bootloader/subproject/sdkconfig.defaults"
   pool = console
 
 
@@ -207,7 +207,7 @@ build CMakeFiles/gen_project_binary | ${cmake_ninja_workdir}CMakeFiles/gen_proje
 # Custom command for .bin_timestamp
 
 build .bin_timestamp | ${cmake_ninja_workdir}.bin_timestamp: CUSTOM_COMMAND bootloader.elf || _project_elf_src bootloader.elf esp-idf/bootloader_support/libbootloader_support.a esp-idf/efuse/libefuse.a esp-idf/esp_app_format/libesp_app_format.a esp-idf/esp_common/libesp_common.a esp-idf/esp_hw_support/libesp_hw_support.a esp-idf/esp_rom/libesp_rom.a esp-idf/esp_system/libesp_system.a esp-idf/hal/libhal.a esp-idf/log/liblog.a esp-idf/main/libmain.a esp-idf/micro-ecc/libmicro-ecc.a esp-idf/soc/libsoc.a
-  COMMAND = cmd.exe /C "cd /D C:\espressif5.0\frameworks\arcadeJoypad\build\bootloader && C:\Espressif5.0\python_env\idf5.0_py3.11_env\Scripts\python.exe C:/espressif5.0/frameworks/esp-idf-v5.0.3/components/esptool_py/esptool/esptool.py --chip esp32c3 elf2image --flash_mode dio --flash_freq 80m --flash_size 4MB --min-rev 3 --min-rev-full 3 --max-rev-full 99 -o C:/espressif5.0/frameworks/arcadeJoypad/build/bootloader/bootloader.bin C:/espressif5.0/frameworks/arcadeJoypad/build/bootloader/bootloader.elf && C:\espressif5.0\tools\cmake\3.24.0\bin\cmake.exe -E echo "Generated C:/espressif5.0/frameworks/arcadeJoypad/build/bootloader/bootloader.bin" && C:\espressif5.0\tools\cmake\3.24.0\bin\cmake.exe -E md5sum C:/espressif5.0/frameworks/arcadeJoypad/build/bootloader/bootloader.bin > C:/espressif5.0/frameworks/arcadeJoypad/build/bootloader/.bin_timestamp"
+  COMMAND = cmd.exe /C "cd /D C:\espressif5.0\frameworks\arcadeJoypad\build\bootloader && C:\espressif5.0\python_env\idf5.0_py3.11_env\Scripts\python.exe C:/espressif5.0/frameworks/esp-idf-v5.0.3/components/esptool_py/esptool/esptool.py --chip esp32c3 elf2image --flash_mode dio --flash_freq 80m --flash_size 4MB --min-rev 3 --min-rev-full 3 --max-rev-full 99 -o C:/espressif5.0/frameworks/arcadeJoypad/build/bootloader/bootloader.bin C:/espressif5.0/frameworks/arcadeJoypad/build/bootloader/bootloader.elf && C:\espressif5.0\tools\cmake\3.24.0\bin\cmake.exe -E echo "Generated C:/espressif5.0/frameworks/arcadeJoypad/build/bootloader/bootloader.bin" && C:\espressif5.0\tools\cmake\3.24.0\bin\cmake.exe -E md5sum C:/espressif5.0/frameworks/arcadeJoypad/build/bootloader/bootloader.bin > C:/espressif5.0/frameworks/arcadeJoypad/build/bootloader/.bin_timestamp"
   DESC = Generating binary image from built executable
   restat = 1
 
@@ -222,7 +222,7 @@ build CMakeFiles/app | ${cmake_ninja_workdir}CMakeFiles/app: phony || _project_e
 # Custom command for CMakeFiles\erase_flash
 
 build CMakeFiles/erase_flash | ${cmake_ninja_workdir}CMakeFiles/erase_flash: CUSTOM_COMMAND
-  COMMAND = cmd.exe /C "cd /D C:\espressif5.0\frameworks\esp-idf-v5.0.3\components\esptool_py && C:\espressif5.0\tools\cmake\3.24.0\bin\cmake.exe -D IDF_PATH=C:/espressif5.0/frameworks/esp-idf-v5.0.3 -D SERIAL_TOOL=C:/Espressif5.0/python_env/idf5.0_py3.11_env/Scripts/python.exe;;C:/espressif5.0/frameworks/esp-idf-v5.0.3/components/esptool_py/esptool/esptool.py;--chip;esp32c3 -D SERIAL_TOOL_ARGS=erase_flash -P run_serial_tool.cmake"
+  COMMAND = cmd.exe /C "cd /D C:\espressif5.0\frameworks\esp-idf-v5.0.3\components\esptool_py && C:\espressif5.0\tools\cmake\3.24.0\bin\cmake.exe -D IDF_PATH=C:/espressif5.0/frameworks/esp-idf-v5.0.3 -D SERIAL_TOOL=C:/espressif5.0/python_env/idf5.0_py3.11_env/Scripts/python.exe;;C:/espressif5.0/frameworks/esp-idf-v5.0.3/components/esptool_py/esptool/esptool.py;--chip;esp32c3 -D SERIAL_TOOL_ARGS=erase_flash -P run_serial_tool.cmake"
   pool = console
 
 
@@ -230,7 +230,7 @@ build CMakeFiles/erase_flash | ${cmake_ninja_workdir}CMakeFiles/erase_flash: CUS
 # Custom command for CMakeFiles\monitor
 
 build CMakeFiles/monitor | ${cmake_ninja_workdir}CMakeFiles/monitor: CUSTOM_COMMAND
-  COMMAND = cmd.exe /C "cd /D C:\espressif5.0\frameworks\esp-idf-v5.0.3\components\esptool_py && C:\espressif5.0\tools\cmake\3.24.0\bin\cmake.exe -D IDF_PATH=C:/espressif5.0/frameworks/esp-idf-v5.0.3 -D SERIAL_TOOL=C:/Espressif5.0/python_env/idf5.0_py3.11_env/Scripts/python.exe;C:/espressif5.0/frameworks/esp-idf-v5.0.3/tools/idf_monitor.py -D SERIAL_TOOL_ARGS=--target;esp32c3;--revision;3;C:/espressif5.0/frameworks/arcadeJoypad/build/bootloader/bootloader.elf -D WORKING_DIRECTORY=C:/espressif5.0/frameworks/arcadeJoypad/build/bootloader -P run_serial_tool.cmake"
+  COMMAND = cmd.exe /C "cd /D C:\espressif5.0\frameworks\esp-idf-v5.0.3\components\esptool_py && C:\espressif5.0\tools\cmake\3.24.0\bin\cmake.exe -D IDF_PATH=C:/espressif5.0/frameworks/esp-idf-v5.0.3 -D SERIAL_TOOL=C:/espressif5.0/python_env/idf5.0_py3.11_env/Scripts/python.exe;C:/espressif5.0/frameworks/esp-idf-v5.0.3/tools/idf_monitor.py -D SERIAL_TOOL_ARGS=--target;esp32c3;--revision;3;C:/espressif5.0/frameworks/arcadeJoypad/build/bootloader/bootloader.elf -D WORKING_DIRECTORY=C:/espressif5.0/frameworks/arcadeJoypad/build/bootloader -P run_serial_tool.cmake"
   pool = console
 
 
@@ -253,28 +253,28 @@ build project_elf_src_esp32c3.c | ${cmake_ninja_workdir}project_elf_src_esp32c3.
 # Custom command for CMakeFiles\size
 
 build CMakeFiles/size | ${cmake_ninja_workdir}CMakeFiles/size: CUSTOM_COMMAND bootloader.map
-  COMMAND = cmd.exe /C "cd /D C:\espressif5.0\frameworks\arcadeJoypad\build\bootloader && C:\Espressif5.0\python_env\idf5.0_py3.11_env\Scripts\python.exe C:/espressif5.0/frameworks/esp-idf-v5.0.3/tools/idf_size.py C:/espressif5.0/frameworks/arcadeJoypad/build/bootloader/bootloader.map"
+  COMMAND = cmd.exe /C "cd /D C:\espressif5.0\frameworks\arcadeJoypad\build\bootloader && C:\espressif5.0\python_env\idf5.0_py3.11_env\Scripts\python.exe C:/espressif5.0/frameworks/esp-idf-v5.0.3/tools/idf_size.py C:/espressif5.0/frameworks/arcadeJoypad/build/bootloader/bootloader.map"
 
 
 #############################################
 # Custom command for CMakeFiles\size-files
 
 build CMakeFiles/size-files | ${cmake_ninja_workdir}CMakeFiles/size-files: CUSTOM_COMMAND bootloader.map
-  COMMAND = cmd.exe /C "cd /D C:\espressif5.0\frameworks\arcadeJoypad\build\bootloader && C:\Espressif5.0\python_env\idf5.0_py3.11_env\Scripts\python.exe C:/espressif5.0/frameworks/esp-idf-v5.0.3/tools/idf_size.py --files C:/espressif5.0/frameworks/arcadeJoypad/build/bootloader/bootloader.map"
+  COMMAND = cmd.exe /C "cd /D C:\espressif5.0\frameworks\arcadeJoypad\build\bootloader && C:\espressif5.0\python_env\idf5.0_py3.11_env\Scripts\python.exe C:/espressif5.0/frameworks/esp-idf-v5.0.3/tools/idf_size.py --files C:/espressif5.0/frameworks/arcadeJoypad/build/bootloader/bootloader.map"
 
 
 #############################################
 # Custom command for CMakeFiles\size-components
 
 build CMakeFiles/size-components | ${cmake_ninja_workdir}CMakeFiles/size-components: CUSTOM_COMMAND bootloader.map
-  COMMAND = cmd.exe /C "cd /D C:\espressif5.0\frameworks\arcadeJoypad\build\bootloader && C:\Espressif5.0\python_env\idf5.0_py3.11_env\Scripts\python.exe C:/espressif5.0/frameworks/esp-idf-v5.0.3/tools/idf_size.py --archives C:/espressif5.0/frameworks/arcadeJoypad/build/bootloader/bootloader.map"
+  COMMAND = cmd.exe /C "cd /D C:\espressif5.0\frameworks\arcadeJoypad\build\bootloader && C:\espressif5.0\python_env\idf5.0_py3.11_env\Scripts\python.exe C:/espressif5.0/frameworks/esp-idf-v5.0.3/tools/idf_size.py --archives C:/espressif5.0/frameworks/arcadeJoypad/build/bootloader/bootloader.map"
 
 
 #############################################
 # Custom command for CMakeFiles\uf2-app
 
 build CMakeFiles/uf2-app | ${cmake_ninja_workdir}CMakeFiles/uf2-app: CUSTOM_COMMAND || _project_elf_src bootloader.elf esp-idf/bootloader_support/libbootloader_support.a esp-idf/efuse/libefuse.a esp-idf/esp_app_format/libesp_app_format.a esp-idf/esp_common/libesp_common.a esp-idf/esp_hw_support/libesp_hw_support.a esp-idf/esp_rom/libesp_rom.a esp-idf/esp_system/libesp_system.a esp-idf/hal/libhal.a esp-idf/log/liblog.a esp-idf/main/libmain.a esp-idf/micro-ecc/libmicro-ecc.a esp-idf/soc/libsoc.a gen_project_binary
-  COMMAND = cmd.exe /C "cd /D C:\espressif5.0\frameworks\arcadeJoypad\build\bootloader && C:\Espressif5.0\python_env\idf5.0_py3.11_env\Scripts\python.exe C:/espressif5.0/frameworks/esp-idf-v5.0.3/tools/mkuf2.py write -o C:/espressif5.0/frameworks/arcadeJoypad/build/bootloader/uf2-app.bin --json C:/espressif5.0/frameworks/arcadeJoypad/build/bootloader/flasher_args.json --chip-id 0xd42ba06c --bin app"
+  COMMAND = cmd.exe /C "cd /D C:\espressif5.0\frameworks\arcadeJoypad\build\bootloader && C:\espressif5.0\python_env\idf5.0_py3.11_env\Scripts\python.exe C:/espressif5.0/frameworks/esp-idf-v5.0.3/tools/mkuf2.py write -o C:/espressif5.0/frameworks/arcadeJoypad/build/bootloader/uf2-app.bin --json C:/espressif5.0/frameworks/arcadeJoypad/build/bootloader/flasher_args.json --chip-id 0xd42ba06c --bin app"
   pool = console
 
 
@@ -282,7 +282,7 @@ build CMakeFiles/uf2-app | ${cmake_ninja_workdir}CMakeFiles/uf2-app: CUSTOM_COMM
 # Custom command for CMakeFiles\uf2
 
 build CMakeFiles/uf2 | ${cmake_ninja_workdir}CMakeFiles/uf2: CUSTOM_COMMAND bootloader || _project_elf_src bootloader.elf esp-idf/bootloader_support/libbootloader_support.a esp-idf/efuse/libefuse.a esp-idf/esp_app_format/libesp_app_format.a esp-idf/esp_common/libesp_common.a esp-idf/esp_hw_support/libesp_hw_support.a esp-idf/esp_rom/libesp_rom.a esp-idf/esp_system/libesp_system.a esp-idf/hal/libhal.a esp-idf/log/liblog.a esp-idf/main/libmain.a esp-idf/micro-ecc/libmicro-ecc.a esp-idf/soc/libsoc.a gen_project_binary
-  COMMAND = cmd.exe /C "cd /D C:\espressif5.0\frameworks\arcadeJoypad\build\bootloader && C:\Espressif5.0\python_env\idf5.0_py3.11_env\Scripts\python.exe C:/espressif5.0/frameworks/esp-idf-v5.0.3/tools/mkuf2.py write -o C:/espressif5.0/frameworks/arcadeJoypad/build/bootloader/uf2.bin --json C:/espressif5.0/frameworks/arcadeJoypad/build/bootloader/flasher_args.json --chip-id 0xd42ba06c"
+  COMMAND = cmd.exe /C "cd /D C:\espressif5.0\frameworks\arcadeJoypad\build\bootloader && C:\espressif5.0\python_env\idf5.0_py3.11_env\Scripts\python.exe C:/espressif5.0/frameworks/esp-idf-v5.0.3/tools/mkuf2.py write -o C:/espressif5.0/frameworks/arcadeJoypad/build/bootloader/uf2.bin --json C:/espressif5.0/frameworks/arcadeJoypad/build/bootloader/flasher_args.json --chip-id 0xd42ba06c"
   pool = console
 
 # =============================================================================
@@ -1241,7 +1241,7 @@ build esp-idf/efuse/rebuild_cache: phony esp-idf/efuse/CMakeFiles/rebuild_cache.
 # Custom command for esp-idf\efuse\CMakeFiles\efuse-common-table
 
 build esp-idf/efuse/CMakeFiles/efuse-common-table | ${cmake_ninja_workdir}esp-idf/efuse/CMakeFiles/efuse-common-table: CUSTOM_COMMAND
-  COMMAND = cmd.exe /C "cd /D C:\espressif5.0\frameworks\arcadeJoypad\build\bootloader\esp-idf\efuse && C:\Espressif5.0\python_env\idf5.0_py3.11_env\Scripts\python.exe C:/espressif5.0/frameworks/esp-idf-v5.0.3/components/efuse/efuse_table_gen.py C:/espressif5.0/frameworks/esp-idf-v5.0.3/components/efuse/esp32c3/esp_efuse_table.csv -t esp32c3 --max_blk_len 256"
+  COMMAND = cmd.exe /C "cd /D C:\espressif5.0\frameworks\arcadeJoypad\build\bootloader\esp-idf\efuse && C:\espressif5.0\python_env\idf5.0_py3.11_env\Scripts\python.exe C:/espressif5.0/frameworks/esp-idf-v5.0.3/components/efuse/efuse_table_gen.py C:/espressif5.0/frameworks/esp-idf-v5.0.3/components/efuse/esp32c3/esp_efuse_table.csv -t esp32c3 --max_blk_len 256"
 
 
 #############################################
@@ -1264,7 +1264,7 @@ build esp-idf/efuse/CMakeFiles/efuse_custom_table | ${cmake_ninja_workdir}esp-id
 # Custom command for esp-idf\efuse\CMakeFiles\show-efuse-table
 
 build esp-idf/efuse/CMakeFiles/show-efuse-table | ${cmake_ninja_workdir}esp-idf/efuse/CMakeFiles/show-efuse-table: CUSTOM_COMMAND
-  COMMAND = cmd.exe /C "cd /D C:\espressif5.0\frameworks\arcadeJoypad\build\bootloader\esp-idf\efuse && C:\Espressif5.0\python_env\idf5.0_py3.11_env\Scripts\python.exe C:/espressif5.0/frameworks/esp-idf-v5.0.3/components/efuse/efuse_table_gen.py C:/espressif5.0/frameworks/esp-idf-v5.0.3/components/efuse/esp32c3/esp_efuse_table.csv -t esp32c3 --max_blk_len 256 --info"
+  COMMAND = cmd.exe /C "cd /D C:\espressif5.0\frameworks\arcadeJoypad\build\bootloader\esp-idf\efuse && C:\espressif5.0\python_env\idf5.0_py3.11_env\Scripts\python.exe C:/espressif5.0/frameworks/esp-idf-v5.0.3/components/efuse/efuse_table_gen.py C:/espressif5.0/frameworks/esp-idf-v5.0.3/components/efuse/esp32c3/esp_efuse_table.csv -t esp32c3 --max_blk_len 256 --info"
 
 
 #############################################
@@ -1279,7 +1279,7 @@ build esp-idf/efuse/CMakeFiles/show_efuse_table | ${cmake_ninja_workdir}esp-idf/
 # Custom command for esp-idf\efuse\CMakeFiles\efuse_test_table
 
 build esp-idf/efuse/CMakeFiles/efuse_test_table | ${cmake_ninja_workdir}esp-idf/efuse/CMakeFiles/efuse_test_table: CUSTOM_COMMAND
-  COMMAND = cmd.exe /C "cd /D C:\espressif5.0\frameworks\arcadeJoypad\build\bootloader\esp-idf\efuse && C:\Espressif5.0\python_env\idf5.0_py3.11_env\Scripts\python.exe C:/espressif5.0/frameworks/esp-idf-v5.0.3/components/efuse/efuse_table_gen.py C:/espressif5.0/frameworks/esp-idf-v5.0.3/components/efuse/test/esp_efuse_test_table.csv -t esp32c3 --max_blk_len 256"
+  COMMAND = cmd.exe /C "cd /D C:\espressif5.0\frameworks\arcadeJoypad\build\bootloader\esp-idf\efuse && C:\espressif5.0\python_env\idf5.0_py3.11_env\Scripts\python.exe C:/espressif5.0/frameworks/esp-idf-v5.0.3/components/efuse/efuse_table_gen.py C:/espressif5.0/frameworks/esp-idf-v5.0.3/components/efuse/test/esp_efuse_test_table.csv -t esp32c3 --max_blk_len 256"
 
 # =============================================================================
 # Write statements declared in CMakeLists.txt:
@@ -1788,7 +1788,7 @@ build esp-idf/esptool_py/rebuild_cache: phony esp-idf/esptool_py/CMakeFiles/rebu
 # Custom command for esp-idf\esptool_py\CMakeFiles\bootloader_check_size
 
 build esp-idf/esptool_py/CMakeFiles/bootloader_check_size | ${cmake_ninja_workdir}esp-idf/esptool_py/CMakeFiles/bootloader_check_size: CUSTOM_COMMAND || _project_elf_src bootloader.elf esp-idf/bootloader_support/libbootloader_support.a esp-idf/efuse/libefuse.a esp-idf/esp_app_format/libesp_app_format.a esp-idf/esp_common/libesp_common.a esp-idf/esp_hw_support/libesp_hw_support.a esp-idf/esp_rom/libesp_rom.a esp-idf/esp_system/libesp_system.a esp-idf/hal/libhal.a esp-idf/log/liblog.a esp-idf/main/libmain.a esp-idf/micro-ecc/libmicro-ecc.a esp-idf/soc/libsoc.a gen_project_binary
-  COMMAND = cmd.exe /C "cd /D C:\espressif5.0\frameworks\arcadeJoypad\build\bootloader\esp-idf\esptool_py && C:\Espressif5.0\python_env\idf5.0_py3.11_env\Scripts\python.exe C:/espressif5.0/frameworks/esp-idf-v5.0.3/components/partition_table/check_sizes.py --offset 0x8000 bootloader 0x0 C:/espressif5.0/frameworks/arcadeJoypad/build/bootloader/bootloader.bin"
+  COMMAND = cmd.exe /C "cd /D C:\espressif5.0\frameworks\arcadeJoypad\build\bootloader\esp-idf\esptool_py && C:\espressif5.0\python_env\idf5.0_py3.11_env\Scripts\python.exe C:/espressif5.0/frameworks/esp-idf-v5.0.3/components/partition_table/check_sizes.py --offset 0x8000 bootloader 0x0 C:/espressif5.0/frameworks/arcadeJoypad/build/bootloader/bootloader.bin"
 
 # =============================================================================
 # Write statements declared in CMakeLists.txt:
