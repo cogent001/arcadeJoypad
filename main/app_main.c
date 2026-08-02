@@ -54,6 +54,10 @@
 
 #define MOTOR_SPD 230
 #define SPD_OFFSET 100
+#define DIFF_OFFSET             50      // 직진/후진시 좌우 모터 하드웨어 편차 보정값
+#define MOTOR_SPD_MIN           0
+#define MOTOR_SPD_MAX           255
+#define CLAMP_SPD(x)            ((x) > MOTOR_SPD_MAX ? MOTOR_SPD_MAX : ((x) < MOTOR_SPD_MIN ? MOTOR_SPD_MIN : (x)))
 
 static const char *TAG = "arcade Joypad";
 
@@ -455,17 +459,17 @@ void app_main(void)
             if ((!sw1) && (sw2) && (sw3) && (sw4)) // STICK UP
             {
                 _sendbuf[ID_DIR] = CW;
-                _sendbuf[ID_SPD] = MOTOR_SPD;
+                _sendbuf[ID_SPD] = CLAMP_SPD(MOTOR_SPD + DIFF_OFFSET); // 하드웨어 편차 보정
                 _sendbuf[ID_DIR + 1] = CCW;
-                _sendbuf[ID_SPD + 1] = MOTOR_SPD;
+                _sendbuf[ID_SPD + 1] = CLAMP_SPD(MOTOR_SPD - DIFF_OFFSET); // 하드웨어 편차 보정
                 ESP_LOGI(TAG, "STICK UP!");
             }
             else if ((sw1) && (!sw2) && (sw3) && (sw4)) // STICK DOWN
             {
                 _sendbuf[ID_DIR] = CCW;
-                _sendbuf[ID_SPD] = MOTOR_SPD;
+                _sendbuf[ID_SPD] = CLAMP_SPD(MOTOR_SPD + DIFF_OFFSET); // 하드웨어 편차 보정
                 _sendbuf[ID_DIR + 1] = CW;
-                _sendbuf[ID_SPD + 1] = MOTOR_SPD;
+                _sendbuf[ID_SPD + 1] = CLAMP_SPD(MOTOR_SPD - DIFF_OFFSET); // 하드웨어 편차 보정
                 ESP_LOGI(TAG, "STICK DOWN!");
             }
             else if ((sw1) && (sw2) && (!sw3) && (sw4)) // STICK RIGHT
@@ -486,55 +490,55 @@ void app_main(void)
             }
             else if ((!sw1) && (sw2) && (sw3) && (!sw4)) // STICK UP-LEFT
             {
-                //_sendbuf[ID_DIR] = ORIGIN;
-                //_sendbuf[ID_SPD] = 0;
+                // 이전에 사용하던 코드 (직진과 동일 처리)
+                //_sendbuf[ID_DIR] = CW;
+                //_sendbuf[ID_SPD] = MOTOR_SPD;
                 //_sendbuf[ID_DIR + 1] = CCW;
                 //_sendbuf[ID_SPD + 1] = MOTOR_SPD;
-                // ESP_LOGI(TAG, "STICK UP-LEFT!");
-                _sendbuf[ID_DIR] = CW;
-                _sendbuf[ID_SPD] = MOTOR_SPD;
-                _sendbuf[ID_DIR + 1] = CCW;
-                _sendbuf[ID_SPD + 1] = MOTOR_SPD;
-                ESP_LOGI(TAG, "STICK UP!");
+
+                _sendbuf[ID_DIR] = ORIGIN;  // 대각선 입력 무시 - 신호 없음
+                _sendbuf[ID_SPD] = 0;
+                _sendbuf[ID_DIR + 1] = ORIGIN;
+                _sendbuf[ID_SPD + 1] = 0;
             }
             else if ((!sw1) && (sw2) && (!sw3) && (sw4)) // STICK UP-RIGHT
             {
+                // 이전에 사용하던 코드 (직진과 동일 처리)
                 //_sendbuf[ID_DIR] = CW;
                 //_sendbuf[ID_SPD] = MOTOR_SPD;
-                //_sendbuf[ID_DIR + 1] = ORIGIN;
-                //_sendbuf[ID_SPD + 1] = 0;
-                // ESP_LOGI(TAG, "STICK UP-RIGHT!");
-                _sendbuf[ID_DIR] = CW;
-                _sendbuf[ID_SPD] = MOTOR_SPD;
-                _sendbuf[ID_DIR + 1] = CCW;
-                _sendbuf[ID_SPD + 1] = MOTOR_SPD;
-                ESP_LOGI(TAG, "STICK UP!");
+                //_sendbuf[ID_DIR + 1] = CCW;
+                //_sendbuf[ID_SPD + 1] = MOTOR_SPD;
+
+                _sendbuf[ID_DIR] = ORIGIN;  // 대각선 입력 무시 - 신호 없음
+                _sendbuf[ID_SPD] = 0;
+                _sendbuf[ID_DIR + 1] = ORIGIN;
+                _sendbuf[ID_SPD + 1] = 0;
             }
             else if ((sw1) && (!sw2) && (sw3) && (!sw4)) // STICK DOWN-LEFT
             {
-                //_sendbuf[ID_DIR] = ORIGIN;
-                //_sendbuf[ID_SPD] = 0;
+                // 이전에 사용하던 코드 (후진과 동일 처리)
+                //_sendbuf[ID_DIR] = CCW;
+                //_sendbuf[ID_SPD] = MOTOR_SPD;
                 //_sendbuf[ID_DIR + 1] = CW;
                 //_sendbuf[ID_SPD + 1] = MOTOR_SPD;
-                // ESP_LOGI(TAG, "STICK DOWN-LEFT!");
-                _sendbuf[ID_DIR] = CCW;
-                _sendbuf[ID_SPD] = MOTOR_SPD;
-                _sendbuf[ID_DIR + 1] = CW;
-                _sendbuf[ID_SPD + 1] = MOTOR_SPD;
-                ESP_LOGI(TAG, "STICK DOWN!");
+
+                _sendbuf[ID_DIR] = ORIGIN;  // 대각선 입력 무시 - 신호 없음
+                _sendbuf[ID_SPD] = 0;
+                _sendbuf[ID_DIR + 1] = ORIGIN;
+                _sendbuf[ID_SPD + 1] = 0;
             }
             else if ((sw1) && (!sw2) && (!sw3) && (sw4)) // STICK DOWN-RIGHT
             {
+                // 이전에 사용하던 코드 (후진과 동일 처리)
                 //_sendbuf[ID_DIR] = CCW;
                 //_sendbuf[ID_SPD] = MOTOR_SPD;
-                //_sendbuf[ID_DIR + 1] = ORIGIN;
-                //_sendbuf[ID_SPD + 1] = 0;
-                // ESP_LOGI(TAG, "STICK DOWN-RIGHT!");
-                _sendbuf[ID_DIR] = CCW;
-                _sendbuf[ID_SPD] = MOTOR_SPD;
-                _sendbuf[ID_DIR + 1] = CW;
-                _sendbuf[ID_SPD + 1] = MOTOR_SPD;
-                ESP_LOGI(TAG, "STICK DOWN!");
+                //_sendbuf[ID_DIR + 1] = CW;
+                //_sendbuf[ID_SPD + 1] = MOTOR_SPD;
+
+                _sendbuf[ID_DIR] = ORIGIN;  // 대각선 입력 무시 - 신호 없음
+                _sendbuf[ID_SPD] = 0;
+                _sendbuf[ID_DIR + 1] = ORIGIN;
+                _sendbuf[ID_SPD + 1] = 0;
             }
             else if ((sw1) && (sw2) && (sw3) && (sw4)) // STICK STOP
             {
