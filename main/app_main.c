@@ -15,8 +15,7 @@
 #include "esp_timer.h"
 #include "esp_mac.h"
 #include "esp_sleep.h"
-
-// #include "app_main.h"
+#include "app_main.h"
 
 #define PACKET_LENGTH       13   //ENTRY PACKET
 #define ACK_PACKET_LENGTH   18
@@ -55,6 +54,53 @@
 #define MOTOR_SPD_MIN           0
 #define MOTOR_SPD_MAX           255
 #define CLAMP_SPD(x)            ((x) > MOTOR_SPD_MAX ? MOTOR_SPD_MAX : ((x) < MOTOR_SPD_MIN ? MOTOR_SPD_MIN : (x)))
+
+#if ENABLE_STICK_STATUS_LOG
+typedef enum
+{
+    STICK_STATE_STOP,
+    STICK_STATE_UP,
+    STICK_STATE_DOWN,
+    STICK_STATE_RIGHT,
+    STICK_STATE_LEFT,
+    STICK_STATE_UP_LEFT,
+    STICK_STATE_UP_RIGHT,
+    STICK_STATE_DOWN_LEFT,
+    STICK_STATE_DOWN_RIGHT,
+    STICK_STATE_INVALID
+} stick_state_t;
+
+static const char *stick_state_to_string(stick_state_t state)
+{
+    switch (state)
+    {
+        case STICK_STATE_STOP:       return "STOP";
+        case STICK_STATE_UP:         return "UP";
+        case STICK_STATE_DOWN:       return "DOWN";
+        case STICK_STATE_RIGHT:      return "RIGHT";
+        case STICK_STATE_LEFT:       return "LEFT";
+        case STICK_STATE_UP_LEFT:    return "UP-LEFT";
+        case STICK_STATE_UP_RIGHT:   return "UP-RIGHT";
+        case STICK_STATE_DOWN_LEFT:  return "DOWN-LEFT";
+        case STICK_STATE_DOWN_RIGHT: return "DOWN-RIGHT";
+        default:                     return "INVALID";
+    }
+}
+
+static stick_state_t get_stick_state(int sw1, int sw2, int sw3, int sw4)
+{
+    if ((!sw1) && (sw2) && (sw3) && (sw4)) return STICK_STATE_UP;
+    if ((sw1) && (!sw2) && (sw3) && (sw4)) return STICK_STATE_DOWN;
+    if ((sw1) && (sw2) && (!sw3) && (sw4)) return STICK_STATE_RIGHT;
+    if ((sw1) && (sw2) && (sw3) && (!sw4)) return STICK_STATE_LEFT;
+    if ((!sw1) && (sw2) && (sw3) && (!sw4)) return STICK_STATE_UP_LEFT;
+    if ((!sw1) && (sw2) && (!sw3) && (sw4)) return STICK_STATE_UP_RIGHT;
+    if ((sw1) && (!sw2) && (sw3) && (!sw4)) return STICK_STATE_DOWN_LEFT;
+    if ((sw1) && (!sw2) && (!sw3) && (sw4)) return STICK_STATE_DOWN_RIGHT;
+    if ((sw1) && (sw2) && (sw3) && (sw4)) return STICK_STATE_STOP;
+    return STICK_STATE_INVALID;
+}
+#endif
 
 static const char *TAG = "arcade Joypad";
 
@@ -151,6 +197,9 @@ void app_main(void)
    
     static bool firstPress = false;
     static int prevBtn = BTN_RELEASE;
+#if ENABLE_STICK_STATUS_LOG
+    static stick_state_t prevStickState = STICK_STATE_STOP;
+#endif
 
     //buf = (uint8_t *)malloc(sizeof(uint8_t) * BUF_SIZE);
     xQueueESPnowRecv = xQueueCreate(10, sizeof(resp_packet_t));
@@ -264,6 +313,15 @@ void app_main(void)
             int sw4 = gpio_get_level(SW4_PIN);
             int btn = gpio_get_level(BTN_PIN);
             //ESP_LOGI(TAG, "SW_UP: %d SW_DN: %d SW_R: %d SW_L: %d btn:%d", sw1, sw2, sw3, sw4, btn);
+
+#if ENABLE_STICK_STATUS_LOG
+            stick_state_t stickState = get_stick_state(sw1, sw2, sw3, sw4);
+            if (stickState != prevStickState)
+            {
+                ESP_LOGI(TAG, "STICK: %s", stick_state_to_string(stickState));
+                prevStickState = stickState;
+            }
+#endif
 
             if (btn != prevBtn)
             {
